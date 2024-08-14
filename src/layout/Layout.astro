@@ -1,0 +1,63 @@
+---
+import {fetchDecoratorReact} from "@navikt/nav-dekoratoren-moduler/ssr";
+import styles from "./Layout.module.css";
+import {getEnvironment} from "../utils/server/environment";
+
+
+/*export interface Props {
+    title: string;
+    breadcrumbs: [{
+        title: string,
+        url: string,
+    }] | [];
+}*/
+
+//const {breadcrumbs} = Astro.props;
+
+const Decorator = await fetchDecoratorReact({
+    env: getEnvironment(),
+    params: {
+        context: "privatperson",
+        //breadcrumbs: breadcrumbs,
+        availableLanguages: [
+            {
+                locale: "nb",
+                url: "https://www.nav.no/minside/varsler",
+                handleInApp: false,
+            },
+            {
+                locale: "en",
+                url: "https://www.nav.no/minside/varsler/en",
+                handleInApp: false,
+            },
+            {
+                locale: "nn",
+                url: "https://www.nav.no/minside/varsler/nn",
+                handleInApp: false,
+            }
+        ],
+    }
+});
+---
+
+<!DOCTYPE html>
+<html lang={"no"}>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Astro description"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>Varsler</title>
+    <link rel="preload" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.0/index.min.css" as="style"/>
+    <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.0/index.min.css"/>
+    <Decorator.Styles/>
+</head>
+<body class="main">
+<Decorator.Header/>
+<div class={styles.container}>
+    <slot/>
+</div>
+<Decorator.Footer/>
+<Decorator.Scripts/>
+</body>
+</html>
