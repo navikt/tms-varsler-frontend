@@ -1,0 +1,18 @@
+---
+import {minSideUrl} from "../../utils/server/urls";
+import {Link, Heading, ToggleGroup} from "@navikt/ds-react";
+import styles from "./PageHeader.module.css";
+import {text} from "../../language/text";
+import {VisningsToggle} from "./VisningsToggle/VisningsToggle";
+import {Astro} from "astro/env";
+const language = Astro.currentLocale
+---
+
+
+<div>
+    <strong>
+        <Link  href={minSideUrl} underline={false} variant="action">{text.minSide[language]}</Link>
+    </strong>
+    <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[language]}</Heading>
+    <VisningsToggle client:only="react"/>
+</div>

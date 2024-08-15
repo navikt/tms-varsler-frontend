@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 0;
+    color: var(--a-text-default);
+}
+
+.container h1 {
+    margin-bottom: 30px;
+}
+
+.container a {
+    color: var(--a-text-default);
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
+.errorDescription {
+    margin-top: var(--a-spacing-1);
+}

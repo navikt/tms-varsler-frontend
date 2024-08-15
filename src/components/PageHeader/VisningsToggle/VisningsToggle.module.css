@@ -1,0 +1,8 @@
+.toggleGroup > div{
+    margin-top: 1rem;
+}
+
+.toggleGroup > div{
+    width: 100%;
+    max-width: 300px;
+}

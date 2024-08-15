@@ -1,0 +1,22 @@
+---
+import {BodyLong, Heading} from "@navikt/ds-react";
+import styles from "./__error.module.css";
+import Layout from "../layout/Layout.astro";
+import KattIBoks from "../svg/KattIBoks";
+import {text} from "../language/text";
+import {baseUrl} from "../utils/server/urls";
+const currentLanguage = "nb"
+---
+
+<Layout title="Utkast" >
+    <div class={styles.container}>
+        <Heading size={"xlarge"}>{text.errorHeading[currentLanguage]}</Heading>
+        <KattIBoks alt={text.errorKitten[currentLanguage]}/>
+        <BodyLong class={styles.errorDescription}>
+            <strong>{text.errorText[currentLanguage]}</strong>
+        </BodyLong>
+        <BodyLong>
+            {text.errorHelp[currentLanguage]} <a class={styles.link} href={baseUrl}>{text.minSide[currentLanguage]}</a>
+        </BodyLong>
+    </div>
+</Layout>
