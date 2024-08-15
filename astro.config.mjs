@@ -14,7 +14,7 @@ export default defineConfig({
     locales: ["nb", "nn", "en"],
     routing: {
       prefixDefaultLocale: false
-    }
+    },
   },
   output: "server",
   adapter: node({

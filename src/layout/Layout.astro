@@ -1,38 +1,29 @@
 ---
 import {fetchDecoratorReact} from "@navikt/nav-dekoratoren-moduler/ssr";
 import styles from "./Layout.module.css";
-import {getEnvironment} from "../utils/server/environment";
+import {baseUrl} from "../utils/server/urls";
+import {DecoratorLocale} from "@navikt/nav-dekoratoren-moduler";
 
-
-/*export interface Props {
-    title: string;
-    breadcrumbs: [{
-        title: string,
-        url: string,
-    }] | [];
-}*/
-
-//const {breadcrumbs} = Astro.props;
-
+const currentLocale = Astro.currentLocale
 const Decorator = await fetchDecoratorReact({
-    env: getEnvironment(),
+    env: "dev",
     params: {
         context: "privatperson",
-        //breadcrumbs: breadcrumbs,
+        language: currentLocale as DecoratorLocale,
         availableLanguages: [
             {
                 locale: "nb",
-                url: "https://www.nav.no/minside/varsler",
+                url: `${baseUrl}/`,
                 handleInApp: false,
             },
             {
                 locale: "en",
-                url: "https://www.nav.no/minside/varsler/en",
+                url: `${baseUrl}/en`,
                 handleInApp: false,
             },
             {
                 locale: "nn",
-                url: "https://www.nav.no/minside/varsler/nn",
+                url: `${baseUrl}/nn`,
                 handleInApp: false,
             }
         ],
@@ -41,7 +32,7 @@ const Decorator = await fetchDecoratorReact({
 ---
 
 <!DOCTYPE html>
-<html lang={"no"}>
+<html lang={currentLocale}>
 <head>
     <meta charset="UTF-8"/>
     <meta name="description" content="Astro description"/>
