@@ -14,10 +14,12 @@
     "@astrojs/check": "0.9.2",
     "@astrojs/node": "8.3.3",
     "@astrojs/react": "3.6.2",
+    "@nanostores/react": "^0.7.3",
     "@navikt/aksel-icons": "6.16.0",
     "@navikt/ds-react": "6.16.0",
     "@navikt/nav-dekoratoren-moduler": "2.1.6",
-    "astro": "4.13.4"
+    "astro": "4.13.4",
+    "swr": "2.2.5"
   },
   "devDependencies": {
     "@hono/node-server": "1.12.0",
