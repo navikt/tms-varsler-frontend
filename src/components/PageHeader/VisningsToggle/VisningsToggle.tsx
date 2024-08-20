@@ -5,7 +5,7 @@ import {text} from "@language/text.ts";
 import {aktiveVarslerUrl} from "@src/utils/client/urls.ts";
 import type {AktiveVarsler} from "@components/types";
 import {fetcher} from "@src/utils/client/fetcher.ts";
-import useSWR from "swr";
+import useSWRImmutable from "swr/immutable";
 
 const language = getLanguage()
 const tellAntallAktiveVarsler = (varsler: AktiveVarsler) => {
@@ -14,8 +14,10 @@ const tellAntallAktiveVarsler = (varsler: AktiveVarsler) => {
 
 
 export const VisningsToggle = () => {
-    const {data : aktiveVarsler  , isLoading}= useSWR<AktiveVarsler>(aktiveVarslerUrl, fetcher)
-    const antallAktiveVarsler = aktiveVarsler ? `(${tellAntallAktiveVarsler(aktiveVarsler)})` : ""
+    const {data   , isLoading}= useSWRImmutable<AktiveVarsler>(aktiveVarslerUrl, fetcher)
+    const antallAktiveVarsler = data ? `(${tellAntallAktiveVarsler(data)})` : ""
+
+    console.log(data)
 
     return (
         <ToggleGroup className={styles.toggleGroup} defaultValue="nye" size="medium" onChange={console.log} >

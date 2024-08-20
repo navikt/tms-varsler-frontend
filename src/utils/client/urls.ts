@@ -16,7 +16,7 @@ export const getEnvironment = (): Environment => {
 
 
 const API_URL: EnvironmentUrl = {
-    local: "http://localhost:4321/tms-varsel-api",
+    local: "http://localhost:3000/tms-varsel-api",
     development: "https://www.ansatt.dev.nav.no/tms-varsel-api",
     production: "https://www.ansatt.nav.no/tms-varsel-api",
 }
