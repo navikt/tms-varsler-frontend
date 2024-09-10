@@ -67,4 +67,24 @@ export const text: Text = {
         en: "My Page",
         nn: "Mi side",
     },
+    and: {
+        nb: "og",
+        nn: "og",
+        en: "and",
+    },
+    filterAlle: {
+        nb: "Alle",
+        nn: "Alle",
+        en: "All",
+    },
+    filterOppgaver: {
+        nb: "Oppgaver",
+        nn: "Oppgåver",
+        en: "Tasks",
+    },
+    filterBeskjeder: {
+        nb: "Beskjeder",
+        nn: "Beskjedar",
+        en: "Messages",
+    },
 };

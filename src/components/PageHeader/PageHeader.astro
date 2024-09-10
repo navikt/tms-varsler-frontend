@@ -5,6 +5,7 @@ import styles from "./PageHeader.module.css";
 import {text} from "../../language/text";
 const language = Astro.currentLocale
 import {VisningsToggle} from "./VisningsToggle/VisningsToggle";
+import {VarselFilter} from "./VarselFilter/VarselFilter"
 ---
 
 
@@ -14,4 +15,5 @@ import {VisningsToggle} from "./VisningsToggle/VisningsToggle";
     </strong>
     <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[language]}</Heading>
     <VisningsToggle client:only="react"/>
+    <VarselFilter client:only="react"/>
 </div>

@@ -9,6 +9,7 @@
       "@language/*": ["src/language/*"],
       "@svg/*": ["src/svg/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@types/*": ["src/types/*"],
       "@src/*": ["src/*"],
     }
   },
