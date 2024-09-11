@@ -1,27 +1,17 @@
 import {text} from "@language/text.ts";
 import {BodyLong, Link} from "@navikt/ds-react";
+import { type Varsel} from "@src/types/Varsel.ts";
 
-export interface Varsel {
-    forstBehandlet: string,
-    eventId: string,
-    tekst: string,
-    link: string,
-    isMasked: boolean,
-    eksternVarslingSendt: false,
-    eksternVarslingKanaler: string[],
-    arkiverOnClick: boolean,
-    varselType: "beskjed" | "oppgave"
-}
 
 export const VarselCard = ({
-                           forstBehandlet,
-                           tekst,
-                           link,
-                           eksternVarslingSendt,
-                           eksternVarslingKanaler,
-                           arkiverOnClick,
-                           varselType,
-                       }: Varsel) => {
+                               forstBehandlet,
+                               isMasked,
+                               spraakkode,
+                               tekst,
+                               link,
+                               eksternVarslingKanaler,
+                               erArkiverbar
+                           }: Varsel) => {
     return (
         (
             <div>
@@ -31,7 +21,7 @@ export const VarselCard = ({
                         {forstBehandlet}
                     </span>
                     {
-                        eksternVarslingSendt && (eksternVarslingKanaler.length > 0) && (
+                        (eksternVarslingKanaler.length > 0) && (
                             <span>
                                 {eksternVarslingKanaler.join(`${text.and} `)}
                             </span>
