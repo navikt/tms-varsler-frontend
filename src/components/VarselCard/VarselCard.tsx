@@ -5,16 +5,14 @@ import { type Varsel} from "@src/types/Varsel.ts";
 
 export const VarselCard = ({
                                forstBehandlet,
-                               isMasked,
                                spraakkode,
                                tekst,
                                link,
                                eksternVarslingKanaler,
-                               erArkiverbar
                            }: Varsel) => {
     return (
         (
-            <div>
+            <div lang={spraakkode}>
                 {link ? <Link href={link}>{tekst}</Link> : <BodyLong>{tekst}</BodyLong>}
                 <div>
                     <span>

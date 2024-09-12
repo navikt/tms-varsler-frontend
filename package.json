@@ -8,18 +8,20 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "mock": "tsx --watch ./mock/server.ts"
+    "mock": "tsx --watch ./mock/server.ts",
+    "ts-check": "tsc --strict"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "2.11.0",
     "@astrojs/check": "0.9.2",
     "@astrojs/node": "8.3.3",
     "@astrojs/react": "3.6.2",
-    "@nanostores/react": "^0.7.3",
+    "@nanostores/react": "0.7.3",
     "@navikt/aksel-icons": "6.16.0",
     "@navikt/ds-react": "6.16.0",
     "@navikt/nav-dekoratoren-moduler": "2.1.6",
     "astro": "4.13.4",
+    "nanostores": "0.11.3",
     "swr": "2.2.5"
   },
   "devDependencies": {

@@ -1,7 +1,2 @@
-export enum Language {
-    en = "English",
-    nb = "Norsk bokmål",
-    nn = "Norsk nynorsk",
-}
-
-export type Locale = keyof typeof Language
+export type Locale = "nb" | "en" | "nn"
+export const DOCUMENT_LOCALE = document.documentElement.lang as Locale

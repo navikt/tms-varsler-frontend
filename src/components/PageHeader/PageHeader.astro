@@ -3,17 +3,23 @@ import {minSideUrl} from "../../utils/server/urls";
 import {Link, Heading} from "@navikt/ds-react";
 import styles from "./PageHeader.module.css";
 import {text} from "../../language/text";
-const language = Astro.currentLocale
 import {VisningsToggle} from "./VisningsToggle/VisningsToggle";
 import {VarselFilter} from "./VarselFilter/VarselFilter"
+import {type Locale} from "../../language/Language";
+
+interface Props {
+    locale: Locale,
+    isTidligere: boolean
+}
+const {locale} = Astro.props;
 ---
 
 
 <div>
     <strong>
-        <Link  href={minSideUrl} underline={false} variant="action">{text.minSide[language]}</Link>
+        <Link href={minSideUrl} underline={false} variant="action">{text.minSide[locale]}</Link>
     </strong>
-    <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[language]}</Heading>
+    <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[locale]}</Heading>
     <VisningsToggle client:only="react"/>
     <VarselFilter client:only="react"/>
 </div>

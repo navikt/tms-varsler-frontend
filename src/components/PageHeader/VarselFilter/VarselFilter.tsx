@@ -1,20 +1,26 @@
 import {Chips, Search} from "@navikt/ds-react";
 import {text} from "@language/text.ts";
+import {$showTidligere} from "@src/store/store.ts";
+import {useStore} from '@nanostores/react';
+import {DOCUMENT_LOCALE} from "@language/Language.ts";
 
-const language = "nb"
-const toggleOptions = [text.filterAlle[language], text.filterOppgaver[language], text.filterBeskjeder[language]]
+const toggleOptions = [text.filterAlle[DOCUMENT_LOCALE], text.filterOppgaver[DOCUMENT_LOCALE], text.filterBeskjeder[DOCUMENT_LOCALE]]
+export const VarselFilter = ({}) => {
 
+    const isTidligereView: boolean = useStore($showTidligere)
 
-export const VarselFilter  = ({}) => {
+    if (!isTidligereView) {
+        return null
+    }
+
     return (
         <div>
             <Search hideLabel={false} label="Søk alle NAV sine sider" variant="simple"/>
             <Chips>
-                {toggleOptions.map((label, id) => (
+                {toggleOptions.map((label) => (
                     <Chips.Toggle
                         checkmark={false}
                         key={label}
-
                     >
                         {label}
                     </Chips.Toggle>

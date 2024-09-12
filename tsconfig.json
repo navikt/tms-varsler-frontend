@@ -1,6 +1,8 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "baseUrl": ".",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
@@ -9,7 +11,6 @@
       "@language/*": ["src/language/*"],
       "@svg/*": ["src/svg/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@types/*": ["src/types/*"],
       "@src/*": ["src/*"],
     }
   },

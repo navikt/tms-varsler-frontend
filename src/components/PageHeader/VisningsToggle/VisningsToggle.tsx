@@ -1,28 +1,38 @@
 import {ToggleGroup} from "@navikt/ds-react";
 import styles from "./VisningsToggle.module.css"
-import {getLanguage} from "@language/getLanguage.ts";
 import {text} from "@language/text.ts";
 import {aktiveVarslerUrl} from "@src/utils/client/urls.ts";
 import {fetcher} from "@src/utils/client/fetcher.ts";
 import useSWRImmutable from "swr/immutable";
 import type {VarselResponse} from "@src/types/Varsel.ts";
+import {setViewToNye, setViewToTidligere} from "@src/utils/client/viewUrl.ts";
+import {useStore} from "@nanostores/react";
+import {$showTidligere} from "@src/store/store.ts";
+import {DOCUMENT_LOCALE} from "@language/Language.ts";
 
-const language = getLanguage()
 
 const aktiveVarselCounterText = (varsler: VarselResponse["aktive"]) => {
     const antallVarsler = varsler?.oppgaver.length + varsler?.beskjeder.length
     return antallVarsler > 0 ? `(${antallVarsler}\)` : ""
 }
 
+
 export const VisningsToggle = () => {
-    const {data: varselResponse, isLoading} = useSWRImmutable<VarselResponse>(aktiveVarslerUrl, fetcher)
+    const {data: varselResponse} = useSWRImmutable<VarselResponse>(aktiveVarslerUrl, fetcher)
+
     const antallAktiveVarsler = varselResponse && aktiveVarselCounterText(varselResponse.aktive)
+    const isTidligereView: boolean = useStore($showTidligere)
+
+    const defaultToggle = isTidligereView ? "tidligere" : "nye"
+
 
 
     return (
-        <ToggleGroup className={styles.toggleGroup} defaultValue="nye" size="medium" onChange={console.log}>
-            <ToggleGroup.Item value="nye" label={text.newToggle[language] + antallAktiveVarsler}/>
-            <ToggleGroup.Item value="tidligere" label={text.previousToggle[language]}/>
+        <ToggleGroup defaultValue={defaultToggle} className={styles.toggleGroup} size="medium" onChange={console.log}>
+            <ToggleGroup.Item onClick={() => setViewToNye()} value="nye"
+                              label={text.newToggle[DOCUMENT_LOCALE] + antallAktiveVarsler}/>
+            <ToggleGroup.Item onClick={() => setViewToTidligere()} value="tidligere"
+                              label={text.previousToggle[DOCUMENT_LOCALE]}/>
         </ToggleGroup>
     )
 }

@@ -2,9 +2,10 @@
 import {fetchDecoratorReact} from "@navikt/nav-dekoratoren-moduler/ssr";
 import styles from "./Layout.module.css";
 import {baseUrl} from "../utils/server/urls";
-import {DecoratorLocale} from "@navikt/nav-dekoratoren-moduler";
+import {type DecoratorLocale} from "@navikt/nav-dekoratoren-moduler";
+import {Locale} from "../language/Language";
+const currentLocale:Locale  = Astro.currentLocale as Locale
 
-const currentLocale = Astro.currentLocale
 const Decorator = await fetchDecoratorReact({
     env: "dev",
     params: {
@@ -30,7 +31,6 @@ const Decorator = await fetchDecoratorReact({
     }
 });
 
-console.log(currentLocale)
 ---
 
 <!DOCTYPE html>

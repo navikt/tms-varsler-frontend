@@ -2,10 +2,14 @@
 import Layout from "../layout/Layout.astro";
 import PageHeader from "../components/PageHeader/PageHeader.astro";
 import {VarselList} from "../components/VarseList/VarselList.tsx";
+
+const currentLocale = Astro.currentLocale
+
 ---
 
 
 <Layout>
-    <PageHeader/>
+    <PageHeader locale={currentLocale}/>
     <VarselList client:only="react"/>
 </Layout>
+
