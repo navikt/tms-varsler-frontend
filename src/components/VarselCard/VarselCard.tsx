@@ -6,7 +6,7 @@ import {ClipboardIcon} from '@navikt/aksel-icons';
 import {DOCUMENT_LOCALE} from "@language/Language.ts";
 
 
-const constructMetaData = (eksternVarslingKanaler: String[], forstBehandlet) => {
+const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanaler"], forstBehandlet: Varsel["forstBehandlet"]) => {
     return (
         <div className={styles.metadata}>
             <span className={styles.date}> {`${forstBehandlet}`} </span>
