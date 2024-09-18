@@ -1,3 +1,16 @@
-.pageHeading{
+.container {
+    background-color: var(--a-surface-default);
+    padding: 1rem;
+    max-width: 912px;
+    margin: 0 auto;
+}
+
+.pageHeading {
     margin-top: 1.5rem;
+}
+
+@media (max-width: 648px) {
+    .container {
+        padding: 0 0.5rem;
+    }
 }

@@ -1,0 +1,16 @@
+.backgroundWrapper{
+    background: #ECEEF0;
+
+}
+.varselViewContainer{
+    width: 100%;
+    max-width: 912px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+@media (min-width: 480px){
+    .heading{
+        margin-top: 0.5rem;
+    }
+}

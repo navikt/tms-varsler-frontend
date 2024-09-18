@@ -1,16 +1,18 @@
 import {VarselCard} from "@components/VarselCard/VarselCard.tsx";
-import { type Varsel} from "@src/types/Varsel.ts";
+import {type Varsel} from "@src/types/Varsel.ts";
+import {Heading} from "@navikt/ds-react";
+import styles from "./VarselList.module.css"
 
 interface Props {
     tittel: string;
     varsler: Varsel[]
 }
 
+export const VarselList = ({varsler, tittel}: Props) => {
 
-export const VarselList = ({varsler, tittel}: Props) =>
-    <div>
-        <h2>{tittel}</h2>
-        <ul>
+    return (<div>
+        <Heading className={styles.heading} size="xsmall" level="2">{tittel}</Heading>
+        <ul className={styles.list}>
             {varsler && varsler.map((v) => (
                 <li key={v.varselId}>
                     <VarselCard {...v}/>
@@ -18,4 +20,6 @@ export const VarselList = ({varsler, tittel}: Props) =>
             ))
             }
         </ul>
-    </div>
+    </div>)
+
+}

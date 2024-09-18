@@ -20,7 +20,7 @@ const aktiveVarselCounterText = (varsler: VarselResponse["aktive"]) => {
 export const VisningsToggle = () => {
     const {data: varselResponse} = useSWRImmutable<VarselResponse>(aktiveVarslerUrl, fetcher)
 
-    const antallAktiveVarsler = varselResponse && aktiveVarselCounterText(varselResponse.aktive)
+    const antallAktiveVarsler = varselResponse ? aktiveVarselCounterText(varselResponse.aktive) : ""
     const isTidligereView: boolean = useStore($showTidligere)
 
     const defaultToggle = isTidligereView ? "tidligere" : "nye"

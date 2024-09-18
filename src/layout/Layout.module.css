@@ -5,15 +5,13 @@ body {
   max-width: none;
 }
 
-.container {
-  padding: 1rem;
-  min-height: 600px;
-  max-width: 912px;
-  margin: 0 auto;
+.container, decorator-utils{
+  background-color: var(--a-surface-default);.container, decorator-utils{
+  background-color: var(--a-surface-default);
+}
 }
 
-@media (max-width: 648px) {
-  .container {
-    padding: 0 0.5rem;
-  }
+.container {
+  min-height: 600px;
+  margin: 0 auto;
 }

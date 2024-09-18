@@ -1,6 +1,22 @@
 import {text} from "@language/text.ts";
 import {BodyLong, Link} from "@navikt/ds-react";
-import { type Varsel} from "@src/types/Varsel.ts";
+import {type Varsel} from "@src/types/Varsel.ts";
+import styles from "./VarselCard.module.css"
+import {ClipboardIcon} from '@navikt/aksel-icons';
+import {DOCUMENT_LOCALE} from "@language/Language.ts";
+
+
+const constructMetaData = (eksternVarslingKanaler: String[], forstBehandlet) => {
+    return (
+        <div className={styles.metadata}>
+            <span className={styles.date}> {`${forstBehandlet}`} </span>
+            {eksternVarslingKanaler.length > 0 ? <span className={styles.varselKanaler}>
+                {`• Varslet på ${eksternVarslingKanaler.join(" " + text.and[DOCUMENT_LOCALE] + " ")}`}
+            </span> : ""}
+
+        </div>
+    )
+}
 
 
 export const VarselCard = ({
@@ -10,21 +26,18 @@ export const VarselCard = ({
                                link,
                                eksternVarslingKanaler,
                            }: Varsel) => {
+
+
     return (
         (
-            <div lang={spraakkode}>
-                {link ? <Link href={link}>{tekst}</Link> : <BodyLong>{tekst}</BodyLong>}
+            <div lang={spraakkode} className={styles.container}>
+                <div className={styles.varselIcon}><ClipboardIcon width="20px" height="20px"/></div>
                 <div>
-                    <span>
-                        {forstBehandlet}
-                    </span>
-                    {
-                        (eksternVarslingKanaler.length > 0) && (
-                            <span>
-                                {eksternVarslingKanaler.join(`${text.and} `)}
-                            </span>
-                        )
-                    }
+                    <div>
+                        {link ? <Link href={link}> <BodyLong weight="semibold">{tekst}</BodyLong></Link> :
+                            <BodyLong weight="semibold">{tekst}</BodyLong>}
+                    </div>
+                    {constructMetaData(eksternVarslingKanaler, forstBehandlet)}
                 </div>
             </div>
         ))

@@ -5,6 +5,13 @@ type Text = {
         [lang in Locale]: string;
     };
 };
+export const dynamicText = {
+    tidligereVarslerHeading: {
+        nb: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidligere varsler`,
+        en: (occurredCount: number, totalCount: number) => `Showing ${occurredCount} of ${totalCount} previous notifications`,
+        nn: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidlegare varsel`,
+    }
+}
 
 export const text: Text = {
     hovedoverskrift: {
@@ -12,12 +19,12 @@ export const text: Text = {
         en: "Notifications",
         nn: "Varslar",
     },
-    newToggle:{
+    newToggle: {
         nb: "Nye ",
         en: "New ",
         nn: "Nye ",
     },
-    previousToggle:{
+    previousToggle: {
         nb: "Tidligere",
         en: "Previous",
         nn: "Tidlegare",

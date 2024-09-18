@@ -1,0 +1,19 @@
+.heading{
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.list{
+    display: grid;
+    gap: 1px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+@media (min-width: 480px){
+    .heading{
+        margin-top: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+}
