@@ -2,18 +2,36 @@ import styles from "./TidligereView.module.css";
 import {VarselList} from "@components/VarseList/VarselList.tsx";
 import {dynamicText} from "@language/text.ts";
 import {DOCUMENT_LOCALE} from "@language/Language.ts";
-import type {Varsel} from "@src/types/Varsel.ts";
+import type {InaktivVarsel} from "@src/types/Varsel.ts";
+import {$filterSearch, $filterVarselType} from "@src/store/store.ts";
+import {useStore} from "@nanostores/react";
 
 type Props = {
-    varsler: Varsel[],
+    varsler: InaktivVarsel[],
+}
+
+
+const filterVarseler = (varsler: InaktivVarsel[]) => {
+    const filterVarselType = useStore($filterVarselType)
+    const filterSearch = useStore($filterSearch)
+
+    const filteredByType = varsler.filter((varsel) => filterVarselType === "alle" || varsel.type === filterVarselType)
+
+    if(filterSearch === "") {
+        return filteredByType
+    }
+
+    const filteredBySearch = filteredByType.filter((varsel) => varsel.tekst.toLowerCase().includes(filterSearch))
+    return filteredBySearch
 }
 
 export const TidligereView = ({varsler}: Props) => {
-    const filteredList = varsler
+    const filteredList = filterVarseler(varsler)
+
 
     return <div className={styles.container}>
-        {varsler && <VarselList
-            tittel={dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](filteredList.length, filteredList.length)}
-            varsler={varsler}/>}
+        {filteredList && <VarselList
+            tittel={dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](filteredList.length, varsler.length)}
+            varsler={filteredList}/>}
     </div>
 }

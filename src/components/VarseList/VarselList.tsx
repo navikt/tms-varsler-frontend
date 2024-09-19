@@ -8,13 +8,13 @@ interface Props {
     varsler: Varsel[]
 }
 
-export const VarselList = ({varsler, tittel}: Props) => {
+export const VarselList = ({varsler, tittel, }: Props) => {
 
     return (<div>
         <Heading className={styles.heading} size="xsmall" level="2">{tittel}</Heading>
         <ul className={styles.list}>
             {varsler && varsler.map((v) => (
-                <li key={v.varselId}>
+                <li key={v.id}>
                     <VarselCard {...v}/>
                 </li>
             ))

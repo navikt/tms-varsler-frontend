@@ -1,0 +1,9 @@
+.filterContainer{
+    max-width: 386px;
+    margin-top: var(--a-spacing-5);
+    margin-bottom: var(--a-spacing-5);
+}
+
+.filterToggle{
+    margin-top: var(--a-spacing-4);
+}

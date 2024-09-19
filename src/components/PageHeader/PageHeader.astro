@@ -4,7 +4,7 @@ import {Link, Heading} from "@navikt/ds-react";
 import styles from "./PageHeader.module.css";
 import {text} from "../../language/text";
 import {VisningsToggle} from "./VisningsToggle/VisningsToggle";
-import {VarselFilter} from "./VarselFilter/VarselFilter"
+import {Filter} from "./Filter/Filter"
 import {type Locale} from "../../language/Language";
 
 interface Props {
@@ -14,12 +14,13 @@ interface Props {
 const {locale} = Astro.props;
 ---
 
-
-<div class={styles.container}>
-    <strong>
-        <Link href={minSideUrl} underline={false} variant="action">{text.minSide[locale]}</Link>
-    </strong>
-    <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[locale]}</Heading>
-    <VisningsToggle client:only="react"/>
-    <VarselFilter client:only="react"/>
+<div>
+    <div class={styles.container}>
+        <strong>
+            <Link href={minSideUrl} underline={false} variant="action">{text.minSide[locale]}</Link>
+        </strong>
+        <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[locale]}</Heading>
+        <VisningsToggle client:only="react"/>
+        <Filter client:only="react"/>
+    </div>
 </div>
