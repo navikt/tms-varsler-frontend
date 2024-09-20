@@ -16,10 +16,10 @@ spec:
   image: {{ image }}
   port: 3000
   liveness:
-    path: /minside/varsler/api/internal/isAlive
+    path: /minside/varsler-ny/api/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /minside/varsler/api/internal/isReady
+    path: /minside/varsler-ny/api/internal/isReady
     initialDelay: 10
   replicas:
     min: 2
@@ -30,8 +30,8 @@ spec:
         - application: nav-dekoratoren
           namespace: personbruker
   ingresses:
-    - "https://www.intern.dev.nav.no/minside/varsler"
-    - "https://www.ansatt.dev.nav.no/minside/varsler"
+    - "https://www.intern.dev.nav.no/minside/varsler-ny"
+    - "https://www.ansatt.dev.nav.no/minside/varsler-ny"
   resources:
     limits:
       memory: 768Mi

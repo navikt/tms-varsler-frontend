@@ -30,7 +30,7 @@ spec:
         - application: nav-dekoratoren
           namespace: personbruker
   ingresses:
-    - "https://www.nav.no/minside/varsler"
+    - "https://www.ansatt.nav.no/minside/varsler-ny"
   resources:
     limits:
       memory: 768Mi
