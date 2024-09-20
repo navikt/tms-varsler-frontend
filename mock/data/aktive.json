@@ -1,4 +1,5 @@
 {
+  "hasMasked": true,
   "aktive": {
     "oppgaver": [
       {
@@ -8,7 +9,8 @@
         "link": "https://enNyLenke",
         "isMasked": false,
         "eksternVarslingSendt": false,
-        "eksternVarslingKanaler": []
+        "eksternVarslingKanaler": [],
+        "isArkiverbar": false
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -19,7 +21,8 @@
         "eksternVarslingSendt": true,
         "eksternVarslingKanaler": [
           "SMS"
-        ]
+        ],
+        "isArkiverbar": false
       }
     ],
     "beskjeder": [
@@ -33,7 +36,7 @@
         "eksternVarslingKanaler": [
           "SMS"
         ],
-        "arkiverOnClick": true
+        "isArkiverbar": true
       },
       {
         "forstBehandlet": "2019-11-27T12:24:34.671Z",
@@ -47,7 +50,7 @@
           "SMS",
           "EPOST"
         ],
-        "arkiverOnClick": true
+        "isArkiverbar": true
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -57,7 +60,7 @@
         "isMasked": false,
         "eksternVarslingSendt": false,
         "eksternVarslingKanaler": [],
-        "arkiverOnClick": false
+        "isArkiverbar": false
       }
     ]
   },

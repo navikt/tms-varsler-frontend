@@ -1,0 +1,10 @@
+.noVarselMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: var(--content-view-min-height);
+}

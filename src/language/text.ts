@@ -94,4 +94,19 @@ export const text: Text = {
         nn: "Beskjedar",
         en: "Messages",
     },
+    noAktiveVarselerMessageTitle:{
+        nb: "Ingen nye varsler",
+        nn: "Ingen nye varsel",
+        en: "No new notifications",
+    },
+    noAktiveVarselerMessageText:{
+        nb: "Vi varsler deg når noe skjer",
+        nn: "Vi varslar deg når noko skjer",
+        en: "We will notify you when something happens",
+    },
+    noInaktiveVarselerMessageTitle:{
+        nb: "Ingen tidligere varsler",
+        nn: "Ingen tidlegare varsel",
+        en: "No previous notifications",
+    },
 };
