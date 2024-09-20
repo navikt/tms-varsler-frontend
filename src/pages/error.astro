@@ -5,7 +5,8 @@ import Layout from "../layout/Layout.astro";
 import KattIBoks from "../svg/KattIBoks";
 import {text} from "../language/text";
 import {baseUrl} from "../utils/server/urls";
-const currentLanguage = Astro.currentLocale
+import {Locale} from "../language/Language";
+const currentLanguage = Astro.currentLocale as Locale
 ---
 
 <Layout title="Utkast" >

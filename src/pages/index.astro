@@ -2,9 +2,10 @@
 import Layout from "../layout/Layout.astro";
 import PageHeader from "../components/PageHeader/PageHeader.astro";
 import {VarselView} from "../components/VarselView/VarselView";
+import {Locale} from "../language/Language";
 
 
-const currentLocale = Astro.currentLocale
+const currentLocale = Astro.currentLocale as Locale
 
 ---
 
