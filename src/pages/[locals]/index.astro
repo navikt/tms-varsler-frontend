@@ -8,6 +8,6 @@ const currentLocale = Astro.currentLocale as Locale
 
 
 <Layout>
-    <PageHeader/>
-
+    <PageHeader locale={currentLocale}/>
+    <VarselView client:only="react"/>
 </Layout>
