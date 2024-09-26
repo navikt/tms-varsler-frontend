@@ -7,19 +7,15 @@ import {VisningsToggle} from "./VisningsToggle/VisningsToggle";
 import {Filter} from "./Filter/Filter"
 import {type Locale} from "../../language/Language";
 
-interface Props {
-    locale: Locale,
-    isTidligere: boolean
-}
-const {locale} = Astro.props;
+const currentLocale:Locale  = Astro.currentLocale as Locale
 ---
 
 <div>
     <div class={styles.container}>
         <strong>
-            <Link href={minSideUrl} underline={false} variant="action">{text.minSide[locale]}</Link>
+            <Link href={minSideUrl} underline={false} variant="action">{text.minSide[currentLocale]}</Link>
         </strong>
-        <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[locale]}</Heading>
+        <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[currentLocale]}</Heading>
         <VisningsToggle client:only="react"/>
         <Filter client:only="react"/>
     </div>

@@ -5,7 +5,7 @@ import Layout from "../layout/Layout.astro";
 import KattIBoks from "../svg/KattIBoks";
 import {text} from "../language/text";
 import {baseUrl} from "../utils/server/urls";
-import {Locale} from "../language/Language";
+import {type Locale} from "../language/Language";
 const currentLanguage = Astro.currentLocale as Locale
 ---
 
@@ -13,7 +13,7 @@ const currentLanguage = Astro.currentLocale as Locale
     <div class={styles.container}>
         <Heading size={"xlarge"}>{text.errorHeading[currentLanguage]}</Heading>
         <KattIBoks alt={text.errorKitten[currentLanguage]}/>
-        <BodyLong class={styles.errorDescription}>
+        <BodyLong className={styles.errorDescription}>
             <strong>{text.errorText[currentLanguage]}</strong>
         </BodyLong>
         <BodyLong>
