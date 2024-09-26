@@ -20,7 +20,7 @@
     "@navikt/aksel-icons": "6.16.0",
     "@navikt/ds-react": "6.16.0",
     "@navikt/nav-dekoratoren-moduler": "2.1.6",
-    "astro": "4.13.4",
+    "astro": "4.15.9",
     "nanostores": "0.11.3",
     "swr": "2.2.5"
   },

@@ -12,6 +12,7 @@
       "@svg/*": ["src/svg/*"],
       "@layouts/*": ["src/layouts/*"],
       "@src/*": ["src/*"],
+      "@customTypes/*": ["src/customTypes/*"],
     }
   },
 }

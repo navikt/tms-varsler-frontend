@@ -1,4 +1,4 @@
-import type {Locale} from "@language/Language.ts";
+import type {Locale} from "@customTypes/Locale.ts";
 
 type Text = {
     [key: string]: {

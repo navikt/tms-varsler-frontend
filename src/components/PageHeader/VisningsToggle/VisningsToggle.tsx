@@ -4,7 +4,7 @@ import {text} from "@language/text.ts";
 import {aktiveVarslerUrl} from "@src/utils/client/urls.ts";
 import {fetcher} from "@src/utils/client/fetcher.ts";
 import useSWRImmutable from "swr/immutable";
-import type {VarselResponse} from "@src/types/Varsel.ts";
+import type {VarselResponse} from "@src/customTypes/Varsel.ts";
 import {setViewToNye, setViewToTidligere} from "@src/utils/client/viewUrl.ts";
 import {useStore} from "@nanostores/react";
 import {$showTidligere} from "@src/store/store.ts";
