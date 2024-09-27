@@ -1,7 +1,7 @@
 import styles from "./TidligereView.module.css";
 import {VarselList} from "@components/VarseList/VarselList.tsx";
 import {dynamicText} from "@language/text.ts";
-import {DOCUMENT_LOCALE} from "@language/Language.ts";
+import {DOCUMENT_LOCALE} from "@language/language.ts";
 import type {InaktivVarsel} from "@src/customTypes/Varsel.ts";
 import {$filterSearch, $filterVarselType} from "@src/store/store.ts";
 import {useStore} from "@nanostores/react";

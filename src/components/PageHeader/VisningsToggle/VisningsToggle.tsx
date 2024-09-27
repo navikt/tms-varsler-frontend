@@ -8,7 +8,7 @@ import type {VarselResponse} from "@src/customTypes/Varsel.ts";
 import {setViewToNye, setViewToTidligere} from "@src/utils/client/viewUrl.ts";
 import {useStore} from "@nanostores/react";
 import {$showTidligere} from "@src/store/store.ts";
-import {DOCUMENT_LOCALE} from "@language/Language.ts";
+import {DOCUMENT_LOCALE} from "@language/language.ts";
 
 
 const aktiveVarselCounterText = (varsler: VarselResponse["aktive"]) => {
