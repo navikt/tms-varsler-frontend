@@ -1,2 +1,2 @@
 type Locale = "nb" | "en" | "nn"
-export const DOCUMENT_LOCALE = document.documentElement.lang as Locale
+export const DOCUMENT_LOCALE : Locale = document.documentElement.lang as Locale
