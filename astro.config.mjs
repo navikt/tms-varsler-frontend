@@ -4,7 +4,7 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/minside/varsler",
+  base: "/minside/varsler-ny",
   build: {
     assetsPrefix: "https://cdn.nav.no/min-side/tms-varsler-frontend"
   },
@@ -19,5 +19,8 @@ export default defineConfig({
   output: "server",
   adapter: node({
     mode: "standalone"
-  })
+  }),
+  experimental: {
+    serverIslands: true
+  },
 });

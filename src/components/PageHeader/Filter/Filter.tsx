@@ -2,7 +2,7 @@ import {Chips, Search} from "@navikt/ds-react";
 import {text} from "@language/text.ts";
 import {$filterVarselType, $showTidligere, setFilterSearch} from "@src/store/store.ts";
 import {useStore} from '@nanostores/react';
-import {DOCUMENT_LOCALE} from "@language/Language.ts";
+import {DOCUMENT_LOCALE} from "@language/language.ts";
 import styles from "./Filter.module.css";
 
 

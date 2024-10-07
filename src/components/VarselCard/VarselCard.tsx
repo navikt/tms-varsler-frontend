@@ -3,7 +3,7 @@ import {BodyLong, Link} from "@navikt/ds-react";
 import {type Varsel} from "@src/customTypes/Varsel.ts";
 import styles from "./VarselCard.module.css"
 import {ClipboardIcon} from '@navikt/aksel-icons';
-import {DOCUMENT_LOCALE} from "@language/Language.ts";
+import {DOCUMENT_LOCALE} from "@language/language.ts";
 
 
 const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanaler"], forstBehandlet: Varsel["forstBehandlet"]) => {

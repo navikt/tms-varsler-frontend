@@ -3,7 +3,7 @@ import {KattBjellehat} from "@svg/KattBjellehat.tsx";
 import {BodyShort, Heading} from "@navikt/ds-react";
 import {$showTidligere} from "@src/store/store.ts";
 import {useStore} from "@nanostores/react";
-import {DOCUMENT_LOCALE} from "@language/Language.ts";
+import {DOCUMENT_LOCALE} from "@language/language.ts";
 import {text} from "@language/text.ts";
 
 export const NoVarselMessage = () => {
