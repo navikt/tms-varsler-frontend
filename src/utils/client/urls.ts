@@ -1,5 +1,5 @@
 const isProduction = window.location.href.includes("www.nav.no");
-const isDevelopment = window.location.href.includes("www.intern.dev.nav.no");
+const isDevelopment = window.location.href.includes("www.ansatt.dev.nav.no");
 
 export type Environment = "local" | "development" | "production"
 type  EnvironmentUrl = {[key in Environment]:string}
@@ -22,4 +22,4 @@ const API_URL: EnvironmentUrl = {
 }
 
 
-export const aktiveVarslerUrl = `${API_URL[getEnvironment()]}/aktive`
+export const aktiveVarslerUrl = `${API_URL[getEnvironment()]}/alle`

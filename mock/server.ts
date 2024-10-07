@@ -10,6 +10,6 @@ api.use("/*", cors({
     credentials: true,
 }));
 
-api.get('/tms-varsel-api/aktive', (c) => c.json(aktiveVarsler));
+api.get('/tms-varsel-api/alle', (c) => c.json(aktiveVarsler));
 
 serve(api);
