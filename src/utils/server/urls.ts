@@ -14,6 +14,6 @@ const Min_SIDE_URL: EnvironmentUrls = {
     production: "https://www.nav.no/minside",
 }
 
-export const loginUrl = () => `/oauth2/login?redirect=${BASE_URL[getEnvironment()]}}`;
+export const loginUrl = () => `/minside/varsler-ny/oauth2/login?redirect=${BASE_URL[getEnvironment()]}}`;
 export const baseUrl = BASE_URL[getEnvironment()]
 export const minSideUrl = Min_SIDE_URL[getEnvironment()]
