@@ -1,6 +1,6 @@
 import {type Environment, getEnvironment} from "./environment.ts";
 
-type  EnvironmentUrls = {[key in Environment]:string}
+type  EnvironmentUrls = { [key in Environment]: string }
 
 const BASE_URL: EnvironmentUrls = {
     local: "http://localhost:4321/minside/varsler",
@@ -14,5 +14,6 @@ const Min_SIDE_URL: EnvironmentUrls = {
     production: "https://www.nav.no/minside",
 }
 
+export const loginUrl = () => `/oauth2/login?redirect=${BASE_URL[getEnvironment()]}}`;
 export const baseUrl = BASE_URL[getEnvironment()]
 export const minSideUrl = Min_SIDE_URL[getEnvironment()]
