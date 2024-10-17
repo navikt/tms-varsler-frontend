@@ -1,3 +1,5 @@
+export type VarselType = "oppgave" | "beskjed"
+
 export type Varsel ={
     id: string;
     forstBehandlet: string;
@@ -10,16 +12,18 @@ export type Varsel ={
     erArkiverbar: boolean;
 }
 
-export type VarselType = "oppgave" | "beskjed"
-
 export type InaktivVarsel = Varsel & {
     type: VarselType
 }
 
+export type AktiveVarsler = {
+    beskjeder: Varsel[]
+    oppgaver: Varsel[]
+}
+
+export type InaktiveVarsler = InaktivVarsel[]
+
 export type VarselResponse = {
-    aktive: {
-        oppgaver: Varsel[]
-        beskjeder: Varsel[]
-    }
-    inaktive: InaktivVarsel[]
+    aktive: AktiveVarsler
+    inaktive: InaktiveVarsler
 }

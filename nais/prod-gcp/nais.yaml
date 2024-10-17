@@ -29,6 +29,7 @@ spec:
       rules:
         - application: nav-dekoratoren
           namespace: personbruker
+        - application: tms-varsel-api
   ingresses:
     - "https://www.ansatt.nav.no/minside/varsler-ny"
   resources:
@@ -37,3 +38,10 @@ spec:
     requests:
       cpu: "20m"
       memory: 128Mi
+  env:
+    - name: TMS_ALLE_VARSLER_API_URL
+      value: "http://tms-varsel-api/alle"
+    - name: TMS_APP_BASE_URL
+      value: "https://www.nav.no/minside/varsler-ny"
+    - name: TMS_MIN_SIDE_URL
+      value: "https://www.nav.no"

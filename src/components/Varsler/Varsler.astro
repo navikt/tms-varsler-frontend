@@ -1,0 +1,33 @@
+---
+import styles from './Varsler.module.css';
+import VarselView from "@components/VarselView/VarselView";
+import {varselApiUrl} from "@utils/server/urls";
+
+const oboToken = Astro.locals.token;
+
+const data = await fetch(varselApiUrl, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${oboToken}`,
+    },
+}).then((response) => {
+    if (!response.ok) {
+        console.error(`Error, fetch failed with status: ${response.status}`)
+        Astro.redirect("/error");
+    }
+
+    return response.json();
+}).catch((error) => {
+    console.error(`Error, fetch failed: ${error}`);
+    Astro.redirect("/error");
+});
+---
+
+
+<div>
+    <div class={styles.pageConten}>
+        <VarselView varselResponse={data} client:only="react"/>
+    </div>
+</div>

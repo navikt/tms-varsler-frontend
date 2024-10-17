@@ -109,4 +109,9 @@ export const text: Text = {
         nn: "Ingen tidlegare varsel",
         en: "No previous notifications",
     },
+    loadingMessage:{
+        nb: "Henter innhold ...",
+        nn: "Hentar innhald ...",
+        en: "Loading content ...",
+    },
 };

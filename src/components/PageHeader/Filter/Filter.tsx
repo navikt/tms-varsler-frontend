@@ -24,7 +24,7 @@ export const Filter = ({}) => {
 
     return (
         <div className={styles.filterContainer}>
-            <Search onChange={(v) => setFilterSearch(v)} className={styles.searchInput} hideLabel={false} label="Søk alle NAV sine sider" variant="simple"/>
+            <Search onChange={(v) => setFilterSearch(v)} className={styles.searchInput} hideLabel={false} label="Søk i dine tidligere varsler" variant="simple"/>
             <Chips className={styles.filterToggle}>
                 {Object.entries(toggleOptions).map(([key,value]) => (
                     <Chips.Toggle

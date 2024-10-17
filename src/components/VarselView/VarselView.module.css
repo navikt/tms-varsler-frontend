@@ -1,10 +1,11 @@
 :root {
-    --content-view-min-height: 286px;
+    --content-view-min-height: 386px;
 }
 
 .backgroundWrapper{
     background: #ECEEF0;
     min-height: var(--content-view-min-height);
+    flex-grow: 1;
 }
 .varselViewContainer{
     width: 100%;

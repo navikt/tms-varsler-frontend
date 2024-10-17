@@ -5,9 +5,6 @@
     margin: 0 auto;
 }
 
-.pageHeading {
-    margin-top: 1.5rem;
-}
 
 @media (max-width: 648px) {
     .container {

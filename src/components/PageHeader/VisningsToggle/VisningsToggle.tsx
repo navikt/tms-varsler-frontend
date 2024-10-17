@@ -1,13 +1,10 @@
 import {ToggleGroup} from "@navikt/ds-react";
 import styles from "./VisningsToggle.module.css"
 import {text} from "@language/text.ts";
-import {aktiveVarslerUrl} from "@src/utils/client/urls.ts";
-import {fetcher} from "@src/utils/client/fetcher.ts";
-import useSWRImmutable from "swr/immutable";
 import type {VarselResponse} from "@src/customTypes/Varsel.ts";
 import {setViewToNye, setViewToTidligere} from "@src/utils/client/viewUrl.ts";
 import {useStore} from "@nanostores/react";
-import {$showTidligere} from "@src/store/store.ts";
+import {$aktiveVarsler, $showTidligere} from "@src/store/store.ts";
 import {DOCUMENT_LOCALE} from "@language/language.ts";
 
 
@@ -18,14 +15,11 @@ const aktiveVarselCounterText = (varsler: VarselResponse["aktive"]) => {
 
 
 export const VisningsToggle = () => {
-    const {data: varselResponse} = useSWRImmutable<VarselResponse>(aktiveVarslerUrl, fetcher)
+    const aktiveVarsler = useStore($aktiveVarsler)
 
-    const antallAktiveVarsler = varselResponse ? aktiveVarselCounterText(varselResponse.aktive) : ""
+    const antallAktiveVarsler = aktiveVarselCounterText(aktiveVarsler)
     const isTidligereView: boolean = useStore($showTidligere)
-
     const defaultToggle = isTidligereView ? "tidligere" : "nye"
-
-
 
     return (
         <ToggleGroup defaultValue={defaultToggle} className={styles.toggleGroup} size="medium" onChange={console.log}>

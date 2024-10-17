@@ -1,5 +1,4 @@
 ---
-import {minSideUrl} from "../../utils/server/urls";
 import {Link, Heading} from "@navikt/ds-react";
 import styles from "./PageHeader.module.css";
 import {text} from "../../language/text";
@@ -12,9 +11,6 @@ const currentLocale:Locale  = Astro.currentLocale as Locale
 
 <div>
     <div class={styles.container}>
-        <strong>
-            <Link href={minSideUrl} underline={false} variant="action">{text.minSide[currentLocale]}</Link>
-        </strong>
         <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[currentLocale]}</Heading>
         <VisningsToggle client:only="react"/>
         <Filter client:only="react"/>

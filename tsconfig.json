@@ -11,6 +11,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@src/*": ["src/*"],
       "@src/customTypes/*": ["src/customTypes/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
 }

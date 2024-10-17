@@ -25,7 +25,7 @@ const filterVarseler = (varsler: InaktivVarsel[]) => {
     return filteredBySearch
 }
 
-export const TidligereView = ({varsler}: Props) => {
+export const TidligereVarslerView = ({varsler}: Props) => {
     const filteredList = filterVarseler(varsler)
 
 

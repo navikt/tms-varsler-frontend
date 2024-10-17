@@ -9,7 +9,7 @@ type Props = {
     beskjeder: Varsel[],
 }
 
-export const NyeView = ({oppgaver, beskjeder}: Props) => {
+export const NyeVarslerView = ({oppgaver, beskjeder}: Props) => {
 
     return <div className={styles.container}>
         {oppgaver && <VarselList tittel={text.filterOppgaver[DOCUMENT_LOCALE]} varsler={oppgaver}/>}
