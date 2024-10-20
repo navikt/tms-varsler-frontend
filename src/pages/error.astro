@@ -9,7 +9,7 @@ import {type Locale} from "../customTypes/Locale";
 const currentLanguage = Astro.currentLocale as Locale
 ---
 
-<Layout title="Utkast" >
+<Layout title="Varsler" >
     <div class={styles.container}>
         <Heading size={"xlarge"}>{text.errorHeading[currentLanguage]}</Heading>
         <KattIBoks alt={text.errorKitten[currentLanguage]}/>
