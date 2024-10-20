@@ -1,18 +1,7 @@
-type Environment = "local" | "dev" | "prod";
+import {type Environment, getEnvironment} from "@utils/server/environment.ts";
+
 type EnvBasedUrl = { [key in Environment]: string }
 
-const isDevelopment = process.env.NAIS_CLUSTER_NAME === "dev-gcp";
-export const isLocal = process.env.NODE_ENV === "development";
-
-const getEnvironment = ():Environment => {
-    if (isLocal) {
-        return "local";
-    }
-    if (isDevelopment) {
-        return "dev";
-    }
-    return "prod";
-}
 
 const TMS_MIN_SIDE_URL : EnvBasedUrl = {
     local: "http://localhost:4321/minside",
