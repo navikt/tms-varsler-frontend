@@ -1,11 +1,11 @@
 ---
 import styles from './Varsler.module.css';
 import VarselView from "@components/VarselView/VarselView";
-import {varselApiUrl} from "@utils/server/urls";
+import {varslerApiurl} from "@utils/server/urls";
 
 const oboToken = Astro.locals.token;
 
-const data = await fetch(varselApiUrl, {
+const data = await fetch(varslerApiurl, {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
