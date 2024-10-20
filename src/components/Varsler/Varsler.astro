@@ -24,6 +24,8 @@ const data = await fetch(varslerApiurl, {
     console.error(`Error, fetch failed: ${error}`);
     Astro.redirect("/error");
 });
+
+console.log(data)
 ---
 
 
