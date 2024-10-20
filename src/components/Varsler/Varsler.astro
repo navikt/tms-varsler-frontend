@@ -2,8 +2,9 @@
 import styles from './Varsler.module.css';
 import VarselView from "@components/VarselView/VarselView";
 import {varslerApiurl} from "@utils/server/urls";
+import {getOboToken} from "../../utils/server/getOboToken";
 
-const oboToken = Astro.locals.token;
+const oboToken = getOboToken(Astro.locals.token);
 
 const data = await fetch(varslerApiurl, {
     method: "GET",
