@@ -11,8 +11,8 @@ const TMS_MIN_SIDE_URL : EnvBasedUrl = {
 
 const TMS_VARSEL_API : EnvBasedUrl = {
     local: "http://localhost:3000/tms-varsel-api",
-    dev: "http://tms-varsel-api",
-    prod: "http://tms-varsel-api",
+    dev: "http://tms-varsel-api/tms-varsel-api",
+    prod: "http://tms-varsel-api/tms-varsel-api",
 };
 
 
