@@ -1,0 +1,17 @@
+---
+import {text} from "../../language/text";
+import PageHeader from "../PageHeader/PageHeader.astro";
+import VarselFetcher from "../VarselFetcher/VarselFetcher.astro";
+import {Loader} from "@navikt/ds-react";
+import {Locale} from "../../customTypes/Locale";
+const currentLocale = Astro.currentLocale as Locale
+
+---
+
+
+<>
+    <PageHeader />
+    <VarselFetcher server:defer>
+        <Loader size="3xlarge" slot="fallback" title={text.loadingMessage[currentLocale]}/>
+    </VarselFetcher>
+</>

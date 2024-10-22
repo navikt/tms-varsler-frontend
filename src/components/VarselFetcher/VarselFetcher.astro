@@ -1,5 +1,4 @@
 ---
-import styles from './Varsler.module.css';
 import VarselView from "@components/VarselView/VarselView";
 import {varslerApiurl} from "@utils/server/urls";
 import {getOboToken} from "../../utils/server/getOboToken";
@@ -25,13 +24,11 @@ const data = await fetch(varslerApiurl, {
     Astro.redirect("/error");
 });
 
-console.log(data)
-console.log(varslerApiurl)
 ---
 
 
 <div>
-    <div class={styles.pageConten}>
+    <div>
         <VarselView varselResponse={data} client:only="react"/>
     </div>
 </div>
