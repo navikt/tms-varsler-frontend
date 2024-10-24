@@ -94,20 +94,25 @@ export const text: Text = {
         nn: "Beskjedar",
         en: "Messages",
     },
-    noAktiveVarselerMessageTitle:{
+    noAktiveVarselerTitle:{
         nb: "Ingen nye varsler",
         nn: "Ingen nye varsel",
         en: "No new notifications",
     },
-    noAktiveVarselerMessageText:{
+    noAktiveVarselerDescription:{
         nb: "Vi varsler deg når noe skjer",
         nn: "Vi varslar deg når noko skjer",
         en: "We will notify you when something happens",
     },
-    noInaktiveVarselerMessageTitle:{
+    noInaktiveVarselerTitle:{
         nb: "Ingen tidligere varsler",
         nn: "Ingen tidlegare varsel",
         en: "No previous notifications",
+    },
+    noInaktiveVarselerDescription:{
+        nb: "Når du har gjort en oppgave eller lest en beskjed havner de her.",
+        nn: "Når du har gjort en oppgåve eller lest en beskjed havnar dei her.",
+        en: "When you have completed a task or read a message, it will appear here.",
     },
     loadingMessage:{
         nb: "Henter innhold ...",

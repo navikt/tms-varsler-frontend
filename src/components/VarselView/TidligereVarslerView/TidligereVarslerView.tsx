@@ -5,6 +5,7 @@ import {DOCUMENT_LOCALE} from "@language/language.ts";
 import type {InaktivVarsel} from "@src/customTypes/Varsel.ts";
 import {$filterSearch, $filterVarselType} from "@src/store/store.ts";
 import {useStore} from "@nanostores/react";
+import {NoVarselMessage} from "@components/VarselView/NoVarselMessage/NoVarselMessage.tsx";
 
 type Props = {
     varsler: InaktivVarsel[],
@@ -21,14 +22,14 @@ const filterVarseler = (varsler: InaktivVarsel[]) => {
         return filteredByType
     }
 
-    const filteredBySearch = filteredByType.filter((varsel) => varsel.tekst.toLowerCase().includes(filterSearch))
-    return filteredBySearch
+    return filteredByType.filter((varsel) => varsel.tekst.toLowerCase().includes(filterSearch))
 }
 
 export const TidligereVarslerView = ({varsler}: Props) => {
+    if(varsler.length === 0) {
+        return <NoVarselMessage />
+    }
     const filteredList = filterVarseler(varsler)
-
-
     return <div className={styles.container}>
         {filteredList && <VarselList
             tittel={dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](filteredList.length, varsler.length)}
