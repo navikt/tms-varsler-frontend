@@ -1,6 +1,6 @@
 import {Chips, Search} from "@navikt/ds-react";
 import {text} from "@language/text.ts";
-import {$filterVarselType, $showTidligere, setFilterSearch} from "@src/store/store.ts";
+import {$filterSearch, $filterVarselType, $showTidligere, setFilterSearch} from "@src/store/store.ts";
 import {useStore} from '@nanostores/react';
 import {DOCUMENT_LOCALE} from "@language/language.ts";
 import styles from "./Filter.module.css";
@@ -24,7 +24,7 @@ export const Filter = ({}) => {
 
     return (
         <div className={styles.filterContainer}>
-            <Search onChange={(v) => setFilterSearch(v)} className={styles.searchInput} hideLabel={false} label="Søk i dine tidligere varsler" variant="simple"/>
+            <Search defaultValue={$filterSearch.value} onChange={(v) => setFilterSearch(v)} className={styles.searchInput} hideLabel={false} label="Søk i dine tidligere varsler" variant="simple"/>
             <Chips className={styles.filterToggle}>
                 {Object.entries(toggleOptions).map(([key,value]) => (
                     <Chips.Toggle

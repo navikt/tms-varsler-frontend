@@ -12,7 +12,7 @@ const aktiveVarselCounterText = (varsler: VarselResponse["aktive"]) => {
     const antallVarsler = varsler?.oppgaver.length + varsler?.beskjeder.length
     return antallVarsler > 0 ? `(${antallVarsler}\)` : ""
 }
-
+const mapToSetViewFunction = (view: string) => view === "nye" ? setViewToNye() : setViewToTidligere();
 
 export const VisningsToggle = () => {
     const aktiveVarsler = useStore($aktiveVarsler)
@@ -22,10 +22,10 @@ export const VisningsToggle = () => {
     const defaultToggle = isTidligereView ? "tidligere" : "nye"
 
     return (
-        <ToggleGroup defaultValue={defaultToggle} className={styles.toggleGroup} size="medium" onChange={console.log}>
-            <ToggleGroup.Item onClick={() => setViewToNye()} value="nye"
+        <ToggleGroup defaultValue={defaultToggle} className={styles.toggleGroup} size="medium" onChange={mapToSetViewFunction}>
+            <ToggleGroup.Item  value="nye"
                               label={text.newToggle[DOCUMENT_LOCALE] + antallAktiveVarsler}/>
-            <ToggleGroup.Item onClick={() => setViewToTidligere()} value="tidligere"
+            <ToggleGroup.Item  value="tidligere"
                               label={text.previousToggle[DOCUMENT_LOCALE]}/>
         </ToggleGroup>
     )
