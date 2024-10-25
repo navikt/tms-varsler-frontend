@@ -1,10 +1,3 @@
-import type {Locale} from "@src/customTypes/Locale.ts";
-
-type Text = {
-    [key: string]: {
-        [lang in Locale]: string;
-    };
-};
 export const dynamicText = {
     tidligereVarslerHeading: {
         nb: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidligere varsler`,
