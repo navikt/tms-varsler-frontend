@@ -31,8 +31,8 @@ spec:
           namespace: personbruker
         - application: tms-varsel-api
   ingresses:
-    - "https://www.intern.dev.nav.no/minside/varsler-ny"
-    - "https://www.ansatt.dev.nav.no/minside/varsler-ny"
+    - "https://www.intern.dev.nav.no/minside/varsler"
+    - "https://www.ansatt.dev.nav.no/minside/varsler"
   resources:
     limits:
       memory: 768Mi
