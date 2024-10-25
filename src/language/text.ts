@@ -13,7 +13,7 @@ export const dynamicText = {
     }
 }
 
-export const text: Text = {
+export const text = {
     hovedoverskrift: {
         nb: "Varseler",
         en: "Notifications",
@@ -114,9 +114,19 @@ export const text: Text = {
         nn: "Når du har gjort en oppgåve eller lest en beskjed havnar dei her.",
         en: "When you have completed a task or read a message, it will appear here.",
     },
+    noSearchResultTitle:{
+        nb: "Ingen resultater",
+        nn: "Ingen resultat",
+        en: "No results",
+    },
+    noSearchResultDescription:{
+        nb: "Sjekk om du har skrevet feil eller prøv med et annet søkeord",
+        nn: "Sjekk om du har skrive feil eller prøv med eit anna søkeord",
+        en: "Check if you have written incorrectly or try another search term",
+    },
     loadingMessage:{
         nb: "Henter innhold ...",
         nn: "Hentar innhald ...",
         en: "Loading content ...",
     },
-};
+} as const;

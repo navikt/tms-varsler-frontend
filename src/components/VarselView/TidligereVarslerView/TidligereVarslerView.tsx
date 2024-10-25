@@ -18,7 +18,7 @@ const filterVarseler = (varsler: InaktivVarsel[]) => {
 
     const filteredByType = varsler.filter((varsel) => filterVarselType === "alle" || varsel.type === filterVarselType)
 
-    if(filterSearch === "") {
+    if (filterSearch === "") {
         return filteredByType
     }
 
@@ -26,13 +26,18 @@ const filterVarseler = (varsler: InaktivVarsel[]) => {
 }
 
 export const TidligereVarslerView = ({varsler}: Props) => {
-    if(varsler.length === 0) {
-        return <NoVarselMessage />
+    if (varsler.length === 0) {
+        return <NoVarselMessage type="noInaktiveVarseler"/>
     }
-    const filteredList = filterVarseler(varsler)
+    const filteredList = filterVarseler(varsler);
+    const noFilterResult = filteredList && filteredList.length === 0;
+    if (noFilterResult) {
+        return <NoVarselMessage type="noSearchResult"/>
+    }
+
     return <div className={styles.container}>
-        {filteredList && <VarselList
+        <VarselList
             tittel={dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](filteredList.length, varsler.length)}
-            varsler={filteredList}/>}
+            varsler={filteredList}/>
     </div>
 }
