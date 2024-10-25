@@ -6,7 +6,7 @@ type EnvBasedUrl = { [key in Environment]: string }
 const TMS_MIN_SIDE_URL : EnvBasedUrl = {
     local: "http://localhost:4321/minside",
     dev: "https://www.ansatt.dev.nav.no/minside",
-    prod: "https://www.ansatt.dev.nav.no/minside",
+    prod: "https://www.ansatt.nav.no/minside",
 };
 
 const TMS_VARSEL_API : EnvBasedUrl = {
@@ -19,6 +19,6 @@ const TMS_VARSEL_API : EnvBasedUrl = {
 
 
 export const minSideUrl = TMS_MIN_SIDE_URL[getEnvironment()];
-export const baseUrl = `${TMS_MIN_SIDE_URL[getEnvironment()]}/varsler-ny`;
+export const baseUrl = `${TMS_MIN_SIDE_URL[getEnvironment()]}/varsler`;
 export const varslerApiurl = `${TMS_VARSEL_API[getEnvironment()]}/alle`;
-export const loginUrl = `/minside/varsler-ny/oauth2/login?redirect=${baseUrl}`;
+export const loginUrl = `/minside/varsler/oauth2/login?redirect=${baseUrl}`;

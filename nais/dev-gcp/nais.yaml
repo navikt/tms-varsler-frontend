@@ -16,10 +16,10 @@ spec:
   image: {{ image }}
   port: 3000
   liveness:
-    path: /minside/varsler-ny/api/internal/isAlive
+    path: /minside/varsler/api/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /minside/varsler-ny/api/internal/isReady
+    path: /minside/varsler/api/internal/isReady
     initialDelay: 10
   replicas:
     min: 2
