@@ -14,7 +14,7 @@ export const NyeVarslerView = ({oppgaver, beskjeder}: Props) => {
     const hasOppgaver = oppgaver.length > 0
     const hasBeskjeder = beskjeder.length > 0
     if(!hasOppgaver && !hasBeskjeder) {
-        return <NoVarselMessage type="noSearchResult"/>
+        return <NoVarselMessage type="noAktiveVarseler"/>
     }
 
     return <div className={styles.container}>

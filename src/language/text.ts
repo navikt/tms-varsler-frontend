@@ -122,4 +122,9 @@ export const text = {
         nn: "Hentar innhald ...",
         en: "Loading content ...",
     },
+    searchLabel:{
+        nb: "Søk i dine tidligere varsler",
+        nn: "Søk i dine tidlegare varsel",
+        en: "Search in your previous notifications",
+    },
 } as const;
