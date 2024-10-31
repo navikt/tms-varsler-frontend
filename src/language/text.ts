@@ -3,7 +3,12 @@ export const dynamicText = {
         nb: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidligere varsler`,
         en: (occurredCount: number, totalCount: number) => `Showing ${occurredCount} of ${totalCount} previous notifications`,
         nn: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidlegare varsel`,
-    }
+    },
+    notificationChannel: (kanaler: string[]) => ({
+        nb: `Varslet via ${kanaler.join(" og ")}`,
+        en: `Notified via ${kanaler.join(" and ")}`,
+        nn: `Varsla via ${kanaler.join(" og ")}`,
+    }),
 }
 
 export const text = {
@@ -72,44 +77,54 @@ export const text = {
         nn: "Beskjedar",
         en: "Messages",
     },
-    noAktiveVarselerTitle:{
+    noAktiveVarselerTitle: {
         nb: "Ingen nye varsler",
         nn: "Ingen nye varsel",
         en: "No new notifications",
     },
-    noAktiveVarselerDescription:{
+    noAktiveVarselerDescription: {
         nb: "Vi varsler deg når noe skjer",
         nn: "Vi varslar deg når noko skjer",
         en: "We will notify you when something happens",
     },
-    noInaktiveVarselerTitle:{
+    noInaktiveVarselerTitle: {
         nb: "Ingen tidligere varsler",
         nn: "Ingen tidlegare varsel",
         en: "No previous notifications",
     },
-    noInaktiveVarselerDescription:{
+    noInaktiveVarselerDescription: {
         nb: "Når du har gjort en oppgave eller lest en beskjed havner de her.",
         nn: "Når du har gjort en oppgåve eller lest en beskjed havnar dei her.",
         en: "When you have completed a task or read a message, it will appear here.",
     },
-    noSearchResultTitle:{
+    noSearchResultTitle: {
         nb: "Ingen resultater",
         nn: "Ingen resultat",
         en: "No results",
     },
-    noSearchResultDescription:{
+    noSearchResultDescription: {
         nb: "Sjekk om du har skrevet feil eller prøv med et annet søkeord",
         nn: "Sjekk om du har skrive feil eller prøv med eit anna søkeord",
         en: "Check if you have written incorrectly or try another search term",
     },
-    loadingMessage:{
+    loadingMessage: {
         nb: "Henter innhold ...",
         nn: "Hentar innhald ...",
         en: "Loading content ...",
     },
-    searchLabel:{
+    searchLabel: {
         nb: "Søk i dine tidligere varsler",
         nn: "Søk i dine tidlegare varsel",
         en: "Search in your previous notifications",
     },
+    sms: {
+        nb: "SMS",
+        nn: "SMS",
+        en: "SMS",
+    },
+    epost: {
+        nb: "e-post",
+        nn: "e-post",
+        en: "e-mail",
+    }
 } as const;

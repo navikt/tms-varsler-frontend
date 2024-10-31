@@ -1,6 +1,7 @@
-import {text} from "@language/text.ts";
+import {dynamicText, text} from "@language/text.ts";
 import {BodyLong, Link} from "@navikt/ds-react";
 import {type Varsel} from "@src/customTypes/Varsel.ts";
+import formatData from "@utils/client/data.ts";
 import styles from "./VarselCard.module.css"
 import {ClipboardIcon} from '@navikt/aksel-icons';
 import {DOCUMENT_LOCALE} from "@language/language.ts";
@@ -9,11 +10,10 @@ import {DOCUMENT_LOCALE} from "@language/language.ts";
 const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanaler"], forstBehandlet: Varsel["forstBehandlet"]) => {
     return (
         <div className={styles.metadata}>
-            <span className={styles.date}> {`${forstBehandlet}`} </span>
+            <span className={styles.date}> {`${formatData(forstBehandlet)}`} </span>
             {eksternVarslingKanaler.length > 0 ? <span className={styles.varselKanaler}>
-                {`• Varslet på ${eksternVarslingKanaler.join(" " + text.and[DOCUMENT_LOCALE] + " ")}`}
+                {dynamicText.notificationChannel(eksternVarslingKanaler)[DOCUMENT_LOCALE]}
             </span> : ""}
-
         </div>
     )
 }
