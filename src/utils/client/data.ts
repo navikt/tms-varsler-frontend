@@ -1,6 +1,13 @@
 import dayjs from "dayjs";
-const formatData = (data: string) => {
+import type {Varsel} from "@src/customTypes/Varsel.ts";
+
+export const formatData = (data: string) => {
     return dayjs(data).format('DD.MM.YYYY kl. HH.mm');
 }
 
-export default formatData;
+
+export const sortVarselList = (data: Varsel[]) => {
+    return data.sort((a, b) => {
+        return dayjs(b.forstBehandlet).diff(dayjs(a.forstBehandlet));
+    });
+}

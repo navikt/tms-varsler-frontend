@@ -1,7 +1,7 @@
 import {dynamicText, text} from "@language/text.ts";
 import {BodyLong, Link} from "@navikt/ds-react";
 import {type Varsel} from "@src/customTypes/Varsel.ts";
-import formatData from "@utils/client/data.ts";
+import {formatData} from "@utils/client/data.ts";
 import styles from "./VarselCard.module.css"
 import {ClipboardIcon} from '@navikt/aksel-icons';
 import {DOCUMENT_LOCALE} from "@language/language.ts";
