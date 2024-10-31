@@ -6,13 +6,16 @@ import {Loader} from "@navikt/ds-react";
 import {type Locale} from "../../customTypes/Locale";
 import Layout from "../../layout/Layout.astro";
 const currentLocale = Astro.currentLocale as Locale
+import styles from "./VarselPage.module.css";
 
 ---
 
 
 <Layout >
     <PageHeader />
-    <VarselFetcher server:defer>
-        <Loader size="3xlarge" slot="fallback" title={text.loadingMessage[currentLocale]}/>
-    </VarselFetcher>
+    <div class={styles.contentWrapper}>
+        <VarselFetcher server:defer>
+            <Loader size="3xlarge" slot="fallback" title={text.loadingMessage[currentLocale]}/>
+        </VarselFetcher>
+    </div>
 </Layout>

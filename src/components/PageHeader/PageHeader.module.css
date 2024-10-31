@@ -1,7 +1,8 @@
 .container {
     background-color: var(--a-surface-default);
     padding: 1rem;
-    max-width: 912px;
+    width: var(--content-width);
+    max-width: var(--content-max-width);
     margin: 0 auto;
 }
 

@@ -1,5 +1,6 @@
 .container {
-    max-width: 632px;
+    width: var(--content-width);
+    max-width: var(--content-max-width);
     display: grid;
     grid-template-columns: [icon] auto [content] 1fr;
     gap: var(--a-spacing-1);

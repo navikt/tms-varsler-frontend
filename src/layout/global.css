@@ -1,0 +1,10 @@
+:root {
+    --content-max-width: 100%;
+    --content-width: 39.5rem;
+}
+body, html {
+    min-height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

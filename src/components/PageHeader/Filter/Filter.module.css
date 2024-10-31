@@ -1,5 +1,6 @@
 .filterContainer{
-    max-width: 386px;
+    max-width: 100%;
+    width: 24.125rem;
     margin-top: var(--a-spacing-5);
     margin-bottom: var(--a-spacing-5);
 }

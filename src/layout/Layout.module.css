@@ -12,8 +12,6 @@ body {
 }
 
 .layout {
-  min-height: 550px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  flex: 1;
 }
+

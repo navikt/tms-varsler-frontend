@@ -27,8 +27,4 @@ const data = await fetch(varslerApiurl, {
 ---
 
 
-<div>
-    <div>
-        <VarselView isError={isError} varselResponse={data} client:only="react"/>
-    </div>
-</div>
+<VarselView isError={isError} varselResponse={data} client:only="react"/>

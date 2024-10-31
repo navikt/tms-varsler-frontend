@@ -1,0 +1,5 @@
+.contentWrapper{
+    background: #ECEEF0;
+    min-height: var(--content-view-min-height);
+    height: 100%;
+}
