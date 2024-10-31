@@ -4,6 +4,8 @@ import {varslerApiurl} from "@utils/server/urls";
 import {getOboToken} from "../../utils/server/getOboToken";
 const oboToken = await getOboToken(Astro.locals.token);
 
+let isError = false;
+
 const data = await fetch(varslerApiurl, {
     method: "GET",
     headers: {
@@ -14,20 +16,19 @@ const data = await fetch(varslerApiurl, {
 }).then((response) => {
     if (!response.ok) {
         console.error(`Error, fetch failed with status: ${response.status}`)
-        Astro.redirect("/error");
+        isError = true;
     }
 
     return response.json();
 }).catch((error) => {
     console.error(`Error, fetch failed: ${error}`);
-    Astro.redirect("/error");
+    isError = true;
 });
-
 ---
 
 
 <div>
     <div>
-        <VarselView varselResponse={data} client:only="react"/>
+        <VarselView isError={isError} varselResponse={data} client:only="react"/>
     </div>
 </div>

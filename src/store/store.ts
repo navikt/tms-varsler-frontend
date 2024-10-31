@@ -15,6 +15,12 @@ export const setFilterSearch = (search: string) => {
 export const $aktiveVarsler: PreinitializedWritableAtom<AktiveVarsler> = atom({beskjeder: [], oppgaver: []});
 export const $inaktiveVarsler: PreinitializedWritableAtom<InaktiveVarsler> = atom([]);
 
+export const $isError: PreinitializedWritableAtom<boolean> = atom(false);
+export const setError = () => {
+    $isError.set(true)
+}
+
+
 export const setAktiveVarsler = (varsler: AktiveVarsler) => {
     $aktiveVarsler.set({beskjeder: sortVarsler(varsler.beskjeder), oppgaver: sortVarsler(varsler.oppgaver)})
 }

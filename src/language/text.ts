@@ -43,24 +43,9 @@ export const text = {
         nn: "Hentar innhald ...",
     },
     errorHeading: {
-        nb: "Oisann, noe gikk galt!",
-        en: "Oups, something went wrong!",
-        nn: "Oisann, noko gjekk gale",
-    },
-    errorText: {
-        nb: "Vi fant dessverre ikke det du lette etter",
-        en: "We couldn't find the content you were looking for",
-        nn: "Vi fann dessverre ikkje det du leita etter",
-    },
-    errorHelp: {
-        nb: "Prøv igjen senere eller gå til ",
-        en: "Try again later or go to ",
-        nn: "Prøv igjen seinare eller gå til ",
-    },
-    errorKitten: {
-        nb: "En svart katt som har forsøkt å hoppe inn i en boks med hodet først men satt seg fast slik at bare føttene og halen stikker opp",
-        en: "A black cat that has attempted to jump into a box head first but the box was too smal so that her feet ant tail is up in the air",
-        nn: "En svart katt som har forsøkt å hoppe inn i en boks med hodet først men satt seg fast slik at bare føttene og halen stikker opp",
+        nb: "Vi har for øyeblikket tekniske problemer. Dette kan føre til at du ikke får opp alle dine varsler. Vennligst prøv igjen senere.",
+        en: "We are currently experiencing technical issues. This may prevent you from seeing all your notifications. Please try again later.",
+        nn: "Vi har for øyeblikket tekniske problem. Dette kan føre til at du ikkje får opp alle dine varsel. Ver venleg og prøv igjen seinare.",
     },
     minSide: {
         nb: "Min side",
