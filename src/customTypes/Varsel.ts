@@ -9,7 +9,7 @@ export type Varsel ={
     link: string;
     eksternVarslingSendt: boolean;
     eksternVarslingKanaler: string[];
-    erArkiverbar: boolean;
+    isArkiverbar: boolean;
 }
 
 export type InaktivVarsel = Varsel & {
