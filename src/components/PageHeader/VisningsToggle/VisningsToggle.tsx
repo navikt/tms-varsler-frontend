@@ -1,7 +1,6 @@
 import {ToggleGroup} from "@navikt/ds-react";
 import styles from "./VisningsToggle.module.css"
 import {text} from "@language/text.ts";
-import type {VarselResponse} from "@src/customTypes/Varsel.ts";
 import {setViewToNye, setViewToTidligere} from "@src/utils/client/viewUrl.ts";
 import {useStore} from "@nanostores/react";
 import {$aktiveBeskjeder, $aktiveOppgaver, $showTidligere} from "@src/store/store.ts";

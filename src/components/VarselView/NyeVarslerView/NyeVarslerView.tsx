@@ -2,7 +2,6 @@ import styles from "@components/VarselView/VarselView.module.css";
 import {VarselList} from "@components/VarseList/VarselList.tsx";
 import {text} from "@language/text.ts";
 import {DOCUMENT_LOCALE} from "@language/language.ts";
-import type {Varsel} from "@src/customTypes/Varsel.ts";
 import {NoVarselMessage} from "@components/VarselView/NoVarselMessage/NoVarselMessage.tsx";
 import {useStore} from "@nanostores/react";
 import {$aktiveBeskjeder, $aktiveOppgaver} from "@src/store/store.ts";
