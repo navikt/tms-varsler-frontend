@@ -8,9 +8,7 @@ declare namespace App {
 }
 
 interface ImportMetaEnv {
-    readonly TMS_APP_BASE_URL: string;
-    readonly TMS_MIN_SIDE_URL: string;
-    readonly TMS_VARSLER_API_URL: string;
+    PUBLIC_ENVIRONMENT: "local" | "dev" | "prod";
 }
 
 
