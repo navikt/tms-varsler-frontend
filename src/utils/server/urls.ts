@@ -19,4 +19,5 @@ const TMS_VARSEL_API : EnvBasedUrl = {
 export const minSideUrl = TMS_MIN_SIDE_URL[environment];
 export const baseUrl = `${TMS_MIN_SIDE_URL[environment]}/varsler`;
 export const varslerApiurl = `${TMS_VARSEL_API[environment]}/alle`;
+export const inaktiverBeskjedApiUrl = `${TMS_VARSEL_API[environment]}/beskjed/inaktiver`;
 export const loginUrl = `/minside/varsler/oauth2/login?redirect=${baseUrl}`;

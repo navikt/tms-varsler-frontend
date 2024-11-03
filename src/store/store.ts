@@ -41,13 +41,13 @@ export const initVarsler = (varselResponse : VarselResponse) => {
     }
 }
 
-export const arkiverVarsel = (id: string) => {
+export const inaktiverBeskjed = (id: string) => {
     const inaktive = $inaktiveVarsler.get()
     const aktive = $aktiveBeskjeder.get()
-    const varselToArkiver = aktive.find((v: Varsel) => v.id === id)
+    const varselToInaktiver = aktive.find((v: Varsel) => v.id === id)
 
-    if (varselToArkiver) {
-        const varselToInactivate: InaktivVarsel = {...varselToArkiver, isArkiverbar:false, type: "beskjed"}
+    if (varselToInaktiver) {
+        const varselToInactivate: InaktivVarsel = {...varselToInaktiver, isInaktiverbar:false, type: "beskjed"}
         setInaktiveVarsler([...inaktive, varselToInactivate])
         setAktiveBeskjeder(aktive.filter((v: Varsel) => v.id !== id))
     }

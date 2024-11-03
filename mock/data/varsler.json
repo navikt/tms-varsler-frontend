@@ -10,7 +10,7 @@
         "isMasked": false,
         "eksternVarslingSendt": false,
         "eksternVarslingKanaler": [],
-        "isArkiverbar": false
+        "isInaktiverbar": false
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -22,7 +22,7 @@
         "eksternVarslingKanaler": [
           "SMS"
         ],
-        "isArkiverbar": false
+        "isInaktiverbar": false
       }
     ],
     "beskjeder": [
@@ -36,7 +36,7 @@
         "eksternVarslingKanaler": [
           "SMS"
         ],
-        "isArkiverbar": true
+        "isInaktiverbar": true
       },
       {
         "forstBehandlet": "2019-11-27T12:24:34.671Z",
@@ -50,7 +50,7 @@
           "SMS",
           "EPOST"
         ],
-        "isArkiverbar": true
+        "isInaktiverbar": true
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -60,7 +60,7 @@
         "isMasked": false,
         "eksternVarslingSendt": false,
         "eksternVarslingKanaler": [],
-        "isArkiverbar": false
+        "isInaktiverbar": false
       }
     ]
   },
@@ -100,10 +100,10 @@
       "type": "beskjed"
     },
     {
-      "forstBehandlet": "2019-11-27T12:24:34.671Z",
+      "forstBehandlet": "2024-10-27T12:24:34.671Z",
       "id": "11748574232374672",
       "uid": "934de6ce-f94f-47de-84d2-639ac2674627",
-      "tekst": "Søknad om forskudd på dagpenger er mottatt. Hvis du trenger forskudd på dagpenger eller ettersende vedlegg til sønakden din kan du trykke deg inn i den nye forskuddskøsningen ved å gå til denne siden.",
+      "tekst": "Søknad om forskudd på Arbeidsavklaringspenger er mottatt. Hvis du trenger forskudd på Arbeidsavklaringspenger eller ettersende vedlegg til sønakden din kan du trykke deg inn i den nye forskuddskøsningen ved å gå til denne siden.",
       "link": null,
       "isMasked": true,
       "eksternVarslingSendt": true,
