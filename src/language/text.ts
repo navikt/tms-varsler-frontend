@@ -132,4 +132,15 @@ export const text = {
         nn: "Merk som lese",
         en: "Mark as read",
     },
+    insufficientLoggingLevelAlert: {
+        nb: "Du har logget inn med Min ID. For å se innholdet i alle dine varsler ",
+        nn: "Du har logga inn med Min ID. For å sjå innhaldet i alle dine varsel ",
+        en: "You have logged in with Min ID. To see the content of all your notifications ",
+    },
+    insufficientLoggingLevelAlertLink: {
+        nb: " logg inn med BankID, Buypass eller Commfides.",
+        nn: " logg inn med BankID, Buypass eller Commfides.",
+        en: " log in with BankID, Buypass or Commfides.",
+    }
+
 } as const;
