@@ -1,10 +1,12 @@
 import {dynamicText, text} from "@language/text.ts";
-import {BodyLong, Link} from "@navikt/ds-react";
+import {BodyLong, Button, Link} from "@navikt/ds-react";
 import {type Varsel} from "@src/customTypes/Varsel.ts";
 import {formatData} from "@utils/client/data.ts";
 import styles from "./VarselCard.module.css"
 import {ClipboardIcon} from '@navikt/aksel-icons';
 import {DOCUMENT_LOCALE} from "@language/language.ts";
+import {inaktiverBeskjed} from "@src/store/store.ts";
+import postInarkiver from "@components/VarselCard/postInaktiver.ts";
 
 
 const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanaler"], forstBehandlet: Varsel["forstBehandlet"]) => {
@@ -18,13 +20,20 @@ const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanale
     )
 }
 
-
+const handleVarselClick = (id: string, isInaktiverbar: boolean) => {
+    if (isInaktiverbar) {
+        inaktiverBeskjed(id)
+        postInarkiver(id)
+    }
+}
 export const VarselCard = ({
                                forstBehandlet,
                                spraakkode,
                                tekst,
                                link,
                                eksternVarslingKanaler,
+                               isInaktiverbar,
+                               id
                            }: Varsel) => {
 
 
@@ -34,10 +43,12 @@ export const VarselCard = ({
                 <div className={styles.varselIcon}><ClipboardIcon width="20px" height="20px"/></div>
                 <div>
                     <div>
-                        {link ? <Link href={link}> <BodyLong weight="semibold">{tekst}</BodyLong></Link> :
+                        {link ? <Link onClick={() => handleVarselClick(id,isInaktiverbar)} href={link}> <BodyLong weight="semibold">{tekst}</BodyLong></Link> :
                             <BodyLong weight="semibold">{tekst}</BodyLong>}
                     </div>
                     {constructMetaData(eksternVarslingKanaler, forstBehandlet)}
+                    {isInaktiverbar && !link ?
+                        <Button onClick={() => handleVarselClick(id,isInaktiverbar)} size="small" variant="secondary">{text.markAsRead[DOCUMENT_LOCALE]}</Button> : ""}
                 </div>
             </div>
         ))

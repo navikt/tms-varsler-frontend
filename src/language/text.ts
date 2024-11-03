@@ -126,5 +126,10 @@ export const text = {
         nb: "e-post",
         nn: "e-post",
         en: "e-mail",
-    }
+    },
+    markAsRead: {
+        nb: "Merk som lest",
+        nn: "Merk som lese",
+        en: "Mark as read",
+    },
 } as const;

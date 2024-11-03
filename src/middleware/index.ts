@@ -1,6 +1,6 @@
 import { getToken, validateToken } from '@navikt/oasis';
 import { defineMiddleware } from 'astro/middleware';
-import {loginUrl} from "@src/utils/server/urls.ts";
+import {loginUrl} from "@utils/urls.ts";
 const isLocal = import.meta.env.DEV;
 
 

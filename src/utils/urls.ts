@@ -1,7 +1,5 @@
-import {type Environment, getEnvironment} from "@utils/server/environment.ts";
-
-type EnvBasedUrl = { [key in Environment]: string }
-
+const environment= import.meta.env.PUBLIC_ENVIRONMENT;
+type EnvBasedUrl = { [key in typeof environment]: string }
 
 const TMS_MIN_SIDE_URL : EnvBasedUrl = {
     local: "http://localhost:4321/minside",
@@ -18,7 +16,8 @@ const TMS_VARSEL_API : EnvBasedUrl = {
 
 
 
-export const minSideUrl = TMS_MIN_SIDE_URL[getEnvironment()];
-export const baseUrl = `${TMS_MIN_SIDE_URL[getEnvironment()]}/varsler`;
-export const varslerApiurl = `${TMS_VARSEL_API[getEnvironment()]}/alle`;
+export const minSideUrl = TMS_MIN_SIDE_URL[environment];
+export const baseUrl = `${TMS_MIN_SIDE_URL[environment]}/varsler`;
+export const varslerApiurl = `${TMS_VARSEL_API[environment]}/alle`;
+export const inaktiverBeskjedApiUrl = `${TMS_VARSEL_API[environment]}/beskjed/inaktiver`;
 export const loginUrl = `/minside/varsler/oauth2/login?redirect=${baseUrl}`;
