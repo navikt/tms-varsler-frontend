@@ -6,6 +6,7 @@ import styles from "./VarselCard.module.css"
 import {ClipboardIcon} from '@navikt/aksel-icons';
 import {DOCUMENT_LOCALE} from "@language/language.ts";
 import {inaktiverBeskjed} from "@src/store/store.ts";
+import postInarkiver from "@components/VarselCard/postInaktiver.ts";
 
 
 const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanaler"], forstBehandlet: Varsel["forstBehandlet"]) => {
@@ -22,6 +23,7 @@ const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanale
 const handleVarselClick = (id: string, isInaktiverbar: boolean) => {
     if (isInaktiverbar) {
         inaktiverBeskjed(id)
+        postInarkiver(id)
     }
 }
 export const VarselCard = ({
