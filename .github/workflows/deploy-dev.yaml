@@ -10,7 +10,6 @@ jobs:
   build:
     name: "build"
     runs-on: "ubuntu-latest"
-
     steps:
       - uses: "actions/checkout@v4"
       - uses: "actions/setup-node@v4"
@@ -26,6 +25,8 @@ jobs:
 
       - name: "Build application"
         run: "npm run build"
+        env:
+          PUBLIC_APP_ENVIRONMENT: dev
 
       - name: "Upload to cdn"
         uses: nais/deploy/actions/cdn-upload/v2@master
