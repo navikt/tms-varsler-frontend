@@ -5,6 +5,8 @@ import {getOboToken} from "@utils/server/getOboToken";
 const oboToken = await getOboToken(Astro.locals.token);
 
 let isError = false;
+console.error(varslerApiurl)
+console.error(import.meta.env.PUBLIC_ENVIRONMENT)
 
 const data = await fetch(varslerApiurl, {
     method: "GET",
