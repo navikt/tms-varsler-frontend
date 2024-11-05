@@ -1,12 +1,12 @@
 ---
 import VarselView from "@components/VarselView/VarselView";
-import {varslerApiurl} from "@utils/urls";
+import {apiInternIngress} from "@utils/urls";
 import {getOboToken} from "@utils/server/getOboToken";
 const oboToken = await getOboToken(Astro.locals.token);
 
 let isError = false;
 
-const data = await fetch(varslerApiurl, {
+const data = await fetch(apiInternIngress, {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
