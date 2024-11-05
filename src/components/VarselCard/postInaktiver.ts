@@ -11,8 +11,12 @@ const postInarkiver = (id: string) => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(requestBody),
-    }).catch(() => console.error('Kall for å inaktivere beskjed feilt'));
-
+    }).then(
+        (response) => {
+            if (!response.ok) {
+                console.error('Inaktivering av beskjed feilet med status: ' + response.status);
+            }
+        }
+    ).catch((e) => console.error("Inaktivering av beskjed feilet"));
 }
-
 export default postInarkiver;

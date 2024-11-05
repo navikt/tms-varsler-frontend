@@ -22,8 +22,8 @@ const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanale
 
 const handleVarselClick = (id: string, isInaktiverbar: boolean) => {
     if (isInaktiverbar) {
-        inaktiverBeskjed(id)
         postInarkiver(id)
+        inaktiverBeskjed(id)
     }
 }
 export const VarselCard = ({

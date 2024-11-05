@@ -14,8 +14,7 @@ api.use("/*", cors({
 api.get('/tms-varsel-api/alle', (c) => c.json(varsler));
 
 api.post('/tms-varsel-api/beskjed/inaktiver', async (c) => {
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return c.json({ status: "ok" });
+
 });
 
 serve(api);
