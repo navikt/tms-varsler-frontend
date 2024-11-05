@@ -24,7 +24,7 @@ export type AktiveVarsler = {
 export type InaktiveVarsler = InaktivVarsel[]
 
 export type VarselResponse = {
-    hasMasked: boolean
+    hasMaskedVarsel: boolean
     aktive: AktiveVarsler
     inaktive: InaktiveVarsler
 }
