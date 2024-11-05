@@ -1,9 +1,5 @@
-name: "Deploy main"
-
-on:
-  push:
-    branches:
-      - "main"
+name: "Prod deploy"
+on: workflow_dispatch
 
 permissions:
   contents: "read"
@@ -14,7 +10,6 @@ jobs:
   build:
     name: "build"
     runs-on: "ubuntu-latest"
-
     steps:
       - uses: "actions/checkout@v4"
       - uses: "actions/setup-node@v4"
@@ -31,7 +26,7 @@ jobs:
       - name: "Build application"
         run: "npm run build"
         env:
-          PUBLIC_APP_ENVIRONMENT: dev
+          PUBLIC_APP_ENVIRONMENT: prod
 
       - name: "Upload to cdn"
         uses: nais/deploy/actions/cdn-upload/v2@master
@@ -58,10 +53,10 @@ jobs:
     needs: "build"
     strategy:
       matrix:
-        cluster: [ dev-gcp ]
+        cluster: [ prod-gcp ]
     steps:
       - uses: "actions/checkout@v3"
-      - name: "Deploy to dev"
+      - name: "Deploy to prod"
         uses: "nais/deploy/actions/deploy@v2"
         env:
           CLUSTER: ${{ matrix.cluster }}
