@@ -1,6 +1,6 @@
 import { requestOboToken } from "@navikt/oasis";
 
-const isLocal = import.meta.env.PUBLIC_ENVIRONMENT === "local";
+const isLocal = import.meta.env.PUBLIC_APP_ENVIRONMENT === "local";
 const audience = `${process.env.NAIS_CLUSTER_NAME}:min-side:tms-varsel-api`;
 
 export const getOboToken = async (token: string): Promise<string> => {

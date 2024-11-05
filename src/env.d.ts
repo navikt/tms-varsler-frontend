@@ -8,7 +8,7 @@ declare namespace App {
 }
 
 interface ImportMetaEnv {
-    PUBLIC_ENVIRONMENT: "local" | "dev" | "prod";
+    PUBLIC_APP_ENVIRONMENT: "local" | "dev" | "prod";
 }
 
 

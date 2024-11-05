@@ -1,4 +1,4 @@
-const environment= import.meta.env.PUBLIC_ENVIRONMENT;
+const environment= import.meta.env.PUBLIC_APP_ENVIRONMENT;
 type EnvBasedUrl = { [key in typeof environment]: string }
 
 const TMS_MIN_SIDE_URL : EnvBasedUrl = {

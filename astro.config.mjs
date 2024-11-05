@@ -1,15 +1,11 @@
 import {defineConfig} from 'astro/config';
 import react from "@astrojs/react";
 import node from "@astrojs/node";
-const getEnvironment = ()  => {
-    if (process.env.NAIS_CLUSTER_NAME === "prod-gcp") {
-        return "production";
-    } else if (process.env.NAIS_CLUSTER_NAME === "dev-gcp") {
-        return "development";
-    } else {
-        return "local";
-    }
-};
+
+
+if(!process.env.PUBLIC_APP_ENVIRONMENT) {
+    throw new Error("PUBLIC_APP_ENVIRONMENT must be set");
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,10 +27,5 @@ export default defineConfig({
     }),
     experimental: {
         serverIslands: true
-    },
-    vite: {
-        define: {
-            "import.meta.env.PUBLIC_ENVIRONMENT": JSON.stringify(getEnvironment()),
-        },
     }
 });
