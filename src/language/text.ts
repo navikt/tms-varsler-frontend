@@ -141,6 +141,11 @@ export const text = {
         nb: " logg inn med BankID, Buypass eller Commfides.",
         nn: " logg inn med BankID, Buypass eller Commfides.",
         en: " log in with BankID, Buypass or Commfides.",
+    },
+    maskedVarselText:{
+        nb: "Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen.",
+        nn: "Du har fått ei melding, logg inn med høgare sikkerheitsnivå for å sjå meldinga.",
+        en: "You have received a message, log in with a higher security level to see the message.",
     }
 
 } as const;

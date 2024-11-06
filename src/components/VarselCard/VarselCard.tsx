@@ -27,6 +27,7 @@ const handleVarselClick = (id: string, isInaktiverbar: boolean) => {
     }
 }
 export const VarselCard = ({
+                                 isMasked,
                                forstBehandlet,
                                spraakkode,
                                tekst,
@@ -36,6 +37,7 @@ export const VarselCard = ({
                                id
                            }: Varsel) => {
 
+    const varselText = isMasked ? text.maskedVarselText[DOCUMENT_LOCALE] : tekst
 
     return (
         (
@@ -44,7 +46,7 @@ export const VarselCard = ({
                 <div>
                     <div>
                         {link ? <Link onClick={() => handleVarselClick(id,isInaktiverbar)} href={link}> <BodyLong weight="semibold">{tekst}</BodyLong></Link> :
-                            <BodyLong weight="semibold">{tekst}</BodyLong>}
+                            <BodyLong weight="semibold">{varselText}</BodyLong>}
                     </div>
                     {constructMetaData(eksternVarslingKanaler, forstBehandlet)}
                     {isInaktiverbar && !link ?
