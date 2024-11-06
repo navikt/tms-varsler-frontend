@@ -27,6 +27,7 @@ jobs:
         run: "npm run build"
         env:
           PUBLIC_APP_ENVIRONMENT: prod
+          ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
 
       - name: "Upload to cdn"
         uses: nais/deploy/actions/cdn-upload/v2@master
