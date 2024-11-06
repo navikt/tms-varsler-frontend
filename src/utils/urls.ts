@@ -35,4 +35,4 @@ export const baseUrl = `${TMS_MIN_SIDE_URL[environment]}/varsler`;
 export const apiInternIngress = `${API_INTERNAL_INGRESS[environment]}/alle`;
 export const inaktiverBeskjedApiUrl = `${API_URL[environment]}/beskjed/inaktiver`;
 export const loginUrl = `/minside/varsler/oauth2/login?redirect=${baseUrl}`;
-export const loginStepUpUrl = `${appBaseUrl}/oauth2/login?level=Level4&redirect=${appBaseUrl}`;
+export const loginStepUpUrl = `${appBaseUrl}/oauth2/login?level=Level4&redirect_uri=${appBaseUrl}`;
