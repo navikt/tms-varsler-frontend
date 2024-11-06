@@ -2,7 +2,6 @@ import {defineConfig} from 'astro/config';
 import react from "@astrojs/react";
 import node from "@astrojs/node";
 
-
 if(!process.env.PUBLIC_APP_ENVIRONMENT) {
     throw new Error("PUBLIC_APP_ENVIRONMENT must be set");
 }
