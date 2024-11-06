@@ -42,15 +42,15 @@ const Decorator = await fetchDecoratorReact({
     <meta name="viewport" content="width=device-width"/>
     <meta name="generator" content={Astro.generator}/>
     <title>Varsler</title>
-    <link rel="preload" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.0/index.min.css" as="style"/>
-    <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.0/index.min.css"/>
+    <link rel="preload" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" as="style"/>
+    <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"/>
     <Decorator.Styles/>
 </head>
 <body>
 <Decorator.Header/>
-<div class={styles.layout}>
+<main class={styles.layout}>
     <slot/>
-</div>
+</main>
 <Decorator.Footer/>
 <Decorator.Scripts/>
 </body>

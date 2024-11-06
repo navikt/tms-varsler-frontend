@@ -1,0 +1,43 @@
+---
+import {BugIcon} from '@navikt/aksel-icons';
+import {
+    BodyShort,
+    Box,
+    Button,
+    Heading,
+    Link,
+    List,
+    VStack,
+} from '@navikt/ds-react';
+import Layout from "../layout/Layout.astro";
+import {baseUrl, errorReportingUrl, minSideUrl, navNoUrl} from "../utils/urls";
+---
+
+<Layout title="Siden finnes ikke">
+    <Box padding="20 10 16 10" width="100%"  data-aksel-template="404-v2">
+        <VStack gap="16">
+            <VStack gap="12" align="start">
+                <div>
+                    <Heading level="1" size="large" spacing>
+                        Beklager, vi fant ikke siden
+                    </Heading>
+                    <BodyShort>
+                        Denne siden kan være slettet eller flyttet, eller det er en feil i
+                        lenken.
+                    </BodyShort>
+                    <List >
+                        <List.Item>Bruk gjerne søket eller menyen</List.Item>
+                        <List.Item>
+                            <Link href={minSideUrl}>Gå til Min side</Link>
+                        </List.Item>
+                    </List>
+                </div>
+                <Button as="a" href={baseUrl}> Gå til dine varsler </Button>
+                <Link href={errorReportingUrl}>
+                    <BugIcon aria-hidden />
+                    Meld gjerne fra om at lenken ikke virker
+                </Link>
+            </VStack>
+        </VStack>
+    </Box>
+</Layout>
