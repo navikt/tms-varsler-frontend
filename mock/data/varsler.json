@@ -42,7 +42,7 @@
         "forstBehandlet": "2019-11-27T12:24:34.671Z",
         "id": "1174857474672",
         "uid": "934de6ce-f94f-47de-84d2-639ac2674627",
-        "tekst": "Søknad om forskudd på dagpenger er mottatt. Hvis du trenger forskudd på dagpenger eller ettersende vedlegg til sønakden din kan du trykke deg inn i den nye forskuddskøsningen ved å gå til denne siden.",
+        "tekst": null,
         "link": null,
         "isMasked": true,
         "eksternVarslingSendt": true,
@@ -116,9 +116,9 @@
     {
       "forstBehandlet": "2020-03-13T09:03:01.449Z",
       "id": "15840923232xwx3781449",
-      "tekst": "Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.",
+      "tekst": null,
       "link": "",
-      "isMasked": false,
+      "isMasked": true,
       "eksternVarslingSendt": false,
       "eksternVarslingKanaler": [],
       "type": "oppgave"

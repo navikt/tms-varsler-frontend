@@ -4,8 +4,15 @@ type EnvBasedUrl = { [key in typeof environment]: string }
 const TMS_MIN_SIDE_URL : EnvBasedUrl = {
     local: "http://localhost:4321/minside",
     dev: "https://www.ansatt.dev.nav.no/minside",
-    prod: "https://www.ansatt.nav.no/minside",
+    prod: "https://www.nav.no/minside",
 };
+
+const APP_BASE_URL : EnvBasedUrl = {
+    local: "http://localhost:4321",
+    dev: "https://www.ansatt.dev.nav.no/minside/varsler",
+    prod: "https://www.nav.no/minside/varsler",
+};
+
 
 const API_INTERNAL_INGRESS: EnvBasedUrl = {
     local: "http://localhost:3000/tms-varsel-api",
@@ -23,7 +30,9 @@ const API_URL : EnvBasedUrl = {
 
 
 export const minSideUrl = TMS_MIN_SIDE_URL[environment];
+export const appBaseUrl = APP_BASE_URL[environment];
 export const baseUrl = `${TMS_MIN_SIDE_URL[environment]}/varsler`;
 export const apiInternIngress = `${API_INTERNAL_INGRESS[environment]}/alle`;
 export const inaktiverBeskjedApiUrl = `${API_URL[environment]}/beskjed/inaktiver`;
 export const loginUrl = `/minside/varsler/oauth2/login?redirect=${baseUrl}`;
+export const loginStepUpUrl = `${appBaseUrl}/oauth2/login?level=Level4&redirect=${appBaseUrl}`;
