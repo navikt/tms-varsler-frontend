@@ -10,11 +10,11 @@ import {
     VStack,
 } from '@navikt/ds-react';
 import Layout from "../layout/Layout.astro";
-import {baseUrl, errorReportingUrl, minSideUrl, navNoUrl} from "../utils/urls";
+import {baseUrl, errorReportingUrl, minSideUrl} from "../utils/urls";
 ---
 
 <Layout title="Siden finnes ikke">
-    <Box padding="20 10 16 10" width="100%"  data-aksel-template="404-v2">
+    <Box paddingInline="10" width="100%" paddingBlock="20 16" data-aksel-template="404-v2">
         <VStack gap="16">
             <VStack gap="12" align="start">
                 <div>
