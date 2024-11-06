@@ -18,7 +18,7 @@ const filterVarseler = (varsler: InaktivVarsel[]) => {
         return filteredByType
     }
 
-    return filteredByType.filter((varsel) => varsel.tekst.toLowerCase().includes(filterSearch))
+    return filteredByType.filter((varsel) => varsel.tekst?.toLowerCase().includes(filterSearch))
 }
 
 export const TidligereVarslerView = () => {
