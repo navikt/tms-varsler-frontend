@@ -2,7 +2,7 @@ const environment = import.meta.env.PUBLIC_APP_ENVIRONMENT;
 type EnvBasedUrl = { [key in typeof environment]: string }
 
 const NAV_NO_URL = {
-    local: 'https://www.nav.no',
+    local: 'http://localhost:4321',
     dev: 'https://www.ansatt.dev.nav.no',
     prod: 'https://www.ansatt.nav.no',
 };

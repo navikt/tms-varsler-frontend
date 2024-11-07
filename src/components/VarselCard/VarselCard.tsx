@@ -14,7 +14,7 @@ const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanale
         <div className={styles.metadata}>
             <span className={styles.date}> {`${formatData(forstBehandlet)}`} </span>
             {eksternVarslingKanaler.length > 0 ? <span className={styles.varselKanaler}>
-                {dynamicText.notificationChannel(eksternVarslingKanaler)[DOCUMENT_LOCALE]}
+                {dynamicText.notificationChannel(eksternVarslingKanaler,DOCUMENT_LOCALE)[DOCUMENT_LOCALE]}
             </span> : ""}
         </div>
     )

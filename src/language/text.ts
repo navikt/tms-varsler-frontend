@@ -4,11 +4,15 @@ export const dynamicText = {
         en: (occurredCount: number, totalCount: number) => `Showing ${occurredCount} of ${totalCount} previous notifications`,
         nn: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidlegare varsel`,
     },
-    notificationChannel: (kanaler: string[]) => ({
-        nb: `Varslet via ${kanaler.join(" og ")}`,
-        en: `Notified via ${kanaler.join(" and ")}`,
-        nn: `Varsla via ${kanaler.join(" og ")}`,
-    }),
+    notificationChannel: (kanaler: string[], locale: "nb" | "nn" | "en") => {
+        const transaltedChannels = kanaler.map((kanal) => kanal === "SMS" ? text.SMS[locale] : text.EPOST[locale])
+
+        return {
+            nb: `Varslet via ${transaltedChannels.join(" og ")}`,
+            en: `Notified via ${transaltedChannels.join(" and ")}`,
+            nn: `Varsla via ${transaltedChannels.join(" og ")}`
+        }
+    },
 }
 
 export const text = {
@@ -117,12 +121,12 @@ export const text = {
         nn: "Søk i dine tidlegare varsel",
         en: "Search in your previous notifications",
     },
-    sms: {
+    SMS: {
         nb: "SMS",
         nn: "SMS",
         en: "SMS",
     },
-    epost: {
+    EPOST: {
         nb: "e-post",
         nn: "e-post",
         en: "e-mail",
@@ -142,7 +146,7 @@ export const text = {
         nn: " logg inn med BankID, Buypass eller Commfides.",
         en: " log in with BankID, Buypass or Commfides.",
     },
-    maskedVarselText:{
+    maskedVarselText: {
         nb: "Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen.",
         nn: "Du har fått ei melding, logg inn med høgare sikkerheitsnivå for å sjå meldinga.",
         en: "You have received a message, log in with a higher security level to see the message.",
