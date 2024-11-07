@@ -9,6 +9,9 @@ if(!process.env.PUBLIC_APP_ENVIRONMENT) {
 // https://astro.build/config
 export default defineConfig({
     base: "/minside/varsler",
+    redirects:{
+        "/minside/tidligere-varsler": "/minside/varsler#tidligere"
+    },
     build: {
         assetsPrefix: "https://cdn.nav.no/min-side/tms-varsler-frontend"
     },
