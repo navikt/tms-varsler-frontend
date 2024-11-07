@@ -4,7 +4,7 @@ type EnvBasedUrl = { [key in typeof environment]: string }
 const NAV_NO_URL = {
     local: 'http://localhost:4321',
     dev: 'https://www.ansatt.dev.nav.no',
-    prod: 'https://www.ansatt.nav.no',
+    prod: 'https://www.nav.no',
 };
 
 const API_INTERNAL_INGRESS: EnvBasedUrl = {
