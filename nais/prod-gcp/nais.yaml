@@ -32,6 +32,7 @@ spec:
         - application: tms-varsel-api
   ingresses:
     - "https://www.ansatt.nav.no/minside/varsler"
+    - "https://www.ansatt.nav.no/minside/tidligere-varsler"
   resources:
     limits:
       memory: 768Mi
