@@ -146,6 +146,15 @@ export const text = {
         nb: "Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen.",
         nn: "Du har fått ei melding, logg inn med høgare sikkerheitsnivå for å sjå meldinga.",
         en: "You have received a message, log in with a higher security level to see the message.",
+    },
+    usefulToKnow: {
+        nb: "Nyttig å vite",
+        nn: "Nyttig å vite",
+        en: "Useful to know",
+    },
+    notificationsFromLastYear: {
+        nb: "Her viser vi tidligere varsler kun fra det siste året.",
+        nn: "Her viser vi tidlegare varsel kun frå det siste året.",
+        en: "Here we only show previous notifications from the last year.",
     }
-
 } as const;
