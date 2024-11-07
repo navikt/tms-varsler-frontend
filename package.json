@@ -7,7 +7,7 @@
     "start": "astro dev",
     "local-build": "PUBLIC_APP_ENVIRONMENT=local astro check && PUBLIC_APP_ENVIRONMENT=local  astro build",
     "build": "astro check && astro build",
-    "preview": "astro preview",
+    "preview": "PUBLIC_APP_ENVIRONMENT=local astro preview",
     "astro": "astro",
     "mock": "tsx --watch ./mock/server.ts",
     "ts-check": "tsc --strict"
