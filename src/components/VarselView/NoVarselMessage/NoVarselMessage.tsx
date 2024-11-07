@@ -7,13 +7,13 @@ import {useStore} from "@nanostores/react";
 import {$isError} from "@src/store/store.ts";
 
 const contentMapper = {
-    "noInaktiveVarseler": {
-        title: text.noInaktiveVarselerTitle[DOCUMENT_LOCALE],
-        description: text.noInaktiveVarselerDescription[DOCUMENT_LOCALE]
+    "noInaktiveVarsler": {
+        title: text.noInaktiveVarslerTitle[DOCUMENT_LOCALE],
+        description: text.noInaktiveVarslerDescription[DOCUMENT_LOCALE]
     },
-    "noAktiveVarseler": {
-        title: text.noAktiveVarselerTitle[DOCUMENT_LOCALE],
-        description: text.noAktiveVarselerDescription[DOCUMENT_LOCALE]
+    "noAktiveVarsler": {
+        title: text.noAktiveVarslerTitle[DOCUMENT_LOCALE],
+        description: text.noAktiveVarslerDescription[DOCUMENT_LOCALE]
     },
     "noSearchResult": {
         title: text.noSearchResultTitle[DOCUMENT_LOCALE],

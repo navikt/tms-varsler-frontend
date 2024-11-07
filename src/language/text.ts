@@ -17,7 +17,7 @@ export const dynamicText = {
 
 export const text = {
     hovedoverskrift: {
-        nb: "Varseler",
+        nb: "Varsler",
         en: "Notifications",
         nn: "Varslar",
     },
@@ -81,22 +81,22 @@ export const text = {
         nn: "Beskjedar",
         en: "Messages",
     },
-    noAktiveVarselerTitle: {
+    noAktiveVarslerTitle: {
         nb: "Ingen nye varsler",
         nn: "Ingen nye varsel",
         en: "No new notifications",
     },
-    noAktiveVarselerDescription: {
+    noAktiveVarslerDescription: {
         nb: "Vi varsler deg når noe skjer",
         nn: "Vi varslar deg når noko skjer",
         en: "We will notify you when something happens",
     },
-    noInaktiveVarselerTitle: {
+    noInaktiveVarslerTitle: {
         nb: "Ingen tidligere varsler",
         nn: "Ingen tidlegare varsel",
         en: "No previous notifications",
     },
-    noInaktiveVarselerDescription: {
+    noInaktiveVarslerDescription: {
         nb: "Når du har gjort en oppgave eller lest en beskjed havner de her.",
         nn: "Når du har gjort en oppgåve eller lest en beskjed havnar dei her.",
         en: "When you have completed a task or read a message, it will appear here.",

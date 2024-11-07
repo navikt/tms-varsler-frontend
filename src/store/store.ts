@@ -31,13 +31,13 @@ const setInaktiveVarsler = (varsler: InaktiveVarsler) => {
     $inaktiveVarsler.set(varsler)
 }
 
-const $hasInitializedVarseler: PreinitializedWritableAtom<boolean> = atom(false);
+const $hasInitializedVarsler: PreinitializedWritableAtom<boolean> = atom(false);
 export const initVarsler = (varselResponse : VarselResponse) => {
-    if(!$hasInitializedVarseler.get()) {
+    if(!$hasInitializedVarsler.get()) {
         setInaktiveVarsler(varselResponse.inaktive)
         setAktiveBeskjeder(varselResponse.aktive.beskjeder)
         setAktiveOppgaver(varselResponse.aktive.oppgaver)
-        $hasInitializedVarseler.set(true)
+        $hasInitializedVarsler.set(true)
     }
 }
 

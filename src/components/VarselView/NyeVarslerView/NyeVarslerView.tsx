@@ -16,7 +16,7 @@ export const NyeVarslerView = () => {
     const hasBeskjeder = beskjeder.length > 0
 
     if(!hasOppgaver && !hasBeskjeder) {
-        return <NoVarselMessage type="noAktiveVarseler"/>
+        return <NoVarselMessage type="noAktiveVarsler"/>
     }
 
     return <div className={styles.container}>

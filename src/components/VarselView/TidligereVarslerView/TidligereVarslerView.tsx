@@ -10,7 +10,7 @@ import {BodyLong, Heading} from "@navikt/ds-react";
 
 
 
-const filterVarseler = (varsler: InaktivVarsel[]) => {
+const filterVarsler = (varsler: InaktivVarsel[]) => {
     const filterVarselType = useStore($filterVarselType)
     const filterSearch = useStore($filterSearch)
     const filteredByType = varsler.filter((varsel) => filterVarselType === "alle" || varsel.type === filterVarselType)
@@ -25,9 +25,9 @@ const filterVarseler = (varsler: InaktivVarsel[]) => {
 export const TidligereVarslerView = () => {
     const varsler = useStore($inaktiveVarsler)
     if (varsler.length === 0) {
-        return <NoVarselMessage type="noInaktiveVarseler"/>
+        return <NoVarselMessage type="noInaktiveVarsler"/>
     }
-    const filteredList = filterVarseler(varsler);
+    const filteredList = filterVarsler(varsler);
     const noFilterResult = filteredList && filteredList.length === 0;
     if (noFilterResult) {
         return <NoVarselMessage type="noSearchResult"/>
