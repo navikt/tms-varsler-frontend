@@ -1,7 +1,7 @@
 export type VarselType = "oppgave" | "beskjed"
 
 export type Varsel ={
-    id: string;
+    eventId: string;
     forstBehandlet: string;
     isMasked: boolean;
     spraakkode: string;

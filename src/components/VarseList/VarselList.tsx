@@ -16,7 +16,7 @@ export const VarselList = ({varsler, tittel, }: Props) => {
         <Heading className={styles.heading} size="xsmall" level="2">{tittel}</Heading>
         <ul className={styles.list}>
             {varsler && sortVarselList(varsler).map((v) => (
-                <li key={v.id}>
+                <li key={v.eventId}>
                     <VarselCard {...v}/>
                 </li>
             ))

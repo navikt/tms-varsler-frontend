@@ -44,11 +44,11 @@ export const initVarsler = (varselResponse : VarselResponse) => {
 export const inaktiverBeskjed = (id: string) => {
     const inaktive = $inaktiveVarsler.get()
     const aktive = $aktiveBeskjeder.get()
-    const varselToInaktiver = aktive.find((v: Varsel) => v.id === id)
+    const varselToInaktiver = aktive.find((v: Varsel) => v.eventId === id)
 
     if (varselToInaktiver) {
         const varselToInactivate: InaktivVarsel = {...varselToInaktiver, isInaktiverbar:false, type: "beskjed"}
         setInaktiveVarsler([...inaktive, varselToInactivate])
-        setAktiveBeskjeder(aktive.filter((v: Varsel) => v.id !== id))
+        setAktiveBeskjeder(aktive.filter((v: Varsel) => v.eventId !== id))
     }
 }

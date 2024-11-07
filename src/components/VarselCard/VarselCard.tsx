@@ -34,7 +34,7 @@ export const VarselCard = ({
                                link,
                                eksternVarslingKanaler,
                                isInaktiverbar,
-                               id
+                               eventId
                            }: Varsel) => {
 
     const varselText = isMasked ? text.maskedVarselText[DOCUMENT_LOCALE] : tekst
@@ -45,12 +45,12 @@ export const VarselCard = ({
                 <div className={styles.varselIcon}><ClipboardIcon width="20px" height="20px"/></div>
                 <div>
                     <div>
-                        {link ? <Link onClick={() => handleVarselClick(id,isInaktiverbar)} href={link}> <BodyLong weight="semibold">{tekst}</BodyLong></Link> :
+                        {link ? <Link onClick={() => handleVarselClick(eventId,isInaktiverbar)} href={link}> <BodyLong weight="semibold">{tekst}</BodyLong></Link> :
                             <BodyLong weight="semibold">{varselText}</BodyLong>}
                     </div>
                     {constructMetaData(eksternVarslingKanaler, forstBehandlet)}
                     {isInaktiverbar && !link ?
-                        <Button onClick={() => handleVarselClick(id,isInaktiverbar)} size="small" variant="secondary">{text.markAsRead[DOCUMENT_LOCALE]}</Button> : ""}
+                        <Button onClick={() => handleVarselClick(eventId,isInaktiverbar)} size="small" variant="secondary">{text.markAsRead[DOCUMENT_LOCALE]}</Button> : ""}
                 </div>
             </div>
         ))

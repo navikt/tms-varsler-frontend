@@ -4,7 +4,7 @@
     "oppgaver": [
       {
         "forstBehandlet": "2023-11-14T08:53:31.607Z",
-        "id": "1584093211607",
+        "eventId": "1584093211607",
         "tekst": "Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...",
         "link": "https://enNyLenke",
         "isMasked": false,
@@ -14,7 +14,7 @@
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
-        "id": "1584093789348",
+        "eventId": "1584093789348",
         "tekst": "Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44",
         "link": "https://enNyLenke",
         "isMasked": false,
@@ -28,7 +28,7 @@
     "beskjeder": [
       {
         "forstBehandlet": "2023-11-13T08:53:17.47Z",
-        "id": "1584093197470",
+        "eventId": "1584093197470",
         "tekst": "Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger. Her kan du også ettersende vedlegg til sønakden hvis det er noe du ønsker å gjøre.",
         "link": "https://enNyLenke",
         "isMasked": false,
@@ -40,7 +40,7 @@
       },
       {
         "forstBehandlet": "2019-11-27T12:24:34.671Z",
-        "id": "1174857474672",
+        "eventId": "1174857474672",
         "uid": "934de6ce-f94f-47de-84d2-639ac2674627",
         "tekst": null,
         "link": null,
@@ -54,7 +54,7 @@
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
-        "id": "1584093789348",
+        "eventId": "1584093789348",
         "tekst": "Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44",
         "link": "https://enNyLenke",
         "isMasked": false,
@@ -67,7 +67,7 @@
   "inaktive": [
     {
       "forstBehandlet": "2023-11-14T08:53:31.607Z",
-      "id": "15840932131607",
+      "eventId": "15840932131607",
       "tekst": "Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...",
       "link": "https://enNyLenke",
       "isMasked": false,
@@ -77,7 +77,7 @@
     },
     {
       "forstBehandlet": "2020-03-13T09:03:09.348Z",
-      "id": "15840932323789348",
+      "eventId": "15840932323789348",
       "tekst": "Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44",
       "link": "https://enNyLenke",
       "isMasked": false,
@@ -89,7 +89,7 @@
     },
     {
       "forstBehandlet": "2023-11-13T08:53:17.47Z",
-      "id": "1584093324197470",
+      "eventId": "1584093324197470",
       "tekst": "Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger. Her kan du også ettersende vedlegg til sønakden hvis det er noe du ønsker å gjøre.",
       "link": "https://enNyLenke",
       "isMasked": false,
@@ -101,7 +101,7 @@
     },
     {
       "forstBehandlet": "2024-10-27T12:24:34.671Z",
-      "id": "11748574232374672",
+      "eventId": "11748574232374672",
       "uid": "934de6ce-f94f-47de-84d2-639ac2674627",
       "tekst": "Søknad om forskudd på Arbeidsavklaringspenger er mottatt. Hvis du trenger forskudd på Arbeidsavklaringspenger eller ettersende vedlegg til sønakden din kan du trykke deg inn i den nye forskuddskøsningen ved å gå til denne siden.",
       "link": null,
@@ -115,7 +115,7 @@
     },
     {
       "forstBehandlet": "2020-03-13T09:03:01.449Z",
-      "id": "15840923232xwx3781449",
+      "eventId": "15840923232xwx3781449",
       "tekst": null,
       "link": "",
       "isMasked": true,
