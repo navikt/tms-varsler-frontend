@@ -29,7 +29,7 @@ const API_INTERNAL_INGRESS: EnvBasedUrl = {
 const API_URL: EnvBasedUrl = {
     local: "http://localhost:3000/tms-varsel-api",
     dev: "https://www.ansatt.dev.nav.no/tms-varsel-api",
-    prod: "https://www.nav.no/tms-varsel-api",
+    prod: "https://www.ansatt.nav.no/tms-varsel-api",
 };
 
 const ERROR_REPORTING_URL = {
