@@ -10,7 +10,7 @@ import {
     VStack,
 } from '@navikt/ds-react';
 import Layout from "../layout/Layout.astro";
-import {baseUrl, errorReportingUrl, minSideUrl} from "../utils/urls";
+import {appBaseUrl, errorReportingUrl, minSideUrl} from "../utils/urls";
 ---
 
 <Layout title="Siden finnes ikke">
@@ -32,7 +32,7 @@ import {baseUrl, errorReportingUrl, minSideUrl} from "../utils/urls";
                         </List.Item>
                     </List>
                 </div>
-                <Button as="a" href={baseUrl}> Gå til dine varsler </Button>
+                <Button as="a" href={appBaseUrl}> Gå til dine varsler </Button>
                 <Link href={errorReportingUrl}>
                     <BugIcon aria-hidden />
                     Meld gjerne fra om at lenken ikke virker
