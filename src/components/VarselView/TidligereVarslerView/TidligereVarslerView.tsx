@@ -39,7 +39,7 @@ export const TidligereVarslerView = () => {
             varsler={filteredList}/>
         <div className={styles.usefulInformation}>
             <BodyLong>
-                <Heading size="small">{text.usefulToKnow[DOCUMENT_LOCALE]}</Heading>
+                <Heading level="2" size="small">{text.usefulToKnow[DOCUMENT_LOCALE]}</Heading>
                 <BodyLong>{text.notificationsFromLastYear[DOCUMENT_LOCALE]}</BodyLong>
             </BodyLong>
         </div>
