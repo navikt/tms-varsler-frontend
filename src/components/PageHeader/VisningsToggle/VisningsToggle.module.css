@@ -4,5 +4,5 @@
 
 .toggleGroup > div{
     max-width: 100%;
-    width: 18.75rem;
+    width: min(100%,18.75rem);
 }
