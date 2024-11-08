@@ -1,8 +1,10 @@
 # tms-varsler-frontend
 
-Frontenden forvisning brukers nye og tidligere varsler på nav.no.
+Frontenden for visning av varsler på nav.no.
+
 
 Url dev:  https://www.ansatt.dev.nav.no/minside/varsler
+
 Url prod: https://www.nav.no/minside/varsler
 
 # Kom i gang
