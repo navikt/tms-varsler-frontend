@@ -2,15 +2,14 @@ import styles from "./TidligereView.module.css";
 import {VarselList} from "@components/VarseList/VarselList.tsx";
 import {dynamicText, text} from "@language/text.ts";
 import {DOCUMENT_LOCALE} from "@language/language.ts";
-import type {InaktivVarsel} from "@src/customTypes/Varsel.ts";
+import type {Varsel} from "@src/customTypes/Varsel.ts";
 import {$filterSearch, $filterVarselType, $inaktiveVarsler} from "@src/store/store.ts";
 import {useStore} from "@nanostores/react";
 import {NoVarselMessage} from "@components/VarselView/NoVarselMessage/NoVarselMessage.tsx";
 import {BodyLong, Heading} from "@navikt/ds-react";
 
 
-
-const filterVarsler = (varsler: InaktivVarsel[]) => {
+const filterVarsler = (varsler: Varsel[]) => {
     const filterVarselType = useStore($filterVarselType)
     const filterSearch = useStore($filterSearch)
     const filteredByType = varsler.filter((varsel) => filterVarselType === "alle" || varsel.type === filterVarselType)
@@ -35,6 +34,7 @@ export const TidligereVarslerView = () => {
 
     return <div className={styles.container}>
         <VarselList
+            isInaktiveVarsler={true}
             tittel={dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](filteredList.length, varsler.length)}
             varsler={filteredList}/>
         <div className={styles.usefulInformation}>

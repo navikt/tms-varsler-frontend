@@ -1,6 +1,6 @@
 import {atom, type PreinitializedWritableAtom} from 'nanostores';
 import type {ToggleOptions} from "@components/PageHeader/Filter/Filter.tsx";
-import type {InaktiveVarsler, InaktivVarsel, Varsel, VarselResponse} from "@src/customTypes/Varsel.ts";
+import type {InaktiveVarsler, Varsel, Varsel, VarselResponse} from "@src/customTypes/Varsel.ts";
 
 export const TIDLIGERE_HASH = "#tidligere"
 export const $showTidligere: PreinitializedWritableAtom<boolean> = atom(window.location.hash === TIDLIGERE_HASH);
@@ -47,7 +47,7 @@ export const inaktiverBeskjed = (id: string) => {
     const varselToInaktiver = aktive.find((v: Varsel) => v.eventId === id)
 
     if (varselToInaktiver) {
-        const varselToInactivate: InaktivVarsel = {...varselToInaktiver, isInaktiverbar:false, type: "beskjed"}
+        const varselToInactivate: Varsel = {...varselToInaktiver, isInaktiverbar:false, type: "beskjed"}
         setInaktiveVarsler([...inaktive, varselToInactivate])
         setAktiveBeskjeder(aktive.filter((v: Varsel) => v.eventId !== id))
     }
