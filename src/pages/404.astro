@@ -11,6 +11,7 @@ import {
 } from '@navikt/ds-react';
 import Layout from "../layout/Layout.astro";
 import {appBaseUrl, errorReportingUrl, minSideUrl} from "../utils/urls";
+import {logLinkNavigation} from "../utils/client/amplitude";
 ---
 
 <Layout title="Siden finnes ikke">
@@ -28,12 +29,14 @@ import {appBaseUrl, errorReportingUrl, minSideUrl} from "../utils/urls";
                     <List >
                         <List.Item>Bruk gjerne søket eller menyen</List.Item>
                         <List.Item>
-                            <Link href={minSideUrl}>Gå til Min side</Link>
+                            <Link href={minSideUrl} onClick={() => {
+                                logLinkNavigation("404-min-side-link");
+                            }}>Gå til Min side</Link>
                         </List.Item>
                     </List>
                 </div>
                 <Button as="a" href={appBaseUrl}> Gå til dine varsler </Button>
-                <Link href={errorReportingUrl}>
+                <Link href={errorReportingUrl} onClick={() => logLinkNavigation("404-meld-inn-feil-link")}>
                     <BugIcon aria-hidden />
                     Meld gjerne fra om at lenken ikke virker
                 </Link>

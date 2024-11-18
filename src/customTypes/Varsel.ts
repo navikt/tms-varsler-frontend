@@ -10,10 +10,7 @@ export type Varsel ={
     eksternVarslingSendt: boolean;
     eksternVarslingKanaler: string[];
     isInaktiverbar: boolean;
-}
-
-export type InaktivVarsel = Varsel & {
-    type: VarselType
+    type: VarselType;
 }
 
 export type AktiveVarsler = {
@@ -21,7 +18,7 @@ export type AktiveVarsler = {
     oppgaver: Varsel[]
 }
 
-export type InaktiveVarsler = InaktivVarsel[]
+export type InaktiveVarsler = Varsel[]
 
 export type VarselResponse = {
     hasMaskedVarsel: boolean

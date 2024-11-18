@@ -10,7 +10,8 @@
         "isMasked": false,
         "eksternVarslingSendt": false,
         "eksternVarslingKanaler": [],
-        "isInaktiverbar": false
+        "isInaktiverbar": false,
+        "type": "oppgave"
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -22,6 +23,7 @@
         "eksternVarslingKanaler": [
           "SMS"
         ],
+        "type": "oppgave",
         "isInaktiverbar": false
       }
     ],
@@ -36,7 +38,8 @@
         "eksternVarslingKanaler": [
           "SMS"
         ],
-        "isInaktiverbar": true
+        "isInaktiverbar": true,
+        "type": "beskjed"
       },
       {
         "forstBehandlet": "2019-11-27T12:24:34.671Z",
@@ -50,7 +53,8 @@
           "SMS",
           "EPOST"
         ],
-        "isInaktiverbar": false
+        "isInaktiverbar": false,
+        "type": "beskjed"
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -60,7 +64,8 @@
         "isMasked": false,
         "eksternVarslingSendt": false,
         "eksternVarslingKanaler": [],
-        "isInaktiverbar": false
+        "isInaktiverbar": false,
+        "type": "beskjed"
       }
     ]
   },
