@@ -29,14 +29,14 @@ import {logLinkNavigation} from "../utils/client/amplitude";
                     <List >
                         <List.Item>Bruk gjerne søket eller menyen</List.Item>
                         <List.Item>
-                            <Link href={minSideUrl} onclick={() => {
+                            <Link href={minSideUrl} onClick={() => {
                                 logLinkNavigation("404-min-side-link");
                             }}>Gå til Min side</Link>
                         </List.Item>
                     </List>
                 </div>
                 <Button as="a" href={appBaseUrl}> Gå til dine varsler </Button>
-                <Link href={errorReportingUrl} onclick={() => logLinkNavigation("404-meld-inn-feil-link")}>
+                <Link href={errorReportingUrl} onClick={() => logLinkNavigation("404-meld-inn-feil-link")}>
                     <BugIcon aria-hidden />
                     Meld gjerne fra om at lenken ikke virker
                 </Link>

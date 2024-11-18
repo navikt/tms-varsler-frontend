@@ -17,6 +17,6 @@ const postInarkiver = (id: string) => {
                 console.error('Inaktivering av beskjed feilet med status: ' + response.status);
             }
         }
-    ).catch((e) => console.error("Inaktivering av beskjed feilet"));
+    ).catch(() => console.error("Inaktivering av beskjed feilet"));
 }
 export default postInarkiver;

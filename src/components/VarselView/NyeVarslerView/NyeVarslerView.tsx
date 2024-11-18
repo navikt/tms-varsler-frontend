@@ -20,7 +20,7 @@ export const NyeVarslerView = () => {
     }
 
     return <div className={styles.container}>
-        {hasOppgaver && <VarselList tittel={text.filterOppgaver[DOCUMENT_LOCALE]} varsler={oppgaver}/>}
-        {hasBeskjeder && <VarselList tittel={text.filterBeskjeder[DOCUMENT_LOCALE]} varsler={beskjeder}/>}
+        {hasOppgaver && <VarselList isInaktiveVarsler={false} tittel={text.filterOppgaver[DOCUMENT_LOCALE]} varsler={oppgaver}/>}
+        {hasBeskjeder && <VarselList isInaktiveVarsler={false} tittel={text.filterBeskjeder[DOCUMENT_LOCALE]} varsler={beskjeder}/>}
     </div>
 }
