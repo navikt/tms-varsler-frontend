@@ -4,8 +4,10 @@ import styles from "./Layout.module.css";
 import {appBaseUrl} from "@utils/urls";
 import {type DecoratorLocale} from "@navikt/nav-dekoratoren-moduler";
 import {type Locale} from "@src/customTypes/Locale";
-const currentLocale:Locale  = Astro.currentLocale as Locale
+const currentLocale: Locale = Astro.currentLocale as Locale
 import "./global.css"
+import {minSideUrl} from "../utils/urls";
+import {text} from "../language/text";
 
 const Decorator = await fetchDecoratorReact({
     env: "dev",
@@ -29,9 +31,17 @@ const Decorator = await fetchDecoratorReact({
                 handleInApp: false,
             }
         ],
+        breadcrumbs: [
+            {
+                title: text.minSide[currentLocale],
+                url: minSideUrl,
+            }, {
+                title: text.hovedoverskrift[currentLocale],
+                url: appBaseUrl,
+            }
+        ]
     }
 });
-
 ---
 
 <!DOCTYPE html>
