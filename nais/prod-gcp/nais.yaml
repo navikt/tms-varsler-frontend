@@ -21,6 +21,9 @@ spec:
   readiness:
     path: /minside/varsler/api/internal/isReady
     initialDelay: 10
+  prometheus:
+    enabled: true
+    path: /minside/varsler/api/internal/metrics
   replicas:
     min: 2
     max: 4
