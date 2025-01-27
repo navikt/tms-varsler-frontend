@@ -1,5 +1,5 @@
-import {logAmplitudeEvent} from '@navikt/nav-dekoratoren-moduler';
 import type {VarselType} from "@src/customTypes/Varsel.ts";
+import {logAmplitudeEvent} from "@navikt/nav-dekoratoren-moduler";
 
 
 const APP_NAME = "tms-varsler-frontend";
