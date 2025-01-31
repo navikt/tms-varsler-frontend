@@ -20,6 +20,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     }
 
     const validation = await validateToken(token);
+    console.log("valdiation --->",validation)
     if (!validation.ok) {
         console.error('Validation failed!');
         return context.redirect(loginUrl);
