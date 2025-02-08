@@ -35,7 +35,7 @@ export const VarselCard = ({varsel, isInaktiv}: { varsel: Varsel, isInaktiv: boo
         (
             <div onClick={() => isInaktiv && !varsel.link && logClickInaktivVarselWithoutLink(varsel.type)} lang={varsel.spraakkode}
                  className={styles.container}>
-                <div className={styles.varselIcon}><ClipboardIcon width="20px" height="20px"/></div>
+                <div className={styles.varselIcon}><ClipboardIcon aria-hidden={true} width="20px" height="20px"/></div>
                 <div>
                     <div>
                         {varsel.link ? <Link
