@@ -112,9 +112,9 @@ export const text = {
         en: "Check if you have written incorrectly or try another search term",
     },
     loadingMessage: {
-        nb: "Henter innhold ...",
-        nn: "Hentar innhald ...",
-        en: "Loading content ...",
+        nb: "Henter dine varsler ...",
+        nn: "Hentar varslane dine ...",
+        en: "Loading your notifications ...",
     },
     searchLabel: {
         nb: "Søk i dine tidligere varsler",
