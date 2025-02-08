@@ -13,7 +13,7 @@ api.use("/*", cors({
 }));
 
 api.get('/tms-varsel-api/alle', async (c)=> {
-    await new Promise((resolve) => setTimeout(resolve, 3000))
+    await new Promise((resolve) => setTimeout(resolve, 400))
     return c.json(varsler)
 }
 );
