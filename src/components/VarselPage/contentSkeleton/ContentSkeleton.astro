@@ -1,14 +1,17 @@
 ---
 import {Skeleton, Heading, Box, HStack, VStack} from "@navikt/ds-react";
 import styles from "./ContentSkeleton.module.css"
+import {type Locale} from "@src/customTypes/Locale";
+const currentLocale = Astro.currentLocale as Locale
+import {text} from "@language/text";
 ---
 
-<div class={styles.skeleton}>
+<div aria-label={text.loadingMessage[currentLocale]} class={styles.skeleton}>
     <Heading as={Skeleton} size="large">
         Oppgaver
     </Heading>
     {
-        <Box margin="1 0" padding="6" borderRadius="xlarge" shadow="xsmall" className="w-56">
+        <Box margin="1 0" padding="6" borderRadius="xlarge" shadow="small" className="w-56">
             <HStack gap="3">
                 <Skeleton variant="circle" width={32} height={32}/>
                 <VStack width="90%" gap="1">
@@ -17,7 +20,7 @@ import styles from "./ContentSkeleton.module.css"
                 </VStack>
             </HStack>
         </Box>
-        <Box padding="6" borderRadius="xlarge" shadow="xsmall" className="w-56">
+        <Box padding="6" borderRadius="xlarge" shadow="small" className="w-56">
             <HStack gap="3">
                 <Skeleton variant="circle" width={32} height={32}/>
                 <VStack width="90%" gap="1">
