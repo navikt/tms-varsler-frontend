@@ -1,18 +1,20 @@
 ---
-import {Heading} from "@navikt/ds-react";
+import { Heading } from "@navikt/ds-react";
 import styles from "./PageHeader.module.css";
-import {text} from "../../language/text";
-import {VisningsToggle} from "./VisningsToggle/VisningsToggle";
-import {Filter} from "./Filter/Filter"
-import type {Locale} from "@src/customTypes/Locale";
+import { text } from "../../language/text";
+import { VisningsToggle } from "./VisningsToggle/VisningsToggle";
+import { Filter } from "./Filter/Filter";
+import type { Locale } from "@src/customTypes/Locale";
 
-const currentLocale:Locale  = Astro.currentLocale as Locale
+const currentLocale: Locale = Astro.currentLocale as Locale;
 ---
 
 <div>
-    <div class={styles.container}>
-        <Heading className={styles.pageHeading} size={"xlarge"}>{text.hovedoverskrift[currentLocale]}</Heading>
-        <VisningsToggle client:only="react"/>
-        <Filter client:only="react"/>
-    </div>
+  <div class={styles.container}>
+    <Heading className={styles.pageHeading} size={"xlarge"}
+      >{text.hovedoverskrift[currentLocale]}</Heading
+    >
+    <VisningsToggle client:only="react" />
+    <Filter client:only="react" />
+  </div>
 </div>

@@ -6,12 +6,11 @@ import styles from "./VarselPage.module.css";
 import ContentSkeleton from "./contentSkeleton/ContentSkeleton.astro";
 ---
 
-
 <Layout>
-    <PageHeader/>
-    <div class={styles.contentWrapper}>
-        <VarselFetcher server:defer>
-            <ContentSkeleton slot="fallback"/>
-        </VarselFetcher>
-    </div>
+  <PageHeader />
+  <div class={styles.contentWrapper}>
+    <VarselFetcher server:defer>
+      <ContentSkeleton slot="fallback" />
+    </VarselFetcher>
+  </div>
 </Layout>

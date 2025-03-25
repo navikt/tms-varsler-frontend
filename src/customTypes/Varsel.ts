@@ -1,27 +1,27 @@
-export type VarselType = "oppgave" | "beskjed"
+export type VarselType = "oppgave" | "beskjed";
 
-export type Varsel ={
-    eventId: string;
-    forstBehandlet: string;
-    isMasked: boolean;
-    spraakkode: string;
-    tekst: string;
-    link: string;
-    eksternVarslingSendt: boolean;
-    eksternVarslingKanaler: string[];
-    isInaktiverbar: boolean;
-    type: VarselType;
-}
+export type Varsel = {
+  eventId: string;
+  forstBehandlet: string;
+  isMasked: boolean;
+  spraakkode: string;
+  tekst: string;
+  link: string;
+  eksternVarslingSendt: boolean;
+  eksternVarslingKanaler: string[];
+  isInaktiverbar: boolean;
+  type: VarselType;
+};
 
 export type AktiveVarsler = {
-    beskjeder: Varsel[]
-    oppgaver: Varsel[]
-}
+  beskjeder: Varsel[];
+  oppgaver: Varsel[];
+};
 
-export type InaktiveVarsler = Varsel[]
+export type InaktiveVarsler = Varsel[];
 
 export type VarselResponse = {
-    hasMaskedVarsel: boolean
-    aktive: AktiveVarsler
-    inaktive: InaktiveVarsler
-}
+  hasMaskedVarsel: boolean;
+  aktive: AktiveVarsler;
+  inaktive: InaktiveVarsler;
+};
