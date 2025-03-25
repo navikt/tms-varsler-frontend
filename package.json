@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "PUBLIC_APP_ENVIRONMENT=local astro dev",
     "start": "astro dev",
-    "local-build": "PUBLIC_APP_ENVIRONMENT=local astro check && PUBLIC_APP_ENVIRONMENT=local  astro build",
-    "build": "export PUBLIC_APP_ENVIRONMENT=local && astro check && astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "mock": "tsx --watch ./mock/server.ts",
