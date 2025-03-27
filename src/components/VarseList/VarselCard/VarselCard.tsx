@@ -1,61 +1,110 @@
-import {dynamicText, text} from "@language/text.ts";
-import {BodyLong, Button, Link} from "@navikt/ds-react";
-import {type Varsel} from "@src/customTypes/Varsel.ts";
-import {formatData} from "@utils/client/data.ts";
-import styles from "./VarselCard.module.css"
-import {ClipboardIcon} from '@navikt/aksel-icons';
-import {DOCUMENT_LOCALE} from "@language/language.ts";
-import {inaktiverBeskjed} from "@src/store/store.ts";
+import { dynamicText, text } from "@language/text.ts";
+import { BodyLong, Button, Link } from "@navikt/ds-react";
+import { type Varsel } from "@src/customTypes/Varsel.ts";
+import { formatData } from "@utils/client/data.ts";
+import styles from "./VarselCard.module.css";
+import { ClipboardIcon } from "@navikt/aksel-icons";
+import { DOCUMENT_LOCALE } from "@language/language.ts";
+import { inaktiverBeskjed } from "@src/store/store.ts";
 import postInarkiver from "@components/VarseList/VarselCard/postInaktiver.ts";
-import {logClickInaktiverButton, logClickInaktivVarselWithoutLink, logLinkNavigation} from "@utils/client/amplitude.ts";
+import {
+  logClickInaktiverButton,
+  logClickInaktivVarselWithoutLink,
+  logLinkNavigation,
+} from "@utils/client/amplitude.ts";
 
-
-const constructMetaData = (eksternVarslingKanaler: Varsel["eksternVarslingKanaler"], forstBehandlet: Varsel["forstBehandlet"]) => {
-    return (
-        <div className={styles.metadata}>
-            <span className={styles.date}> {`${formatData(forstBehandlet)}`} </span>
-            {eksternVarslingKanaler.length > 0 ? <span className={styles.varselKanaler}>
-                {dynamicText.notificationChannel(eksternVarslingKanaler, DOCUMENT_LOCALE)[DOCUMENT_LOCALE]}
-            </span> : ""}
-        </div>
-    )
-}
+const constructMetaData = (
+  eksternVarslingKanaler: Varsel["eksternVarslingKanaler"],
+  forstBehandlet: Varsel["forstBehandlet"],
+) => {
+  return (
+    <div className={styles.metadata}>
+      <span className={styles.date}> {`${formatData(forstBehandlet)}`} </span>
+      {eksternVarslingKanaler.length > 0 ? (
+        <span className={styles.varselKanaler}>
+          {
+            dynamicText.notificationChannel(
+              eksternVarslingKanaler,
+              DOCUMENT_LOCALE,
+            )[DOCUMENT_LOCALE]
+          }
+        </span>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+};
 
 const handleInaktiverVarsel = (id: string, isInaktiverbar: boolean) => {
-    if (isInaktiverbar) {
-        postInarkiver(id)
-        inaktiverBeskjed(id)
-    }
-}
+  if (isInaktiverbar) {
+    postInarkiver(id);
+    inaktiverBeskjed(id);
+  }
+};
 
-export const VarselCard = ({varsel, isInaktiv}: { varsel: Varsel, isInaktiv: boolean }) => {
-    const varselText = varsel.isMasked ? text.maskedVarselText[DOCUMENT_LOCALE] : varsel.tekst
+export const VarselCard = ({
+  varsel,
+  isInaktiv,
+}: {
+  varsel: Varsel;
+  isInaktiv: boolean;
+}) => {
+  const varselText = varsel.isMasked
+    ? text.maskedVarselText[DOCUMENT_LOCALE]
+    : varsel.tekst;
 
-    return (
-        (
-            <div onClick={() => isInaktiv && !varsel.link && logClickInaktivVarselWithoutLink(varsel.type)} lang={varsel.spraakkode}
-                 className={styles.container}>
-                <div className={styles.varselIcon}><ClipboardIcon aria-hidden={true} width="20px" height="20px"/></div>
-                <div>
-                    <div>
-                        {varsel.link ? <Link
-                                onClick={() => {
-                                    handleInaktiverVarsel(varsel.eventId, varsel.isInaktiverbar)
-                                    logLinkNavigation(`${isInaktiv ? "inaktiv" : "aktiv"}-${varsel.type}`)
-                                }}
-                                href={varsel.link}> <BodyLong
-                                weight="semibold">{varsel.tekst}</BodyLong></Link> :
-                            <BodyLong weight="semibold">{varselText}</BodyLong>}
-                    </div>
-                    {constructMetaData(varsel.eksternVarslingKanaler, varsel.forstBehandlet)}
-                    {varsel.isInaktiverbar && !varsel.link ?
-                        <Button onClick={() => {
-                            handleInaktiverVarsel(varsel.eventId, varsel.isInaktiverbar)
-                            logClickInaktiverButton()
-                        }
-                        } size="small"
-                                variant="secondary">{text.markAsRead[DOCUMENT_LOCALE]}</Button> : ""}
-                </div>
-            </div>
-        ))
-}
+  return (
+    <div
+      onClick={() =>
+        isInaktiv &&
+        !varsel.link &&
+        logClickInaktivVarselWithoutLink(varsel.type)
+      }
+      lang={varsel.spraakkode}
+      className={styles.container}
+    >
+      <div className={styles.varselIcon}>
+        <ClipboardIcon aria-hidden={true} width="20px" height="20px" />
+      </div>
+      <div>
+        <div>
+          {varsel.link ? (
+            <Link
+              onClick={() => {
+                handleInaktiverVarsel(varsel.eventId, varsel.isInaktiverbar);
+                logLinkNavigation(
+                  `${isInaktiv ? "inaktiv" : "aktiv"}-${varsel.type}`,
+                );
+              }}
+              href={varsel.link}
+            >
+              {" "}
+              <BodyLong weight="semibold">{varsel.tekst}</BodyLong>
+            </Link>
+          ) : (
+            <BodyLong weight="semibold">{varselText}</BodyLong>
+          )}
+        </div>
+        {constructMetaData(
+          varsel.eksternVarslingKanaler,
+          varsel.forstBehandlet,
+        )}
+        {varsel.isInaktiverbar && !varsel.link ? (
+          <Button
+            onClick={() => {
+              handleInaktiverVarsel(varsel.eventId, varsel.isInaktiverbar);
+              logClickInaktiverButton();
+            }}
+            size="small"
+            variant="secondary"
+          >
+            {text.markAsRead[DOCUMENT_LOCALE]}
+          </Button>
+        ) : (
+          ""
+        )}
+      </div>
+    </div>
+  );
+};

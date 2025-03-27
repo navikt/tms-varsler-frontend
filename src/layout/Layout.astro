@@ -1,68 +1,76 @@
 ---
-import {fetchDecoratorReact} from "@navikt/nav-dekoratoren-moduler/ssr";
+import { fetchDecoratorReact } from "@navikt/nav-dekoratoren-moduler/ssr";
 import styles from "./Layout.module.css";
-import {appBaseUrl} from "@utils/urls";
-import {type DecoratorLocale} from "@navikt/nav-dekoratoren-moduler";
-import {type Locale} from "@src/customTypes/Locale";
-const currentLocale: Locale = Astro.currentLocale as Locale
-import "./global.css"
-import {minSideUrl} from "../utils/urls";
-import {text} from "../language/text";
+import { appBaseUrl } from "@utils/urls";
+import { type DecoratorLocale } from "@navikt/nav-dekoratoren-moduler";
+import { type Locale } from "@src/customTypes/Locale";
+const currentLocale: Locale = Astro.currentLocale as Locale;
+import "./global.css";
+import { minSideUrl } from "../utils/urls";
+import { text } from "../language/text";
 
 const Decorator = await fetchDecoratorReact({
-    env: "dev",
-    params: {
-        context: "privatperson",
-        language: currentLocale as DecoratorLocale,
-        availableLanguages: [
-            {
-                locale: "nb",
-                url: `${appBaseUrl}/`,
-                handleInApp: false,
-            },
-            {
-                locale: "en",
-                url: `${appBaseUrl}/en`,
-                handleInApp: false,
-            },
-            {
-                locale: "nn",
-                url: `${appBaseUrl}/nn`,
-                handleInApp: false,
-            }
-        ],
-        breadcrumbs: [
-            {
-                title: text.minSide[currentLocale],
-                url: minSideUrl,
-            }, {
-                title: text.hovedoverskrift[currentLocale],
-                url: appBaseUrl,
-            }
-        ]
-    }
+  env: "dev",
+  params: {
+    context: "privatperson",
+    language: currentLocale as DecoratorLocale,
+    availableLanguages: [
+      {
+        locale: "nb",
+        url: `${appBaseUrl}/`,
+        handleInApp: false,
+      },
+      {
+        locale: "en",
+        url: `${appBaseUrl}/en`,
+        handleInApp: false,
+      },
+      {
+        locale: "nn",
+        url: `${appBaseUrl}/nn`,
+        handleInApp: false,
+      },
+    ],
+    breadcrumbs: [
+      {
+        title: text.minSide[currentLocale],
+        url: minSideUrl,
+      },
+      {
+        title: text.hovedoverskrift[currentLocale],
+        url: appBaseUrl,
+      },
+    ],
+  },
 });
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={currentLocale}>
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="description" content="Astro description"/>
-    <meta name="viewport" content="width=device-width"/>
-    <meta name="generator" content={Astro.generator}/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="noindex" />
     <title>Varsler</title>
-    <link rel="preload" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" as="style"/>
-    <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"/>
-    <Decorator.Styles/>
-</head>
-<body>
-<Decorator.Header/>
-<main class={styles.layout}>
-    <slot/>
-</main>
-<Decorator.Footer/>
-<Decorator.Scripts/>
-</body>
+    <link
+      rel="preload"
+      href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"
+    />
+    <Decorator.Styles />
+  </head>
+  <body>
+    <Decorator.Header />
+    <main class={styles.layout}>
+      <slot />
+    </main>
+    <Decorator.Footer />
+    <Decorator.Scripts />
+  </body>
 </html>

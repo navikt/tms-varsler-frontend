@@ -1,30 +1,31 @@
 ---
 import VarselView from "@components/VarselView/VarselView";
-import {apiInternIngress} from "@utils/urls";
-import {getOboToken} from "@utils/server/getOboToken";
+import { apiInternIngress } from "@utils/urls";
+import { getOboToken } from "@utils/server/getOboToken";
 const oboToken = await getOboToken(Astro.locals.token);
 
 let isError = false;
 
 const data = await fetch(apiInternIngress, {
-    method: "GET",
-    headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${oboToken}`,
-    },
-}).then((response) => {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    Authorization: `Bearer ${oboToken}`,
+  },
+})
+  .then((response) => {
     if (!response.ok) {
-        console.error(`Error, fetch failed with status: ${response.status}`)
-        isError = true;
+      console.error(`Error, fetch failed with status: ${response.status}`);
+      isError = true;
     }
 
     return response.json();
-}).catch((error) => {
+  })
+  .catch((error) => {
     console.error(`Error, fetch failed: ${error}`);
     isError = true;
-});
+  });
 ---
 
-
-<VarselView isError={isError} varselResponse={data} client:only="react"/>
+<VarselView isError={isError} varselResponse={data} client:only="react" />
