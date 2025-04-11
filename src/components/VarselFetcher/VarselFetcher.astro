@@ -2,11 +2,13 @@
 import VarselView from "@components/VarselView/VarselView";
 import { apiInternIngress } from "@utils/urls";
 import { getOboToken } from "@utils/server/getOboToken";
+import {Locale} from "../../customTypes/Locale";
 const oboToken = await getOboToken(Astro.locals.token);
-
+const currentLocale: Locale = Astro.currentLocale as Locale;
 let isError = false;
 
-const data = await fetch(apiInternIngress, {
+
+const data = await fetch(`${apiInternIngress}?preferert_spraak=${currentLocale}`, {
   method: "GET",
   headers: {
     "Content-Type": "application/json",

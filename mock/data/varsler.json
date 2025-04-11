@@ -5,13 +5,14 @@
       {
         "forstBehandlet": "2023-11-14T08:53:31.607Z",
         "eventId": "1584093211607",
-        "tekst": "Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...",
+        "tekst": "You got a unread message in your inbox",
         "link": "https://enNyLenke",
         "isMasked": false,
         "eksternVarslingSendt": false,
         "eksternVarslingKanaler": [],
         "isInaktiverbar": false,
-        "type": "oppgave"
+        "type": "oppgave",
+        "spraakkode": "en"
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -24,7 +25,9 @@
           "SMS"
         ],
         "type": "oppgave",
-        "isInaktiverbar": false
+        "isInaktiverbar": false,
+        "spraakkode": "nb"
+
       }
     ],
     "beskjeder": [
@@ -39,7 +42,8 @@
           "SMS"
         ],
         "isInaktiverbar": true,
-        "type": "beskjed"
+        "type": "beskjed",
+        "spraakkode": "nb"
       },
       {
         "forstBehandlet": "2019-11-27T12:24:34.671Z",
@@ -54,7 +58,8 @@
           "EPOST"
         ],
         "isInaktiverbar": false,
-        "type": "beskjed"
+        "type": "beskjed",
+        "spraakkode": "nb"
       },
       {
         "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -65,7 +70,8 @@
         "eksternVarslingSendt": false,
         "eksternVarslingKanaler": [],
         "isInaktiverbar": false,
-        "type": "beskjed"
+        "type": "beskjed",
+        "spraakkode": "nb"
       }
     ]
   },
@@ -78,7 +84,8 @@
       "isMasked": false,
       "eksternVarslingSendt": false,
       "eksternVarslingKanaler": [],
-      "type": "beskjed"
+      "type": "beskjed",
+      "spraakkode": "nb"
     },
     {
       "forstBehandlet": "2020-03-13T09:03:09.348Z",
@@ -90,7 +97,8 @@
       "eksternVarslingKanaler": [
         "SMS"
       ],
-      "type": "beskjed"
+      "type": "beskjed",
+      "spraakkode": "nb"
     },
     {
       "forstBehandlet": "2023-11-13T08:53:17.47Z",
@@ -102,7 +110,8 @@
       "eksternVarslingKanaler": [
         "SMS"
       ],
-      "type": "beskjed"
+      "type": "beskjed",
+      "spraakkode": "nb"
     },
     {
       "forstBehandlet": "2024-10-27T12:24:34.671Z",
@@ -116,7 +125,8 @@
         "SMS",
         "EPOST"
       ],
-      "type": "oppgave"
+      "type": "oppgave",
+      "spraakkode": "nb"
     },
     {
       "forstBehandlet": "2020-03-13T09:03:01.449Z",
@@ -126,7 +136,8 @@
       "isMasked": true,
       "eksternVarslingSendt": false,
       "eksternVarslingKanaler": [],
-      "type": "oppgave"
+      "type": "oppgave",
+      "spraakkode": "nb"
     }
   ]
 }
