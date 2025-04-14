@@ -1,9 +1,7 @@
 import { inaktiverBeskjedApiUrl } from "@utils/urls.ts";
-import pino from "pino-http";
 
 const postInarkiver = (id: string) => {
   const requestBody = { eventId: id };
-  const logger = pino().logger;
   fetch(inaktiverBeskjedApiUrl, {
     method: "POST",
     credentials: "same-origin",
@@ -15,11 +13,11 @@ const postInarkiver = (id: string) => {
   })
     .then((response) => {
       if (!response.ok) {
-        logger.error(
+        console.error(
           "Inaktivering av beskjed feilet med status: " + response.status,
         );
       }
     })
-    .catch(() => logger.error("Inaktivering av beskjed feilet"));
+    .catch(() => console.error("Inaktivering av beskjed feilet"));
 };
 export default postInarkiver;
