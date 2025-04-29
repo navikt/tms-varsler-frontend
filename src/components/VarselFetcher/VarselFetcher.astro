@@ -7,7 +7,7 @@ const oboToken = await getOboToken(Astro.locals.token);
 const currentLocale: Locale = Astro.currentLocale as Locale;
 let isError = false;
 
-
+console.log(`${apiInternIngress}?preferert_spraak=${currentLocale}`)
 const data = await fetch(`${apiInternIngress}?preferert_spraak=${currentLocale}`, {
   method: "GET",
   headers: {
