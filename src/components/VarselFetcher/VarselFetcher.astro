@@ -4,21 +4,16 @@ import { apiInternIngress } from "@utils/urls";
 import { getOboToken } from "@utils/server/getOboToken";
 const oboToken = await getOboToken(Astro.locals.token);
 let isError = false;
-const {locale}  = Astro.props;
+const { locale } = Astro.props;
 
-
-
-const data = await fetch(
-  `${apiInternIngress}?preferert_spraak=${locale}`,
-  {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${oboToken}`,
-    },
+const data = await fetch(`${apiInternIngress}?preferert_spraak=${locale}`, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    Authorization: `Bearer ${oboToken}`,
   },
-)
+})
   .then((response) => {
     if (!response.ok) {
       console.error(`Error, fetch failed with status: ${response.status}`);
