@@ -1,15 +1,17 @@
 ---
+import type {Locale} from "../../customTypes/Locale";
 import PageHeader from "../PageHeader/PageHeader.astro";
 import VarselFetcher from "../VarselFetcher/VarselFetcher.astro";
 import Layout from "../../layout/Layout.astro";
 import styles from "./VarselPage.module.css";
 import ContentSkeleton from "./contentSkeleton/ContentSkeleton.astro";
+const locale: Locale = Astro.currentLocale as Locale;
 ---
 
 <Layout>
   <PageHeader />
   <div class={styles.contentWrapper}>
-    <VarselFetcher server:defer>
+    <VarselFetcher server:defer locale=`${locale}`>
       <ContentSkeleton slot="fallback" />
     </VarselFetcher>
   </div>
