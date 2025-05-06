@@ -2,9 +2,12 @@
 import VarselView from "@components/VarselView/VarselView";
 import { apiInternIngress } from "@utils/urls";
 import { getOboToken } from "@utils/server/getOboToken";
+import pino from "pino-http";
+
 const oboToken = await getOboToken(Astro.locals.token);
 let isError = false;
 const { locale } = Astro.props;
+const logger = pino().logger;
 
 const data = await fetch(`${apiInternIngress}?preferert_spraak=${locale}`, {
   method: "GET",
@@ -16,14 +19,14 @@ const data = await fetch(`${apiInternIngress}?preferert_spraak=${locale}`, {
 })
   .then((response) => {
     if (!response.ok) {
-      console.error(`Error, fetch failed with status: ${response.status}`);
+      logger.error(`Error, fetch failed with status: ${response.status}`);
       isError = true;
     }
 
     return response.json();
   })
   .catch((error) => {
-    console.error(`Error, fetch failed: ${error}`);
+    logger.error(`Error, fetch failed: ${error}`);
     isError = true;
   });
 ---

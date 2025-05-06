@@ -1,1 +1,1 @@
-npx prettier --write "./src/**/*.{ts,tsx,astro}"
+PUBLIC_APP_ENVIRONMENT=local npm run build && npx prettier --write "./src/**/*.{ts,tsx,astro}"

@@ -2,7 +2,6 @@ import { inaktiverBeskjedApiUrl } from "@utils/urls.ts";
 
 const postInarkiver = (id: string) => {
   const requestBody = { eventId: id };
-
   fetch(inaktiverBeskjedApiUrl, {
     method: "POST",
     credentials: "same-origin",
