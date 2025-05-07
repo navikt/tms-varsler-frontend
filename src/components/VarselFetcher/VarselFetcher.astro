@@ -5,10 +5,11 @@ import { getOboToken } from "@utils/server/getOboToken";
 import pino from "pino-http";
 
 const oboToken = await getOboToken(Astro.locals.token);
-
 let isError = false;
+const { locale } = Astro.props;
 const logger = pino().logger;
-const data = await fetch(apiInternIngress, {
+
+const data = await fetch(`${apiInternIngress}?preferert_spraak=${locale}`, {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
