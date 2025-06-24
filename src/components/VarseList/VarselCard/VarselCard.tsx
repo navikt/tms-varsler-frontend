@@ -1,6 +1,6 @@
 import { dynamicText, text } from "@language/text.ts";
 import { BodyLong, Button, Link } from "@navikt/ds-react";
-import {type Varsel} from "@src/customTypes/Varsel.ts";
+import { type Varsel } from "@src/customTypes/Varsel.ts";
 import { formatData } from "@utils/client/data.ts";
 import styles from "./VarselCard.module.css";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
@@ -11,7 +11,7 @@ import {
   logClickInaktivVarselWithoutLink,
   logLinkNavigation,
 } from "@utils/client/amplitude.ts";
-import {VarselCardIcon} from "@components/VarseList/VarselCard/VarselCardIcon.tsx";
+import { VarselCardIcon } from "@components/VarseList/VarselCard/VarselCardIcon.tsx";
 
 const constructMetaData = (
   eksternVarslingKanaler: Varsel["eksternVarslingKanaler"],
@@ -65,7 +65,7 @@ export const VarselCard = ({
       className={styles.container}
     >
       <div className={styles.varselIcon}>
-        <VarselCardIcon varselType={varsel.type}/>
+        <VarselCardIcon varselType={varsel.type} />
       </div>
       <div>
         <div>

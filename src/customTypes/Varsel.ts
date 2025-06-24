@@ -1,6 +1,6 @@
 export enum VarselType {
   OPPGAVE = "oppgave",
-  BESKJED = "beskjed"
+  BESKJED = "beskjed",
 }
 export type Varsel = {
   eventId: string;
