@@ -1,5 +1,7 @@
-export type VarselType = "oppgave" | "beskjed";
-
+export enum VarselType {
+  OPPGAVE = "oppgave",
+  BESKJED = "beskjed"
+}
 export type Varsel = {
   eventId: string;
   forstBehandlet: string;

@@ -1,9 +1,8 @@
 import { dynamicText, text } from "@language/text.ts";
 import { BodyLong, Button, Link } from "@navikt/ds-react";
-import { type Varsel } from "@src/customTypes/Varsel.ts";
+import {type Varsel} from "@src/customTypes/Varsel.ts";
 import { formatData } from "@utils/client/data.ts";
 import styles from "./VarselCard.module.css";
-import { ClipboardIcon } from "@navikt/aksel-icons";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
 import { inaktiverBeskjed } from "@src/store/store.ts";
 import postInarkiver from "@components/VarseList/VarselCard/postInaktiver.ts";
@@ -12,6 +11,7 @@ import {
   logClickInaktivVarselWithoutLink,
   logLinkNavigation,
 } from "@utils/client/amplitude.ts";
+import {VarselCardIcon} from "@components/VarseList/VarselCard/VarselCardIcon.tsx";
 
 const constructMetaData = (
   eksternVarslingKanaler: Varsel["eksternVarslingKanaler"],
@@ -65,7 +65,7 @@ export const VarselCard = ({
       className={styles.container}
     >
       <div className={styles.varselIcon}>
-        <ClipboardIcon aria-hidden={true} width="20px" height="20px" />
+        <VarselCardIcon varselType={varsel.type}/>
       </div>
       <div>
         <div>
