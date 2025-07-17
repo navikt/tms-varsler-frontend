@@ -2,12 +2,12 @@
 
 Frontenden for visning av varsler på nav.no.
 
-
-Url dev:  https://www.ansatt.dev.nav.no/minside/varsler
+Url dev: https://www.ansatt.dev.nav.no/minside/varsler
 
 Url prod: https://www.nav.no/minside/varsler
 
 # Kom i gang
+
 1. Installer dependencies med `npm install`
 2. Start hono mockserver med `npm run mock`
 3. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre `npm run dev` i et nytt terminalvindu
@@ -19,4 +19,4 @@ Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på git
 
 ## For NAV-ansatte
 
-Interne henvendelser kan sendes via Slack i kanalen #team-personbruker.
+Interne henvendelser kan sendes via Slack i kanalen [#minside-varsler](https://nav-it.slack.com/archives/CR61BPH7G).

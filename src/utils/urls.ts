@@ -1,4 +1,4 @@
-const environment = import.meta.env.PUBLIC_APP_ENVIRONMENT;
+import { environment } from "./server/environment";
 type EnvBasedUrl = { [key in typeof environment]: string };
 
 const NAV_NO_URL = {
