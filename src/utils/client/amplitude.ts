@@ -5,7 +5,7 @@ const APP_NAME = "tms-varsler-frontend";
 
 export const logLinkNavigation = (komponent: string, destinasjon?: string) => {
   logAmplitudeEvent({
-    eventData: { komponent: komponent, kategori: "tms-varsel"},
+    eventData: { komponent: komponent, kategori: "tms-varsel" },
     eventName: "navigere",
     origin: APP_NAME,
   });
