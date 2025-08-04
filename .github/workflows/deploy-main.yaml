@@ -40,8 +40,6 @@ jobs:
           team: min-side
           source: ./dist/client/_astro
           destination: 'tms-varsler-frontend'
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
       - name: "Build and push"
         uses: nais/docker-build-push@v0
