@@ -2,12 +2,11 @@
 import VarselView from "@components/VarselView/VarselView";
 import { apiInternIngress } from "@utils/urls";
 import { getOboToken } from "@utils/server/getOboToken";
-import pino from "pino-http";
+import logger from "@src/utils/server/logger";
 
 const oboToken = await getOboToken(Astro.locals.token);
 let isError = false;
 const { locale } = Astro.props;
-const logger = pino().logger;
 
 const data = await fetch(`${apiInternIngress}?preferert_spraak=${locale}`, {
   method: "GET",
