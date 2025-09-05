@@ -15,7 +15,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   if (!token) {
-    logger.error("Token not found");
+    logger.info("Token not found");
     return context.redirect(loginUrl);
   }
 
