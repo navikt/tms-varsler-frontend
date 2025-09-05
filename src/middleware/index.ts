@@ -2,11 +2,10 @@ import { getToken, validateToken } from "@navikt/oasis";
 import { defineMiddleware } from "astro/middleware";
 import { loginUrl } from "@utils/urls.ts";
 const isLocal = import.meta.env.DEV;
-import pino from "pino-http";
+import logger from "@src/utils/server/logger";
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const token = getToken(context.request.headers);
-  const logger = pino().logger;
   if (isLocal) {
     return next();
   }
