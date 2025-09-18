@@ -9,7 +9,7 @@ import { text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
 import Error from "@components/error/Error.tsx";
 import { loginStepUpUrl } from "@utils/urls.ts";
-import { logLinkNavigation } from "@utils/client/amplitude.ts";
+import { logLinkNavigation } from "../../utils/client/analytics.ts";
 
 interface props {
   varselResponse: VarselResponse;
