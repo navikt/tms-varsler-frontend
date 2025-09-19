@@ -10,7 +10,7 @@ import {
   logClickInaktiverButton,
   logClickInaktivVarselWithoutLink,
   logLinkNavigation,
-} from "../../../utils/client/analytics.ts";
+} from "@utils/client/analytics.ts";
 import { VarselCardIcon } from "@components/VarseList/VarselCard/VarselCardIcon.tsx";
 
 const constructMetaData = (
