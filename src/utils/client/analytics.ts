@@ -23,7 +23,6 @@ export const logClickInaktiverButton = async () => {
 export const logClickInaktivVarselWithoutLink = async (type: VarselType) => {
   await analyticsLogger("click-tidligere-varsel-uten-link", {
     eventData: { varselType: type },
-    eventName: "click-tidligere-varsel-uten-link",
     origin: APP_NAME,
   });
 };
