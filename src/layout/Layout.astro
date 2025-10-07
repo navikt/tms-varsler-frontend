@@ -3,7 +3,7 @@ import { fetchDecoratorReact } from "@navikt/nav-dekoratoren-moduler/ssr";
 import styles from "./Layout.module.css";
 import { appBaseUrl } from "@utils/urls";
 import { type DecoratorLocale } from "@navikt/nav-dekoratoren-moduler";
-import { type Locale } from "@src/customTypes/Locale";
+import { type Locale } from "../custom-types/Locale";
 const currentLocale: Locale = Astro.currentLocale as Locale;
 import "./global.css";
 import { minSideUrl } from "../utils/urls";

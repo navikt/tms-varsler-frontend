@@ -1,8 +1,8 @@
-import styles from "@components/VarselView/VarselView.module.css";
-import { VarselList } from "@components/VarseList/VarselList.tsx";
+import styles from "../VarselView.module.css";
+import { VarselList } from "../../varsel-list/VarselList.tsx";
 import { text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
-import { NoVarselMessage } from "@components/VarselView/NoVarselMessage/NoVarselMessage.tsx";
+import { NoVarselMessage } from "../no-varsel-message/NoVarselMessage.tsx";
 import { useStore } from "@nanostores/react";
 import { $aktiveBeskjeder, $aktiveOppgaver } from "@src/store/store.ts";
 

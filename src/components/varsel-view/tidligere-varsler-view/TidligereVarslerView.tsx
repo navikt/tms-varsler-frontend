@@ -1,15 +1,15 @@
 import styles from "./TidligereView.module.css";
-import { VarselList } from "@components/VarseList/VarselList.tsx";
+import { VarselList } from "../../varsel-list/VarselList.tsx";
 import { dynamicText, text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
-import type { Varsel } from "@src/customTypes/Varsel.ts";
+import type { Varsel } from "../../../custom-types/Varsel.ts";
 import {
   $filterSearch,
   $filterVarselType,
   $inaktiveVarsler,
 } from "@src/store/store.ts";
 import { useStore } from "@nanostores/react";
-import { NoVarselMessage } from "@components/VarselView/NoVarselMessage/NoVarselMessage.tsx";
+import { NoVarselMessage } from "../no-varsel-message/NoVarselMessage.tsx";
 import { BodyLong, Heading } from "@navikt/ds-react";
 
 const filterVarsler = (varsler: Varsel[]) => {

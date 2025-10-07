@@ -1,5 +1,5 @@
 import { getAnalyticsInstance } from "@navikt/nav-dekoratoren-moduler";
-import type { VarselType } from "../../customTypes/Varsel";
+import type { VarselType } from "../../custom-types/Varsel";
 
 const APP_NAME = "tms-varsler-frontend";
 

@@ -1,17 +1,17 @@
 import { dynamicText, text } from "@language/text.ts";
 import { BodyLong, Button, Link } from "@navikt/ds-react";
-import { type Varsel } from "@src/customTypes/Varsel.ts";
+import { type Varsel } from "../../../custom-types/Varsel.ts";
 import { formatData } from "@utils/client/data.ts";
 import styles from "./VarselCard.module.css";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
 import { inaktiverBeskjed } from "@src/store/store.ts";
-import postInarkiver from "@components/VarseList/VarselCard/postInaktiver.ts";
+import postInarkiver from "./postInaktiver.ts";
 import {
   logClickInaktiverButton,
   logClickInaktivVarselWithoutLink,
   logLinkNavigation,
 } from "@utils/client/analytics.ts";
-import { VarselCardIcon } from "@components/VarseList/VarselCard/VarselCardIcon.tsx";
+import { VarselCardIcon } from "./VarselCardIcon.tsx";
 
 const constructMetaData = (
   eksternVarslingKanaler: Varsel["eksternVarslingKanaler"],

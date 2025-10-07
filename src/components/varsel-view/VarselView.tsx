@@ -1,9 +1,9 @@
 import { useStore } from "@nanostores/react";
 import { $showTidligere, initVarsler } from "@src/store/store.ts";
-import type { VarselResponse } from "@src/customTypes/Varsel.ts";
+import type { VarselResponse } from "../../custom-types/Varsel.ts";
 import styles from "./VarselView.module.css";
-import { NyeVarslerView } from "./NyeVarslerView/NyeVarslerView.tsx";
-import { TidligereVarslerView } from "./TidligereVarslerView/TidligereVarslerView.tsx";
+import { NyeVarslerView } from "./nye-varsler-view/NyeVarslerView.tsx";
+import { TidligereVarslerView } from "./tidligere-varsler-view/TidligereVarslerView.tsx";
 import { Alert, Link } from "@navikt/ds-react";
 import { text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";

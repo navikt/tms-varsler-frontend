@@ -1,11 +1,11 @@
 import { atom, type PreinitializedWritableAtom } from "nanostores";
-import type { ToggleOptions } from "@components/PageHeader/Filter/Filter.tsx";
+import type { ToggleOptions } from "../components/page-header/filter/Filter.tsx";
 import {
   type InaktiveVarsler,
   type Varsel,
   type VarselResponse,
   VarselType,
-} from "@src/customTypes/Varsel.ts";
+} from "../custom-types/Varsel.ts";
 
 export const TIDLIGERE_HASH = "#tidligere";
 export const $showTidligere: PreinitializedWritableAtom<boolean> = atom(

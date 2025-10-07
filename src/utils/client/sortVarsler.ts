@@ -1,4 +1,4 @@
-import type { InaktiveVarsler, Varsel } from "@src/customTypes/Varsel.ts";
+import type { InaktiveVarsler, Varsel } from "../../custom-types/Varsel.ts";
 import dayjs from "dayjs";
 
 const sortVarsler = (varsler: InaktiveVarsler | Varsel[]) =>

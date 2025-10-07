@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import type { Varsel } from "@src/customTypes/Varsel.ts";
+import type { Varsel } from "../../custom-types/Varsel.ts";
 
 export const formatData = (data: string) => {
   return dayjs(data).format("DD.MM.YYYY kl. HH.mm");

@@ -1,5 +1,5 @@
-import { VarselCard } from "@components/VarseList/VarselCard/VarselCard.tsx";
-import { type Varsel } from "@src/customTypes/Varsel.ts";
+import { VarselCard } from "./varsel-card/VarselCard.tsx";
+import { type Varsel } from "../../custom-types/Varsel.ts";
 import { Heading } from "@navikt/ds-react";
 import styles from "./VarselList.module.css";
 import { sortVarselList } from "@utils/client/data.ts";

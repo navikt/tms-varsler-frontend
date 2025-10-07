@@ -1,5 +1,5 @@
 import { ChatElipsisIcon, ClipboardIcon } from "@navikt/aksel-icons";
-import { VarselType } from "@src/customTypes/Varsel.ts";
+import { VarselType } from "../../../custom-types/Varsel.ts";
 
 export const VarselCardIcon = ({ varselType }: { varselType: VarselType }) =>
   varselType === VarselType.OPPGAVE ? (
