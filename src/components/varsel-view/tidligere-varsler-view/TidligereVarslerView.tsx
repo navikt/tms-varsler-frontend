@@ -1,8 +1,8 @@
 import styles from "./TidligereView.module.css";
-import { VarselList } from "../../varsel-list/VarselList.tsx";
+import { VarselList } from "@components/varsel-list/VarselList.tsx";
 import { dynamicText, text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
-import type { Varsel } from "../../../custom-types/Varsel.ts";
+import type { Varsel } from "@src/custom-types/Varsel.ts";
 import {
   $filterSearch,
   $filterVarselType,

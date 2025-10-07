@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { $showTidligere, initVarsler } from "@src/store/store.ts";
-import type { VarselResponse } from "../../custom-types/Varsel.ts";
+import type { VarselResponse } from "@src/custom-types/Varsel.ts";
 import styles from "./VarselView.module.css";
 import { NyeVarslerView } from "./nye-varsler-view/NyeVarslerView.tsx";
 import { TidligereVarslerView } from "./tidligere-varsler-view/TidligereVarslerView.tsx";

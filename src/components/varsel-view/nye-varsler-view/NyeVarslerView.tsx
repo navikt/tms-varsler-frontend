@@ -1,5 +1,5 @@
 import styles from "../VarselView.module.css";
-import { VarselList } from "../../varsel-list/VarselList.tsx";
+import { VarselList } from "@components/varsel-list/VarselList.tsx";
 import { text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
 import { NoVarselMessage } from "../no-varsel-message/NoVarselMessage.tsx";

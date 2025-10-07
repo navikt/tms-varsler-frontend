@@ -1,9 +1,10 @@
 ---
 import { Skeleton, Heading, Box, HStack, VStack } from "@navikt/ds-react";
 import styles from "./ContentSkeleton.module.css";
-import { type Locale } from "../../../custom-types/Locale";
-const currentLocale = Astro.currentLocale as Locale;
+import { type Locale } from "@src/custom-types/Locale";
 import { text } from "@language/text";
+
+const currentLocale = Astro.currentLocale as Locale;
 ---
 
 <div aria-label={text.loadingMessage[currentLocale]} class={styles.skeleton}>

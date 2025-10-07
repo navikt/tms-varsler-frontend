@@ -1,6 +1,6 @@
 import { dynamicText, text } from "@language/text.ts";
 import { BodyLong, Button, Link } from "@navikt/ds-react";
-import { type Varsel } from "../../../custom-types/Varsel.ts";
+import { type Varsel } from "@src/custom-types/Varsel.ts";
 import { formatData } from "@utils/client/data.ts";
 import styles from "./VarselCard.module.css";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
