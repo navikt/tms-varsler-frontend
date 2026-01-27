@@ -9,7 +9,7 @@ import {
   $inaktiveVarsler,
 } from "@src/store/store.ts";
 import { useStore } from "@nanostores/react";
-import { BodyLong, BodyShort, Heading, List } from "@navikt/ds-react";
+import { BodyLong, Heading, List } from "@navikt/ds-react";
 
 const filterVarsler = (varsler: Varsel[]) => {
   const filterVarselType = useStore($filterVarselType);

@@ -5,10 +5,7 @@ const APP_NAME = "tms-varsler-frontend";
 
 const analyticsLogger = getAnalyticsInstance("tms-microfrontend-template-ssr");
 
-export const logLinkNavigation = async (
-  komponent: string,
-  destinasjon?: string,
-) => {
+export const logLinkNavigation = async (komponent: string) => {
   await analyticsLogger("navigere", {
     komponent: komponent,
     kategori: "tms-varsel",
