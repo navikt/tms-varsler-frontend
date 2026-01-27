@@ -9,8 +9,7 @@ import {
   $inaktiveVarsler,
 } from "@src/store/store.ts";
 import { useStore } from "@nanostores/react";
-import { NoVarselMessage } from "@components/VarselView/NoVarselMessage/NoVarselMessage.tsx";
-import { BodyLong, Heading } from "@navikt/ds-react";
+import { BodyLong, BodyShort, Heading, List } from "@navikt/ds-react";
 
 const filterVarsler = (varsler: Varsel[]) => {
   const filterVarselType = useStore($filterVarselType);
@@ -30,33 +29,57 @@ const filterVarsler = (varsler: Varsel[]) => {
 
 export const TidligereVarslerView = () => {
   const varsler = useStore($inaktiveVarsler);
-  if (varsler.length === 0) {
-    return <NoVarselMessage type="noInaktiveVarsler" />;
-  }
   const filteredList = filterVarsler(varsler);
+
+  const noTdiligereVarsler = varsler.length === 0;
   const noFilterResult = filteredList && filteredList.length === 0;
-  if (noFilterResult) {
-    return <NoVarselMessage type="noSearchResult" />;
-  }
+  const listIsEmpty = noTdiligereVarsler || noFilterResult;
+
+  const headingText = noTdiligereVarsler
+    ? text.noInaktiveVarslerTitle[DOCUMENT_LOCALE]
+    : noFilterResult
+      ? text.noSearchResultTitle[DOCUMENT_LOCALE]
+      : dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](
+          filteredList.length,
+          varsler.length,
+        );
+
+  const emptyListDescription = noTdiligereVarsler
+    ? text.noInaktiveVarslerDescription[DOCUMENT_LOCALE]
+    : text.noSearchResultDescription[DOCUMENT_LOCALE];
 
   return (
     <div className={styles.container}>
-      <VarselList
-        isInaktiveVarsler={true}
-        tittel={dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](
-          filteredList.length,
-          varsler.length,
-        )}
-        varsler={filteredList}
-      />
-      <div className={styles.usefulInformation}>
-        <BodyLong>
-          <Heading level="2" size="small">
-            {text.usefulToKnow[DOCUMENT_LOCALE]}
-          </Heading>
-          <BodyLong>{text.notificationsFromLastYear[DOCUMENT_LOCALE]}</BodyLong>
-        </BodyLong>
-      </div>
+      <Heading
+        aria-live="polite"
+        className={styles.tidligereVarselListHeading}
+        size={"small"}
+        level={"2"}
+      >
+        {headingText}
+      </Heading>
+      {listIsEmpty ? (
+        <List>
+          <List.Item>{emptyListDescription}</List.Item>
+          <List.Item>
+            {text.notificationsFromLastYear[DOCUMENT_LOCALE]}
+          </List.Item>
+        </List>
+      ) : (
+        <div>
+          <VarselList isInaktiveVarsler={true} varsler={filteredList} />
+          <div className={styles.usefulInformation}>
+            <BodyLong>
+              <Heading level="2" size="small">
+                {text.usefulToKnow[DOCUMENT_LOCALE]}
+              </Heading>
+              <BodyLong>
+                {text.notificationsFromLastYear[DOCUMENT_LOCALE]}
+              </BodyLong>
+            </BodyLong>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

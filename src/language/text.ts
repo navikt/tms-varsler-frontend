@@ -46,11 +46,6 @@ export const text = {
     en: "No new notifications",
     nn: "Ingen nye varsel",
   },
-  noNewNotificationsIngress: {
-    nb: "Vi varsler deg når noe skjer",
-    en: "We will notify you when something happens",
-    nn: "Vi varslar deg når noko skjer",
-  },
   loading: {
     nb: "Henter innhold ...",
     en: "Loading content ...",
@@ -92,9 +87,9 @@ export const text = {
     en: "No new notifications",
   },
   noAktiveVarslerDescription: {
-    nb: "Vi varsler deg når noe skjer",
-    nn: "Vi varslar deg når noko skjer",
-    en: "We will notify you when something happens",
+    nb: "Vi varsler deg når noe skjer.",
+    nn: "Vi varslar deg når noko skjer.",
+    en: "We will notify you when something happens.",
   },
   noInaktiveVarslerTitle: {
     nb: "Ingen tidligere varsler",
@@ -162,8 +157,8 @@ export const text = {
     en: "Useful to know",
   },
   notificationsFromLastYear: {
-    nb: "Her viser vi tidligere varsler kun fra det siste året.",
-    nn: "Her viser vi tidlegare varsel kun frå det siste året.",
-    en: "Here we only show previous notifications from the last year.",
+    nb: "Varsler eldre enn 12 måneder vises ikke her.",
+    nn: "Varsel som er eldre enn 12 månader, blir ikkje viste her.",
+    en: "Notifications older than 12 months are not shown here.",
   },
 } as const;
