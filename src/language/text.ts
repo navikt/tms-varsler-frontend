@@ -103,7 +103,7 @@ export const text = {
   },
   noInaktiveVarslerDescription: {
     nb: "Når du har gjort en oppgave eller lest en beskjed havner de her.",
-    nn: "Når du har gjort en oppgåve eller lest en beskjed havnar dei her.",
+    nn: "Når du har gjort ei oppgåve eller lest ein beskjed havnar dei her.",
     en: "When you have completed a task or read a message, it will appear here.",
   },
   noSearchResultTitle: {
