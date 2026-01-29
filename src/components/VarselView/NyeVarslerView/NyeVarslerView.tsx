@@ -1,10 +1,10 @@
-import styles from "@components/VarselView/VarselView.module.css";
+import styles from "./NyeVarslerView.module.css";
 import { VarselList } from "@components/VarseList/VarselList.tsx";
 import { text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
-import { NoVarselMessage } from "@components/VarselView/NoVarselMessage/NoVarselMessage.tsx";
 import { useStore } from "@nanostores/react";
 import { $aktiveBeskjeder, $aktiveOppgaver } from "@src/store/store.ts";
+import { BodyShort, Heading } from "@navikt/ds-react";
 
 export const NyeVarslerView = () => {
   const oppgaver = useStore($aktiveOppgaver);
@@ -13,25 +13,49 @@ export const NyeVarslerView = () => {
   const hasOppgaver = oppgaver.length > 0;
   const hasBeskjeder = beskjeder.length > 0;
 
-  if (!hasOppgaver && !hasBeskjeder) {
-    return <NoVarselMessage type="noAktiveVarsler" />;
-  }
-
   return (
-    <div className={styles.container}>
-      {hasOppgaver && (
-        <VarselList
-          isInaktiveVarsler={false}
-          tittel={text.filterOppgaver[DOCUMENT_LOCALE]}
-          varsler={oppgaver}
-        />
-      )}
-      {hasBeskjeder && (
-        <VarselList
-          isInaktiveVarsler={false}
-          tittel={text.filterBeskjeder[DOCUMENT_LOCALE]}
-          varsler={beskjeder}
-        />
+    <div>
+      {!hasOppgaver && !hasBeskjeder ? (
+        <div>
+          <Heading
+            className={styles.nyeVarselListHeading}
+            size={"small"}
+            level={"2"}
+          >
+            {text.noAktiveVarslerTitle[DOCUMENT_LOCALE]}
+          </Heading>
+          <BodyShort className={styles.tomListeBeskrivelse}>
+            {text.noAktiveVarslerDescription[DOCUMENT_LOCALE]}
+          </BodyShort>
+        </div>
+      ) : (
+        <>
+          {hasOppgaver && (
+            <div>
+              <Heading
+                className={styles.nyeVarselListHeading}
+                size="xsmall"
+                level="2"
+              >
+                {text.filterOppgaver[DOCUMENT_LOCALE]}
+              </Heading>
+              <VarselList isInaktiveVarsler={false} varsler={oppgaver} />
+            </div>
+          )}
+
+          {hasBeskjeder && (
+            <div>
+              <Heading
+                className={styles.nyeVarselListHeading}
+                size="xsmall"
+                level="2"
+              >
+                {text.filterBeskjeder[DOCUMENT_LOCALE]}
+              </Heading>
+              <VarselList isInaktiveVarsler={false} varsler={beskjeder} />
+            </div>
+          )}
+        </>
       )}
     </div>
   );
