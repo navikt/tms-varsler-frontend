@@ -8,7 +8,7 @@ interface Props {
   isInaktiveVarsler: boolean;
 }
 
-export const VarselList = ({ varsler, isInaktiveVarsler = false }: Props) => {
+export const VarselList = ({ varsler, isInaktiveVarsler }: Props) => {
   return (
     <ul className={styles.list}>
       {varsler &&
