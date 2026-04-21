@@ -8,9 +8,9 @@ Url prod: https://www.nav.no/minside/varsler
 
 # Kom i gang
 
-1. Installer dependencies med `npm install`
-2. Start hono mockserver med `npm run mock`
-3. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre `npm run dev` i et nytt terminalvindu
+1. Installer dependencies med `pnpm install`
+2. Start hono mockserver med `pnpm mock`
+3. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre `pnpm dev` i et nytt terminalvindu
 4. Appen nås på http://localhost:4321/minside/varsler
 
 # Henvendelser
