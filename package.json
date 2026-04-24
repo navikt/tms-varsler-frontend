@@ -38,7 +38,7 @@
     "@types/node": "24.0.14",
     "@types/react": "18.3.28",
     "@types/react-dom": "18.3.7",
-    "hono": "4.8.5",
+    "hono": "4.12.14",
     "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1",
     "tsx": "4.20.3",
