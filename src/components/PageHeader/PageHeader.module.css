@@ -1,5 +1,5 @@
 .container {
-    background-color: var(--a-surface-default);
+    background-color: var(--ax-bg-raised);
     padding: 1rem;
     width: var(--content-width);
     max-width: var(--content-max-width);

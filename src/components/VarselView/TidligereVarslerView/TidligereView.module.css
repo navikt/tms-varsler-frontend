@@ -6,7 +6,7 @@
   align-items: flex-start;
   gap: 10px;
   border-radius: 12px;
-  background-color: var(--a-surface-default);
+  background-color: var(--ax-bg-raised);
 }
 .tidligereVarselListHeading {
   margin-top: 1.5rem;
