@@ -1,14 +1,12 @@
 body {
-  background-color: var(--a-bg-subtle);
+  background-color: var(--ax-bg-sunken);
 }
 
-.layout, decorator-utils{
-  background-color: var(--a-surface-default); .container, decorator-utils{
-  background-color: var(--a-surface-default);
-}
+.layout,
+decorator-utils {
+  background-color: var(--ax-bg-raised);
 }
 
 .layout {
   flex: 1;
 }
-
