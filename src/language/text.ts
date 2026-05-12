@@ -26,6 +26,11 @@ export const text = {
     en: "Notifications",
     nn: "Varslar",
   },
+  description: {
+    nb: "Her finner du nye og tidligere varsler fra Nav. Du kan lese beskjeder og gjøre oppgaver.",
+    en: "Here you can find new and previous notifications from Nav. You can read messages and complete tasks.",
+    nn: "Her finn du nye og tidlegare varsel frå Nav. Du kan lese beskjedar og gjere oppgåver.",
+  },
   newToggle: {
     nb: "Nye ",
     en: "New ",

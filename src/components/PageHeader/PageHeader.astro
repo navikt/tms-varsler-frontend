@@ -1,19 +1,30 @@
 ---
-import { Heading } from "@navikt/ds-react";
+import { BodyLong, Heading, Link } from "@navikt/ds-react";
 import styles from "./PageHeader.module.css";
 import { text } from "../../language/text";
 import { VisningsToggle } from "./VisningsToggle/VisningsToggle";
 import { Filter } from "./Filter/Filter";
 import type { Locale } from "@src/customTypes/Locale";
+import { minSideUrl } from "@utils/urls";
 
 const currentLocale: Locale = Astro.currentLocale as Locale;
 ---
 
-<div>
-  <div class={styles.container}>
-    <Heading className={styles.pageHeading} size={"xlarge"}
-      >{text.hovedoverskrift[currentLocale]}</Heading
-    >
+<div class={styles.container}>
+  <nav class={styles.breadcrumb} aria-label="Du er her">
+    <ol class={styles.breadcrumbList}>
+      <li class={styles.breadcrumbItem}>
+        <Link href={minSideUrl}>{text.minSide[currentLocale]}</Link>
+      </li>
+    </ol>
+  </nav>
+  <Heading size="large" level="1">
+    {text.hovedoverskrift[currentLocale]}
+  </Heading>
+  <BodyLong className={styles.description} size="large">
+    {text.description[currentLocale]}
+  </BodyLong>
+  <div class={styles.controls}>
     <VisningsToggle client:only="react" />
     <Filter client:only="react" />
   </div>
