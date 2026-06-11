@@ -5,6 +5,7 @@ const postInarkiver = (id: string) => {
   fetch(inaktiverBeskjedApiUrl, {
     method: "POST",
     credentials: "same-origin",
+    keepalive: true,
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
