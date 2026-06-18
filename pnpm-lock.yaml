@@ -68,7 +68,7 @@ importers:
         version: 4.11.3(playwright-core@1.60.0)
       '@hono/node-server':
         specifier: 1.16.0
-        version: 1.16.0(hono@4.12.19)
+        version: 1.16.0(hono@4.12.25)
       '@playwright/test':
         specifier: 1.60.0
         version: 1.60.0
@@ -94,8 +94,8 @@ importers:
         specifier: 4.1.8
         version: 4.1.8(vitest@4.1.8)
       hono:
-        specifier: 4.12.19
-        version: 4.12.19
+        specifier: 4.12.25
+        version: 4.12.25
       jsdom:
         specifier: 29.1.1
         version: 29.1.1
@@ -879,9 +879,6 @@ packages:
       '@types/react': ^17.0.30 || ^18 || ^19
       react: ^17 || ^18 || ^19
       react-dom: ^17 || ^18 || ^19
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
 
   '@navikt/ds-tokens@8.10.4':
     resolution: {integrity: sha512-mtqGpM/7+xOq0f0mJPP6/0Nxb8ye/F5x9g+LUYqpVa5ppY9F+gudhR+km70xQHkYr3vl1Ob3nwAaK6UAUE+D1w==, tarball: https://npm.pkg.github.com/download/@navikt/ds-tokens/8.10.4/d707d19503f39451e30e3ad204912fa34170ca44}
@@ -894,9 +891,6 @@ packages:
       html-react-parser: '>=5.x'
       jsdom: '>=16.x'
       react: '>=17.x'
-    peerDependenciesMeta:
-      react:
-        optional: true
 
   '@navikt/oasis@3.8.0':
     resolution: {integrity: sha512-5CDsv3wop9eIw2YNBCJRr0w6PwwkoTiHzZQXn1+5YZnsksCkHJAFsfKSbRle6zgsD+XRBnc/TPOP0nvNly7NWg==, tarball: https://npm.pkg.github.com/download/@navikt/oasis/3.8.0/fc6862d934adfbefa382220614af18160688cd1e}
@@ -1937,8 +1931,8 @@ packages:
   hastscript@9.0.1:
     resolution: {integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==}
 
-  hono@4.12.19:
-    resolution: {integrity: sha512-xa3eYXYXx68XTT4hZ7dRzsXBhaq85ToSrlUJNoR0gwz/1Ap/CNwX47wfvV7pc/xWhjKVVkLT7zBJy8chhNguqQ==}
+  hono@4.12.25:
+    resolution: {integrity: sha512-2NFaIyNVgJmBs/ecmtGzlmluTFs5cHEWGTdu0t1HBwYzoGXOL5nUQBRMXsXWla5i4KkG//QMzVP88m1+I3fdAQ==}
     engines: {node: '>=16.9.0'}
 
   html-dom-parser@7.0.1:
@@ -2789,6 +2783,7 @@ packages:
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
     engines: {node: ^18 || >=20}
+    deprecated: unmaintained
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
@@ -3792,9 +3787,9 @@ snapshots:
       protobufjs: 7.6.1
       yargs: 17.7.2
 
-  '@hono/node-server@1.16.0(hono@4.12.19)':
+  '@hono/node-server@1.16.0(hono@4.12.25)':
     dependencies:
-      hono: 4.12.19
+      hono: 4.12.25
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -3905,12 +3900,11 @@ snapshots:
       '@floating-ui/react-dom': 2.1.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@navikt/aksel-icons': 8.10.5
       '@navikt/ds-tokens': 8.10.4
+      '@types/react': 18.3.28
       date-fns: 4.1.0
       react: 18.3.1
       react-day-picker: 9.14.0(react@18.3.1)
       react-dom: 18.3.1(react@18.3.1)
-    optionalDependencies:
-      '@types/react': 18.3.28
 
   '@navikt/ds-tokens@8.10.4': {}
 
@@ -3920,7 +3914,6 @@ snapshots:
       html-react-parser: 6.0.1(@types/react@18.3.28)(react@18.3.1)
       js-cookie: 3.0.5
       jsdom: 29.1.1
-    optionalDependencies:
       react: 18.3.1
 
   '@navikt/oasis@3.8.0':
@@ -5154,7 +5147,7 @@ snapshots:
       property-information: 7.1.0
       space-separated-tokens: 2.0.2
 
-  hono@4.12.19: {}
+  hono@4.12.25: {}
 
   html-dom-parser@7.0.1:
     dependencies:
