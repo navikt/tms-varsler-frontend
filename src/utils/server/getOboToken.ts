@@ -1,10 +1,13 @@
 import { requestOboToken } from "@navikt/oasis";
-import logger from "./logger";
+import type { APIContext } from "astro";
 
 const isLocal = import.meta.env.PUBLIC_APP_ENVIRONMENT === "local";
 const audience = `${process.env.NAIS_CLUSTER_NAME}:min-side:tms-varsel-api`;
 
-export const getOboToken = async (token: string): Promise<string> => {
+export const getOboToken = async (
+  token: string,
+  logger: APIContext["logger"],
+): Promise<string> => {
   const oboResult = await requestOboToken(token, audience);
 
   if (isLocal) {

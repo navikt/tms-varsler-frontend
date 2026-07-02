@@ -20,6 +20,9 @@ export default defineConfig({
     assetsPrefix: "https://cdn.nav.no/min-side/tms-varsler-frontend",
   },
   integrations: [react()],
+  logger: {
+    entrypoint: "@navikt/astro-logger",
+  },
   i18n: {
     defaultLocale: "nb",
     locales: ["nn", "en", "nb"],

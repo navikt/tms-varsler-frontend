@@ -2,9 +2,8 @@
 import VarselView from "@components/VarselView/VarselView";
 import { apiInternIngress } from "@utils/urls";
 import { getOboToken } from "@utils/server/getOboToken";
-import logger from "@src/utils/server/logger";
 
-const oboToken = await getOboToken(Astro.locals.token);
+const oboToken = await getOboToken(Astro.locals.token, Astro.logger);
 let isError = false;
 const { locale } = Astro.props;
 
@@ -18,14 +17,14 @@ const data = await fetch(`${apiInternIngress}?preferert_spraak=${locale}`, {
 })
   .then((response) => {
     if (!response.ok) {
-      logger.error(`Error, fetch failed with status: ${response.status}`);
+      Astro.logger.error(`Error, fetch failed with status: ${response.status}`);
       isError = true;
     }
 
     return response.json();
   })
   .catch((error) => {
-    logger.error(`Error, fetch failed: ${error}`);
+    Astro.logger.error(`Error, fetch failed: ${error}`);
     isError = true;
   });
 ---
