@@ -9,6 +9,10 @@ if (!process.env.PUBLIC_APP_ENVIRONMENT) {
 // https://astro.build/config
 export default defineConfig({
   base: "/minside/varsler",
+  // Astro 7 changed the default HTML compressor to 'jsx', which strips spaces
+  // between inline elements. Pin to HTML-aware compression to keep rendered
+  // output identical to Astro 5 (no whitespace regressions in Norwegian copy).
+  compressHTML: true,
   redirects: {
     "/minside/tidligere-varsler": "/minside/varsler#tidligere",
   },

@@ -1,5 +1,5 @@
 ---
-import { fetchDecoratorReact } from "@navikt/nav-dekoratoren-moduler/ssr";
+import { fetchDecoratorHtml } from "@navikt/nav-dekoratoren-moduler/ssr";
 import styles from "./Layout.module.css";
 import { appBaseUrl } from "@utils/urls";
 import { type DecoratorLocale } from "@navikt/nav-dekoratoren-moduler";
@@ -7,7 +7,11 @@ import { type Locale } from "@src/customTypes/Locale";
 const currentLocale: Locale = Astro.currentLocale as Locale;
 import "./global.css";
 
-const Decorator = await fetchDecoratorReact({
+// Use the decorator's HTML output (not the React components): @astrojs/react 6
+// drops <link rel="stylesheet"> / rel="preload" emitted by server-rendered
+// React components, which left the decorator unstyled. set:html injects the
+// markup verbatim. Matches the team pattern (tms-min-side, tms-utkast-frontend).
+const Decorator = await fetchDecoratorHtml({
   env: "dev",
   params: {
     context: "privatperson",
@@ -31,6 +35,13 @@ const Decorator = await fetchDecoratorReact({
     ],
   },
 });
+
+const {
+  DECORATOR_HEAD_ASSETS,
+  DECORATOR_HEADER,
+  DECORATOR_FOOTER,
+  DECORATOR_SCRIPTS,
+} = Decorator;
 ---
 
 <!doctype html>
@@ -51,14 +62,14 @@ const Decorator = await fetchDecoratorReact({
       rel="stylesheet"
       href="https://cdn.nav.no/aksel/@navikt/ds-css/8.10.4/index.min.css"
     />
-    <Decorator.HeadAssets />
+    <Fragment set:html={DECORATOR_HEAD_ASSETS} />
   </head>
   <body>
-    <Decorator.Header />
+    <Fragment set:html={DECORATOR_HEADER} />
     <main id="maincontent" class={styles.layout}>
       <slot />
     </main>
-    <Decorator.Footer />
-    <Decorator.Scripts />
+    <Fragment set:html={DECORATOR_FOOTER} />
+    <Fragment set:html={DECORATOR_SCRIPTS} />
   </body>
 </html>
