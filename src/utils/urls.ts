@@ -1,4 +1,5 @@
 import { environment } from "./server/environment";
+
 type EnvBasedUrl = { [key in typeof environment]: string };
 
 const NAV_NO_URL = {
@@ -14,8 +15,7 @@ const API_INTERNAL_INGRESS: EnvBasedUrl = {
 };
 
 const ERROR_REPORTING_URL = {
-  local:
-    "https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler",
+  local: "https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler",
   dev: "https://www.ansatt.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler",
   prod: "https://www.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler",
 };

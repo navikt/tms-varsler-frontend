@@ -8,10 +8,7 @@ test.describe("Språkstøtte", () => {
 
     await expect(varsler.heading).toHaveText("Notifications");
     await expect(
-      page.getByText(
-        "Here you can find new and previous notifications from Nav",
-        { exact: false },
-      ),
+      page.getByText("Here you can find new and previous notifications from Nav", { exact: false }),
     ).toBeVisible();
   });
 

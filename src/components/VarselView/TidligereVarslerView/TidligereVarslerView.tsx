@@ -1,30 +1,22 @@
-import styles from "./TidligereView.module.css";
 import { VarselList } from "@components/VarseList/VarselList.tsx";
-import { dynamicText, text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
-import type { Varsel } from "@src/customTypes/Varsel.ts";
-import {
-  $filterSearch,
-  $filterVarselType,
-  $inaktiveVarsler,
-} from "@src/store/store.ts";
+import { dynamicText, text } from "@language/text.ts";
 import { useStore } from "@nanostores/react";
 import { BodyLong, Heading, List } from "@navikt/ds-react";
+import type { Varsel } from "@src/customTypes/Varsel.ts";
+import { $filterSearch, $filterVarselType, $inaktiveVarsler } from "@src/store/store.ts";
+import styles from "./TidligereView.module.css";
 
 const filterVarsler = (varsler: Varsel[]) => {
   const filterVarselType = useStore($filterVarselType);
   const filterSearch = useStore($filterSearch);
-  const filteredByType = varsler.filter(
-    (varsel) => filterVarselType === "alle" || varsel.type === filterVarselType,
-  );
+  const filteredByType = varsler.filter((varsel) => filterVarselType === "alle" || varsel.type === filterVarselType);
 
   if (filterSearch === "") {
     return filteredByType;
   }
 
-  return filteredByType.filter((varsel) =>
-    varsel.tekst?.toLowerCase().includes(filterSearch),
-  );
+  return filteredByType.filter((varsel) => varsel.tekst?.toLowerCase().includes(filterSearch));
 };
 
 export const TidligereVarslerView = () => {
@@ -39,10 +31,7 @@ export const TidligereVarslerView = () => {
     ? text.noInaktiveVarslerTitle[DOCUMENT_LOCALE]
     : noFilterResult
       ? text.noSearchResultTitle[DOCUMENT_LOCALE]
-      : dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](
-          filteredList.length,
-          varsler.length,
-        );
+      : dynamicText.tidligereVarslerHeading[DOCUMENT_LOCALE](filteredList.length, varsler.length);
 
   const emptyListDescription = noTdiligereVarsler
     ? text.noInaktiveVarslerDescription[DOCUMENT_LOCALE]
@@ -50,20 +39,13 @@ export const TidligereVarslerView = () => {
 
   return (
     <div className={styles.container}>
-      <Heading
-        aria-live="polite"
-        className={styles.tidligereVarselListHeading}
-        size={"small"}
-        level={"2"}
-      >
+      <Heading aria-live="polite" className={styles.tidligereVarselListHeading} size={"small"} level={"2"}>
         {headingText}
       </Heading>
       {listIsEmpty ? (
         <List>
           <List.Item>{emptyListDescription}</List.Item>
-          <List.Item>
-            {text.notificationsFromLastYear[DOCUMENT_LOCALE]}
-          </List.Item>
+          <List.Item>{text.notificationsFromLastYear[DOCUMENT_LOCALE]}</List.Item>
         </List>
       ) : (
         <div>
@@ -73,9 +55,7 @@ export const TidligereVarslerView = () => {
               <Heading level="2" size="small">
                 {text.usefulToKnow[DOCUMENT_LOCALE]}
               </Heading>
-              <BodyLong>
-                {text.notificationsFromLastYear[DOCUMENT_LOCALE]}
-              </BodyLong>
+              <BodyLong>{text.notificationsFromLastYear[DOCUMENT_LOCALE]}</BodyLong>
             </BodyLong>
           </div>
         </div>

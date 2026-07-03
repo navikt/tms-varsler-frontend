@@ -13,9 +13,7 @@ test.describe("Varsler-forsiden", () => {
     const varsler = new VarslerPage(page);
     await varsler.goto();
 
-    await expect(
-      varsler.breadcrumb.getByRole("link", { name: "Min side" }),
-    ).toBeVisible();
+    await expect(varsler.breadcrumb.getByRole("link", { name: "Min side" })).toBeVisible();
   });
 
   test("viser ingressteksten", async ({ page }) => {
@@ -33,20 +31,14 @@ test.describe("Varsler-forsiden", () => {
     const varsler = new VarslerPage(page);
     await varsler.goto();
 
-    await expect(
-      varsler.varselLink("You have one unread message in your inbox"),
-    ).toBeVisible({ timeout: 20_000 });
+    await expect(varsler.varselLink("You have one unread message in your inbox")).toBeVisible({ timeout: 20_000 });
   });
 
-  test("viser sikkerhetsnivå-varsel når bruker har maskerte varsler", async ({
-    page,
-  }) => {
+  test("viser sikkerhetsnivå-varsel når bruker har maskerte varsler", async ({ page }) => {
     const varsler = new VarslerPage(page);
     await varsler.goto();
 
-    await expect(
-      page.getByText("Du har logget inn med Min ID", { exact: false }),
-    ).toBeVisible({ timeout: 20_000 });
+    await expect(page.getByText("Du har logget inn med Min ID", { exact: false })).toBeVisible({ timeout: 20_000 });
   });
 });
 
@@ -66,8 +58,6 @@ test.describe("Tidligere varsler", () => {
 
     await varsler.showTidligere();
 
-    await expect(
-      varsler.varselLink(/Svar fra veilederen din i innboksen/),
-    ).toBeVisible({ timeout: 20_000 });
+    await expect(varsler.varselLink(/Svar fra veilederen din i innboksen/)).toBeVisible({ timeout: 20_000 });
   });
 });

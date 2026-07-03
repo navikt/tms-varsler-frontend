@@ -1,10 +1,10 @@
-.filterContainer{
-    max-width: 100%;
-    width: 24.125rem;
-    margin-top: var(--ax-space-20);
-    margin-bottom: var(--ax-space-20);
+.filterContainer {
+  max-width: 100%;
+  width: 24.125rem;
+  margin-top: var(--ax-space-20);
+  margin-bottom: var(--ax-space-20);
 }
 
-.filterToggle{
-    margin-top: var(--ax-space-16);
+.filterToggle {
+  margin-top: var(--ax-space-16);
 }

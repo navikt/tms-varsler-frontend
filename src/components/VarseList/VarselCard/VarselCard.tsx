@@ -1,17 +1,17 @@
+import postInarkiver from "@components/VarseList/VarselCard/postInaktiver.ts";
+import { VarselCardIcon } from "@components/VarseList/VarselCard/VarselCardIcon.tsx";
+import { DOCUMENT_LOCALE } from "@language/language.ts";
 import { dynamicText, text } from "@language/text.ts";
 import { BodyLong, Button, Link } from "@navikt/ds-react";
-import { type Varsel } from "@src/customTypes/Varsel.ts";
-import { formatData } from "@utils/client/data.ts";
-import styles from "./VarselCard.module.css";
-import { DOCUMENT_LOCALE } from "@language/language.ts";
+import type { Varsel } from "@src/customTypes/Varsel.ts";
 import { inaktiverBeskjed } from "@src/store/store.ts";
-import postInarkiver from "@components/VarseList/VarselCard/postInaktiver.ts";
 import {
   logClickInaktiverButton,
   logClickInaktivVarselWithoutLink,
   logLinkNavigation,
 } from "@utils/client/analytics.ts";
-import { VarselCardIcon } from "@components/VarseList/VarselCard/VarselCardIcon.tsx";
+import { formatData } from "@utils/client/data.ts";
+import styles from "./VarselCard.module.css";
 
 const constructMetaData = (
   eksternVarslingKanaler: Varsel["eksternVarslingKanaler"],
@@ -22,12 +22,7 @@ const constructMetaData = (
       <span className={styles.date}> {`${formatData(forstBehandlet)}`} </span>
       {eksternVarslingKanaler.length > 0 ? (
         <span className={styles.varselKanaler}>
-          {
-            dynamicText.notificationChannel(
-              eksternVarslingKanaler,
-              DOCUMENT_LOCALE,
-            )[DOCUMENT_LOCALE]
-          }
+          {dynamicText.notificationChannel(eksternVarslingKanaler, DOCUMENT_LOCALE)[DOCUMENT_LOCALE]}
         </span>
       ) : (
         ""
@@ -43,24 +38,14 @@ const handleInaktiverVarsel = (id: string, isInaktiverbar: boolean) => {
   }
 };
 
-export const VarselCard = ({
-  varsel,
-  isInaktiv,
-}: {
-  varsel: Varsel;
-  isInaktiv: boolean;
-}) => {
-  const varselText = varsel.isMasked
-    ? text.maskedVarselText[DOCUMENT_LOCALE]
-    : varsel.tekst;
+export const VarselCard = ({ varsel, isInaktiv }: { varsel: Varsel; isInaktiv: boolean }) => {
+  const varselText = varsel.isMasked ? text.maskedVarselText[DOCUMENT_LOCALE] : varsel.tekst;
 
   return (
+    // biome-ignore lint/a11y/useKeyWithClickEvents: analytics-only click handler, not interactive
+    // biome-ignore lint/a11y/noStaticElementInteractions: analytics-only click handler, not interactive
     <div
-      onClick={() =>
-        isInaktiv &&
-        !varsel.link &&
-        logClickInaktivVarselWithoutLink(varsel.type)
-      }
+      onClick={() => isInaktiv && !varsel.link && logClickInaktivVarselWithoutLink(varsel.type)}
       lang={varsel.spraakkode}
       className={styles.container}
     >
@@ -73,9 +58,7 @@ export const VarselCard = ({
             <Link
               onClick={() => {
                 handleInaktiverVarsel(varsel.eventId, varsel.isInaktiverbar);
-                logLinkNavigation(
-                  `${isInaktiv ? "inaktiv" : "aktiv"}-${varsel.type}`,
-                );
+                logLinkNavigation(`${isInaktiv ? "inaktiv" : "aktiv"}-${varsel.type}`);
               }}
               href={varsel.link}
             >
@@ -86,10 +69,7 @@ export const VarselCard = ({
             <BodyLong weight="semibold">{varselText}</BodyLong>
           )}
         </div>
-        {constructMetaData(
-          varsel.eksternVarslingKanaler,
-          varsel.forstBehandlet,
-        )}
+        {constructMetaData(varsel.eksternVarslingKanaler, varsel.forstBehandlet)}
         {varsel.isInaktiverbar && !varsel.link ? (
           <Button
             onClick={() => {

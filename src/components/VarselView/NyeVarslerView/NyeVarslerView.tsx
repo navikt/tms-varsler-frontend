@@ -1,10 +1,10 @@
-import styles from "./NyeVarslerView.module.css";
 import { VarselList } from "@components/VarseList/VarselList.tsx";
-import { text } from "@language/text.ts";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
+import { text } from "@language/text.ts";
 import { useStore } from "@nanostores/react";
-import { $aktiveBeskjeder, $aktiveOppgaver } from "@src/store/store.ts";
 import { BodyShort, Heading } from "@navikt/ds-react";
+import { $aktiveBeskjeder, $aktiveOppgaver } from "@src/store/store.ts";
+import styles from "./NyeVarslerView.module.css";
 
 export const NyeVarslerView = () => {
   const oppgaver = useStore($aktiveOppgaver);
@@ -17,11 +17,7 @@ export const NyeVarslerView = () => {
     <div>
       {!hasOppgaver && !hasBeskjeder ? (
         <div>
-          <Heading
-            className={styles.nyeVarselListHeading}
-            size={"small"}
-            level={"2"}
-          >
+          <Heading className={styles.nyeVarselListHeading} size={"small"} level={"2"}>
             {text.noAktiveVarslerTitle[DOCUMENT_LOCALE]}
           </Heading>
           <BodyShort className={styles.tomListeBeskrivelse}>
@@ -32,11 +28,7 @@ export const NyeVarslerView = () => {
         <>
           {hasOppgaver && (
             <div>
-              <Heading
-                className={styles.nyeVarselListHeading}
-                size="xsmall"
-                level="2"
-              >
+              <Heading className={styles.nyeVarselListHeading} size="xsmall" level="2">
                 {text.filterOppgaver[DOCUMENT_LOCALE]}
               </Heading>
               <VarselList isInaktiveVarsler={false} varsler={oppgaver} />
@@ -45,11 +37,7 @@ export const NyeVarslerView = () => {
 
           {hasBeskjeder && (
             <div>
-              <Heading
-                className={styles.nyeVarselListHeading}
-                size="xsmall"
-                level="2"
-              >
+              <Heading className={styles.nyeVarselListHeading} size="xsmall" level="2">
                 {text.filterBeskjeder[DOCUMENT_LOCALE]}
               </Heading>
               <VarselList isInaktiveVarsler={false} varsler={beskjeder} />

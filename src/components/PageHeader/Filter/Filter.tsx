@@ -1,13 +1,8 @@
-import { Chips, Search } from "@navikt/ds-react";
-import { text } from "@language/text.ts";
-import {
-  $filterSearch,
-  $filterVarselType,
-  $showTidligere,
-  setFilterSearch,
-} from "@src/store/store.ts";
-import { useStore } from "@nanostores/react";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
+import { text } from "@language/text.ts";
+import { useStore } from "@nanostores/react";
+import { Chips, Search } from "@navikt/ds-react";
+import { $filterSearch, $filterVarselType, $showTidligere, setFilterSearch } from "@src/store/store.ts";
 import styles from "./Filter.module.css";
 
 const toggleOptions = {
@@ -18,7 +13,7 @@ const toggleOptions = {
 
 export type ToggleOptions = keyof typeof toggleOptions;
 
-export const Filter = ({}) => {
+export const Filter = () => {
   const isTidligereView: boolean = useStore($showTidligere);
   const filterToggle = useStore($filterVarselType);
 

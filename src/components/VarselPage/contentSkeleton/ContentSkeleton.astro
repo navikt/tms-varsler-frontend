@@ -1,8 +1,10 @@
 ---
-import { Skeleton, Heading, Box, HStack, VStack } from "@navikt/ds-react";
-import styles from "./ContentSkeleton.module.css";
+import { Box, Heading, HStack, Skeleton, VStack } from "@navikt/ds-react";
 import { type Locale } from "@src/customTypes/Locale";
+import styles from "./ContentSkeleton.module.css";
+
 const currentLocale = Astro.currentLocale as Locale;
+
 import { text } from "@language/text";
 ---
 

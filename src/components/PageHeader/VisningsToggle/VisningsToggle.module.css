@@ -1,8 +1,8 @@
-.toggleGroup > div{
-    margin-top: 1rem;
+.toggleGroup > div {
+  margin-top: 1rem;
 }
 
-.toggleGroup > div{
-    max-width: 100%;
-    width: min(100%,18.75rem);
+.toggleGroup > div {
+  max-width: 100%;
+  width: min(100%, 18.75rem);
 }
