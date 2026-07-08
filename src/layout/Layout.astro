@@ -1,10 +1,12 @@
 ---
-import { fetchDecoratorHtml } from "@navikt/nav-dekoratoren-moduler/ssr";
-import styles from "./Layout.module.css";
-import { appBaseUrl } from "@utils/urls";
 import { type DecoratorLocale } from "@navikt/nav-dekoratoren-moduler";
+import { fetchDecoratorHtml } from "@navikt/nav-dekoratoren-moduler/ssr";
 import { type Locale } from "@src/customTypes/Locale";
+import { appBaseUrl } from "@utils/urls";
+import styles from "./Layout.module.css";
+
 const currentLocale: Locale = Astro.currentLocale as Locale;
+
 import "./global.css";
 
 // Use the decorator's HTML output (not the React components): @astrojs/react 6
@@ -36,12 +38,7 @@ const Decorator = await fetchDecoratorHtml({
   },
 });
 
-const {
-  DECORATOR_HEAD_ASSETS,
-  DECORATOR_HEADER,
-  DECORATOR_FOOTER,
-  DECORATOR_SCRIPTS,
-} = Decorator;
+const { DECORATOR_HEAD_ASSETS, DECORATOR_HEADER, DECORATOR_FOOTER, DECORATOR_SCRIPTS } = Decorator;
 ---
 
 <!doctype html>

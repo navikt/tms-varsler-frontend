@@ -21,13 +21,10 @@
         "link": "https://enNyLenke",
         "isMasked": false,
         "eksternVarslingSendt": true,
-        "eksternVarslingKanaler": [
-          "SMS"
-        ],
+        "eksternVarslingKanaler": ["SMS"],
         "type": "oppgave",
         "isInaktiverbar": false,
         "spraakkode": "nb"
-
       }
     ],
     "beskjeder": [
@@ -38,9 +35,7 @@
         "link": "https://enNyLenke",
         "isMasked": false,
         "eksternVarslingSendt": true,
-        "eksternVarslingKanaler": [
-          "SMS"
-        ],
+        "eksternVarslingKanaler": ["SMS"],
         "isInaktiverbar": true,
         "type": "beskjed",
         "spraakkode": "nb"
@@ -53,10 +48,7 @@
         "link": null,
         "isMasked": true,
         "eksternVarslingSendt": true,
-        "eksternVarslingKanaler": [
-          "SMS",
-          "EPOST"
-        ],
+        "eksternVarslingKanaler": ["SMS", "EPOST"],
         "isInaktiverbar": false,
         "type": "beskjed",
         "spraakkode": "nb"
@@ -94,9 +86,7 @@
       "link": "https://enNyLenke",
       "isMasked": false,
       "eksternVarslingSendt": true,
-      "eksternVarslingKanaler": [
-        "SMS"
-      ],
+      "eksternVarslingKanaler": ["SMS"],
       "type": "beskjed",
       "spraakkode": "nb"
     },
@@ -107,9 +97,7 @@
       "link": "https://enNyLenke",
       "isMasked": false,
       "eksternVarslingSendt": true,
-      "eksternVarslingKanaler": [
-        "SMS"
-      ],
+      "eksternVarslingKanaler": ["SMS"],
       "type": "beskjed",
       "spraakkode": "nb"
     },
@@ -121,10 +109,7 @@
       "link": null,
       "isMasked": true,
       "eksternVarslingSendt": true,
-      "eksternVarslingKanaler": [
-        "SMS",
-        "EPOST"
-      ],
+      "eksternVarslingKanaler": ["SMS", "EPOST"],
       "type": "oppgave",
       "spraakkode": "nb"
     },

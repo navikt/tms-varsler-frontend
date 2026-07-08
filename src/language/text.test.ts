@@ -3,21 +3,15 @@ import { dynamicText, text } from "./text";
 
 describe("dynamicText.tidligereVarslerHeading", () => {
   it("should render the bokmål heading with counts", () => {
-    expect(dynamicText.tidligereVarslerHeading.nb(3, 10)).toBe(
-      "Viser 3 av 10 tidligere varsler",
-    );
+    expect(dynamicText.tidligereVarslerHeading.nb(3, 10)).toBe("Viser 3 av 10 tidligere varsler");
   });
 
   it("should render the english heading with counts", () => {
-    expect(dynamicText.tidligereVarslerHeading.en(3, 10)).toBe(
-      "Showing 3 of 10 previous notifications",
-    );
+    expect(dynamicText.tidligereVarslerHeading.en(3, 10)).toBe("Showing 3 of 10 previous notifications");
   });
 
   it("should render the nynorsk heading with counts", () => {
-    expect(dynamicText.tidligereVarslerHeading.nn(3, 10)).toBe(
-      "Viser 3 av 10 tidlegare varsel",
-    );
+    expect(dynamicText.tidligereVarslerHeading.nn(3, 10)).toBe("Viser 3 av 10 tidlegare varsel");
   });
 });
 
@@ -35,8 +29,6 @@ describe("dynamicText.notificationChannel", () => {
   });
 
   it("should handle a single channel", () => {
-    expect(dynamicText.notificationChannel(["SMS"], "nb").nb).toBe(
-      "Varslet via SMS",
-    );
+    expect(dynamicText.notificationChannel(["SMS"], "nb").nb).toBe("Varslet via SMS");
   });
 });

@@ -1,23 +1,23 @@
 :root {
-    --content-view-min-height: 386px;
+  --content-view-min-height: 386px;
 }
 
-.varselViewContainer{
-    width: var(--content-width);
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 1.5rem 1rem 3.5rem 1rem;
+.varselViewContainer {
+  width: var(--content-width);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3.5rem 1rem;
 }
 
-@media (min-width: 480px){
-    :root {
-        --content-view-min-height: 407px;
-    }
-    .heading{
-        margin-top: 0.5rem;
-    }
+@media (min-width: 480px) {
+  :root {
+    --content-view-min-height: 407px;
+  }
+  .heading {
+    margin-top: 0.5rem;
+  }
 
-    .varselViewContainer{
-        padding: 2rem 1rem 6rem 1rem;
-    }
+  .varselViewContainer {
+    padding: 2rem 1rem 6rem 1rem;
+  }
 }

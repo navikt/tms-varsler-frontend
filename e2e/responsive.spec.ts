@@ -9,9 +9,7 @@ test.describe("Responsivt design", () => {
     await varsler.goto();
 
     await expect(varsler.heading).toBeVisible();
-    await expect(
-      varsler.varselLink("You have one unread message in your inbox"),
-    ).toBeVisible({ timeout: 20_000 });
+    await expect(varsler.varselLink("You have one unread message in your inbox")).toBeVisible({ timeout: 20_000 });
   });
 
   test("viser forsiden på desktop viewport", async ({ page }) => {
@@ -21,8 +19,6 @@ test.describe("Responsivt design", () => {
     await varsler.goto();
 
     await expect(varsler.heading).toBeVisible();
-    await expect(
-      varsler.varselLink("You have one unread message in your inbox"),
-    ).toBeVisible({ timeout: 20_000 });
+    await expect(varsler.varselLink("You have one unread message in your inbox")).toBeVisible({ timeout: 20_000 });
   });
 });

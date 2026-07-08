@@ -14,7 +14,8 @@
     "test:coverage": "PUBLIC_APP_ENVIRONMENT=local vitest run --coverage",
     "test:e2e": "playwright test",
     "ts-check": "tsc --strict",
-    "prettier": "prettier --write './src/**/*.{ts,tsx,astro}'",
+    "lint": "biome check --write .",
+    "lint:check": "biome check .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.3",
+    "@biomejs/biome": "2.5.2",
     "@hono/node-server": "1.16.0",
     "@playwright/test": "1.60.0",
     "@testing-library/dom": "10.4.1",
@@ -50,8 +52,6 @@
     "@vitest/coverage-v8": "4.1.8",
     "hono": "4.12.25",
     "jsdom": "29.1.1",
-    "prettier": "3.8.3",
-    "prettier-plugin-astro": "0.14.1",
     "tsx": "4.22.1",
     "typescript": "5.8.3",
     "vitest": "4.1.8"

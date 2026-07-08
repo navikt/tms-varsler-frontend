@@ -8,9 +8,7 @@ test.describe("Tilgjengelighet (a11y)", () => {
   test("forsiden har ingen WCAG-brudd", async ({ page }) => {
     const varsler = new VarslerPage(page);
     await varsler.goto();
-    await expect(
-      varsler.varselLink("You have one unread message in your inbox"),
-    ).toBeVisible({ timeout: 20_000 });
+    await expect(varsler.varselLink("You have one unread message in your inbox")).toBeVisible({ timeout: 20_000 });
 
     const results = await new AxeBuilder({ page })
       .include("#maincontent")
@@ -22,9 +20,7 @@ test.describe("Tilgjengelighet (a11y)", () => {
 
   test("404-siden har ingen WCAG-brudd", async ({ page }) => {
     await page.goto("/minside/varsler/finnes/ikke");
-    await expect(
-      page.locator("#maincontent").getByRole("heading", { level: 1 }),
-    ).toBeVisible();
+    await expect(page.locator("#maincontent").getByRole("heading", { level: 1 })).toBeVisible();
 
     const results = await new AxeBuilder({ page })
       .include("#maincontent")

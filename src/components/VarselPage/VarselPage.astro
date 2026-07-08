@@ -1,10 +1,11 @@
 ---
 import type { Locale } from "../../customTypes/Locale";
+import Layout from "../../layout/Layout.astro";
 import PageHeader from "../PageHeader/PageHeader.astro";
 import VarselFetcher from "../VarselFetcher/VarselFetcher.astro";
-import Layout from "../../layout/Layout.astro";
-import styles from "./VarselPage.module.css";
 import ContentSkeleton from "./contentSkeleton/ContentSkeleton.astro";
+import styles from "./VarselPage.module.css";
+
 const locale: Locale = Astro.currentLocale as Locale;
 ---
 

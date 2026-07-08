@@ -5,8 +5,7 @@ type Locale = "nb" | "en" | "nn";
 const BASE_PATH = "/minside/varsler";
 
 // nb er standardspråk uten prefiks; en og nn har språkprefiks i URL-en.
-const pathForLocale = (locale: Locale): string =>
-  locale === "nb" ? BASE_PATH : `${BASE_PATH}/${locale}`;
+const pathForLocale = (locale: Locale): string => (locale === "nb" ? BASE_PATH : `${BASE_PATH}/${locale}`);
 
 export class VarslerPage {
   readonly main: Locator;
@@ -33,9 +32,7 @@ export class VarslerPage {
   }
 
   async showTidligere(): Promise<void> {
-    await this.main
-      .getByRole("radio", { name: /tidligere|previous|tidlegare/i })
-      .click();
+    await this.main.getByRole("radio", { name: /tidligere|previous|tidlegare/i }).click();
   }
 
   searchField(): Locator {

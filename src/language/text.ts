@@ -1,16 +1,12 @@
 export const dynamicText = {
   tidligereVarslerHeading: {
-    nb: (occurredCount: number, totalCount: number) =>
-      `Viser ${occurredCount} av ${totalCount} tidligere varsler`,
+    nb: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidligere varsler`,
     en: (occurredCount: number, totalCount: number) =>
       `Showing ${occurredCount} of ${totalCount} previous notifications`,
-    nn: (occurredCount: number, totalCount: number) =>
-      `Viser ${occurredCount} av ${totalCount} tidlegare varsel`,
+    nn: (occurredCount: number, totalCount: number) => `Viser ${occurredCount} av ${totalCount} tidlegare varsel`,
   },
   notificationChannel: (kanaler: string[], locale: "nb" | "nn" | "en") => {
-    const transaltedChannels = kanaler.map((kanal) =>
-      kanal === "SMS" ? text.SMS[locale] : text.EPOST[locale],
-    );
+    const transaltedChannels = kanaler.map((kanal) => (kanal === "SMS" ? text.SMS[locale] : text.EPOST[locale]));
 
     return {
       nb: `Varslet via ${transaltedChannels.join(" og ")}`,

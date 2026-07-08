@@ -1,7 +1,7 @@
 import { VarselCard } from "@components/VarseList/VarselCard/VarselCard.tsx";
-import { type Varsel } from "@src/customTypes/Varsel.ts";
-import styles from "./VarselList.module.css";
+import type { Varsel } from "@src/customTypes/Varsel.ts";
 import { sortVarselList } from "@utils/client/data.ts";
+import styles from "./VarselList.module.css";
 
 interface Props {
   varsler: Varsel[];

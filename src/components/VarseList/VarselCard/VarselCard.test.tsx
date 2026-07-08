@@ -1,6 +1,6 @@
+import { type Varsel, VarselType } from "@src/customTypes/Varsel.ts";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { VarselType, type Varsel } from "@src/customTypes/Varsel.ts";
 
 const logLinkNavigation = vi.fn();
 const logClickInaktiverButton = vi.fn();
@@ -9,10 +9,8 @@ const postInaktiver = vi.fn();
 
 vi.mock("@utils/client/analytics.ts", () => ({
   logLinkNavigation: (...args: unknown[]) => logLinkNavigation(...args),
-  logClickInaktiverButton: (...args: unknown[]) =>
-    logClickInaktiverButton(...args),
-  logClickInaktivVarselWithoutLink: (...args: unknown[]) =>
-    logClickInaktivVarselWithoutLink(...args),
+  logClickInaktiverButton: (...args: unknown[]) => logClickInaktiverButton(...args),
+  logClickInaktivVarselWithoutLink: (...args: unknown[]) => logClickInaktivVarselWithoutLink(...args),
 }));
 
 vi.mock("@components/VarseList/VarselCard/postInaktiver.ts", () => ({
@@ -53,27 +51,15 @@ describe("VarselCard", () => {
   });
 
   it("should render an external channel label when channels are present", () => {
-    render(
-      <VarselCard
-        varsel={{ ...baseVarsel, eksternVarslingKanaler: ["SMS"] }}
-        isInaktiv={false}
-      />,
-    );
+    render(<VarselCard varsel={{ ...baseVarsel, eksternVarslingKanaler: ["SMS"] }} isInaktiv={false} />);
 
     expect(screen.getByText("Varslet via SMS")).toBeInTheDocument();
   });
 
   it("should render the masked text when masked and without a link", () => {
-    render(
-      <VarselCard
-        varsel={{ ...baseVarsel, isMasked: true, link: "" }}
-        isInaktiv={false}
-      />,
-    );
+    render(<VarselCard varsel={{ ...baseVarsel, isMasked: true, link: "" }} isInaktiv={false} />);
 
-    expect(
-      screen.getByText(/logg inn med høyere sikkerhetsnivå/),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/logg inn med høyere sikkerhetsnivå/)).toBeInTheDocument();
   });
 
   it("should log link navigation when the link is clicked", () => {
@@ -85,25 +71,13 @@ describe("VarselCard", () => {
   });
 
   it("should render a 'Merk som lest' button when inaktiverbar without a link", () => {
-    render(
-      <VarselCard
-        varsel={{ ...baseVarsel, isInaktiverbar: true, link: "" }}
-        isInaktiv={false}
-      />,
-    );
+    render(<VarselCard varsel={{ ...baseVarsel, isInaktiverbar: true, link: "" }} isInaktiv={false} />);
 
-    expect(
-      screen.getByRole("button", { name: "Merk som lest" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Merk som lest" })).toBeInTheDocument();
   });
 
   it("should inaktivere and log when the button is clicked", () => {
-    render(
-      <VarselCard
-        varsel={{ ...baseVarsel, isInaktiverbar: true, link: "" }}
-        isInaktiv={false}
-      />,
-    );
+    render(<VarselCard varsel={{ ...baseVarsel, isInaktiverbar: true, link: "" }} isInaktiv={false} />);
 
     fireEvent.click(screen.getByRole("button", { name: "Merk som lest" }));
 
@@ -112,12 +86,7 @@ describe("VarselCard", () => {
   });
 
   it("should not render a button when the varsel has a link", () => {
-    render(
-      <VarselCard
-        varsel={{ ...baseVarsel, isInaktiverbar: true }}
-        isInaktiv={false}
-      />,
-    );
+    render(<VarselCard varsel={{ ...baseVarsel, isInaktiverbar: true }} isInaktiv={false} />);
 
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
   });

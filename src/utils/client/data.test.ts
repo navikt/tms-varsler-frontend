@@ -1,5 +1,5 @@
+import { type Varsel, VarselType } from "@src/customTypes/Varsel.ts";
 import { describe, expect, it } from "vitest";
-import { VarselType, type Varsel } from "@src/customTypes/Varsel.ts";
 import { formatData, sortVarselList } from "./data";
 
 const makeVarsel = (forstBehandlet: string): Varsel => ({

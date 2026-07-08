@@ -1,11 +1,11 @@
 ---
 import { BodyLong, Heading, Link } from "@navikt/ds-react";
-import styles from "./PageHeader.module.css";
-import { text } from "../../language/text";
-import { VisningsToggle } from "./VisningsToggle/VisningsToggle";
-import { Filter } from "./Filter/Filter";
 import type { Locale } from "@src/customTypes/Locale";
 import { minSideUrl } from "@utils/urls";
+import { text } from "../../language/text";
+import { Filter } from "./Filter/Filter";
+import styles from "./PageHeader.module.css";
+import { VisningsToggle } from "./VisningsToggle/VisningsToggle";
 
 const currentLocale: Locale = Astro.currentLocale as Locale;
 ---
