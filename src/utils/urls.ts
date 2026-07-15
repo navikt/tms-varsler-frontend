@@ -28,5 +28,4 @@ export const inaktiverBeskjedApiUrl = `${NAV_NO_URL[environment]}/tms-varsel-api
 export const loginStepUpUrl = `${appBaseUrl}/oauth2/login?level=Level4&redirect=${appBaseUrl}`;
 
 export const apiInternIngress = `${API_INTERNAL_INGRESS[environment]}/alle`;
-export const loginUrl = `/minside/varsler/oauth2/login?redirect=${appBaseUrl}`;
 export const errorReportingUrl = ERROR_REPORTING_URL[environment];

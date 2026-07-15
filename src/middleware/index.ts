@@ -1,30 +1,3 @@
-import { getToken, validateToken } from "@navikt/oasis";
-import { loginUrl } from "@utils/urls.ts";
-import { defineMiddleware } from "astro/middleware";
+import { authenticate } from "@navikt/astro-auth";
 
-const isLocal = import.meta.env.DEV;
-
-export const onRequest = defineMiddleware(async (context, next) => {
-  const token = getToken(context.request.headers);
-  if (isLocal) {
-    return next();
-  }
-
-  if (context.request.url.includes("/internal")) {
-    return next();
-  }
-
-  if (!token) {
-    context.logger.info("Token not found");
-    return context.redirect(loginUrl);
-  }
-
-  const validation = await validateToken(token);
-  if (!validation.ok) {
-    context.logger.error("Validation failed!");
-    return context.redirect(loginUrl);
-  }
-
-  context.locals.token = token;
-  return next();
-});
+export const onRequest = authenticate();
