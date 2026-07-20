@@ -2,7 +2,10 @@
   "description": "Strukturert intervju som avdekker blindsoner i Nav-prosjekter — personvern, auth, avhengigheter og observerbarhet",
   "domain": "general",
   "tags": ["planning", "requirements", "interview", "onboarding", "nav-pilot"],
-  "references": ["references/data-classification.md", "references/blind-spots.md"],
+  "references": [
+    "references/data-classification.md",
+    "references/blind-spots.md"
+  ],
   "examples": [
     {
       "prompt": "Kjør et dypintervju for den nye dp-behandling-tjenesten",
