@@ -9,7 +9,7 @@ const NAV_NO_URL = {
 };
 
 const API_INTERNAL_INGRESS: EnvBasedUrl = {
-  local: "http://localhost:3000/tms-varsel-api",
+  local: "http://localhost:4321/tms-varsel-api",
   dev: "http://tms-varsel-api/tms-varsel-api",
   prod: "http://tms-varsel-api/tms-varsel-api",
 };

@@ -1,6 +1,8 @@
 import node from "@astrojs/node";
 import react from "@astrojs/react";
+import mockServer from "@navikt/astro-mocks";
 import { defineConfig } from "astro/config";
+import varsler from "./src/mocks/varsler.json" with { type: "json" };
 
 if (!process.env.PUBLIC_APP_ENVIRONMENT) {
   throw new Error("PUBLIC_APP_ENVIRONMENT must be set");
@@ -20,7 +22,7 @@ export default defineConfig({
       sourcemap: true,
     },
   },
-  integrations: [react()],
+  integrations: [react(), mockServer({ mocks: varsler })],
   logger: {
     entrypoint: "@navikt/astro-logger",
   },
