@@ -17,7 +17,7 @@ vi.mock("@components/VarseList/VarselCard/postInaktiver.ts", () => ({
   default: (...args: unknown[]) => postInaktiver(...args),
 }));
 
-import { VarselCard } from "./VarselCard";
+import { VarselCard } from "@components/VarseList/VarselCard/VarselCard";
 
 const baseVarsel: Varsel = {
   eventId: "1",

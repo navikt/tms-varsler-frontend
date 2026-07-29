@@ -1,6 +1,6 @@
 import { type Varsel, VarselType } from "@src/customTypes/Varsel.ts";
 import { describe, expect, it } from "vitest";
-import { formatData, sortVarselList } from "./data";
+import { formatData, sortVarselList } from "@utils/client/data";
 
 const makeVarsel = (forstBehandlet: string): Varsel => ({
   eventId: forstBehandlet,

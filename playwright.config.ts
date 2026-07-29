@@ -4,7 +4,8 @@ const PORT = 4321;
 const origin = `http://localhost:${PORT}`;
 
 export default defineConfig({
-  testDir: "./e2e",
+  testDir: "./test/integration",
+  testMatch: "**/*.spec.ts",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
