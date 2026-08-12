@@ -1,6 +1,6 @@
 import { type Varsel, VarselType } from "@src/customTypes/Varsel.ts";
-import { describe, expect, it } from "vitest";
 import sortVarsler from "@utils/client/sortVarsler";
+import { describe, expect, it } from "vitest";
 
 const makeVarsel = (forstBehandlet: string, overrides: Partial<Varsel> = {}): Varsel => ({
   eventId: forstBehandlet,

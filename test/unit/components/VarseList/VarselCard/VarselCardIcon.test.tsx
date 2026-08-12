@@ -1,7 +1,7 @@
+import { VarselCardIcon } from "@components/VarseList/VarselCard/VarselCardIcon";
 import { VarselType } from "@src/customTypes/Varsel.ts";
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { VarselCardIcon } from "@components/VarseList/VarselCard/VarselCardIcon";
 
 describe("VarselCardIcon", () => {
   it("should render a decorative (aria-hidden) icon for an oppgave", () => {
