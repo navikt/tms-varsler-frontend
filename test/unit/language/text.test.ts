@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { dynamicText, text } from "@language/text";
+import { describe, expect, it } from "vitest";
 
 describe("dynamicText.tidligereVarslerHeading", () => {
   it("should render the bokmål heading with counts", () => {
