@@ -21,12 +21,13 @@
     "@astrojs/check": "0.9.10",
     "@astrojs/node": "11.0.2",
     "@astrojs/react": "6.0.1",
+    "@nais/apm": "0.6.0",
     "@nanostores/react": "1.1.0",
     "@navikt/aksel-icons": "8.15.0",
+    "@navikt/astro-auth": "1.0.8",
     "@navikt/astro-logger": "1.0.0",
     "@navikt/ds-react": "8.10.4",
     "@navikt/nav-dekoratoren-moduler": "3.4.0",
-    "@navikt/astro-auth": "1.0.8",
     "@navikt/oasis": "3.8.0",
     "astro": "7.1.6",
     "dayjs": "1.11.21",
@@ -58,6 +59,7 @@
   },
   "pnpm": {
     "overrides": {
+      "react-router": "7.18.2",
       "vite": "8.1.3"
     }
   }

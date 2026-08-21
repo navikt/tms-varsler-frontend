@@ -1,6 +1,8 @@
 ---
+import { renderNaisMetaTags } from "@nais/apm";
 import { type DecoratorLocale } from "@navikt/nav-dekoratoren-moduler";
 import { fetchDecoratorHtml } from "@navikt/nav-dekoratoren-moduler/ssr";
+import Observability from "@src/components/observability/Observability";
 import { type Locale } from "@src/customTypes/Locale";
 import { appBaseUrl } from "@utils/urls";
 import styles from "./Layout.module.css";
@@ -50,6 +52,7 @@ const { DECORATOR_HEAD_ASSETS, DECORATOR_HEADER, DECORATOR_FOOTER, DECORATOR_SCR
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="noindex" />
     <title>Varsler</title>
+    <Fragment set:html={renderNaisMetaTags()} />
     <link
       rel="preload"
       href="https://cdn.nav.no/aksel/@navikt/ds-css/8.10.4/index.min.css"
@@ -62,6 +65,7 @@ const { DECORATOR_HEAD_ASSETS, DECORATOR_HEADER, DECORATOR_FOOTER, DECORATOR_SCR
     <Fragment set:html={DECORATOR_HEAD_ASSETS} />
   </head>
   <body>
+    <Observability client:only="react" />
     <Fragment set:html={DECORATOR_HEADER} />
     <main id="maincontent" class={styles.layout}>
       <slot />

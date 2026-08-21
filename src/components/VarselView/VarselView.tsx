@@ -1,6 +1,7 @@
 import ErrorAlert from "@components/error/Error.tsx";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
 import { text } from "@language/text.ts";
+import { withApmErrorBoundary } from "@nais/apm/react";
 import { useStore } from "@nanostores/react";
 import { Alert, Link } from "@navikt/ds-react";
 import type { VarselResponse } from "@src/customTypes/Varsel.ts";
@@ -41,4 +42,7 @@ const VarselView = ({ varselResponse, isError }: props) => {
   );
 };
 
-export default VarselView;
+export default withApmErrorBoundary(VarselView, {
+  fallback: <ErrorAlert />,
+  fingerprint: "varsler-render",
+});
