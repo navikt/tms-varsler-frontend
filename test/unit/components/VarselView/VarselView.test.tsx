@@ -2,6 +2,12 @@ import type { VarselResponse } from "@src/customTypes/Varsel";
 import { render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+const captureException = vi.fn();
+
+vi.mock("@nais/apm", () => ({
+  captureException: (...args: unknown[]) => captureException(...args),
+}));
+
 vi.mock("@components/VarselView/NyeVarslerView/NyeVarslerView.tsx", () => ({
   NyeVarslerView: () => {
     throw new Error("Render failed");
@@ -21,6 +27,7 @@ const emptyResponse: VarselResponse = {
 
 describe("VarselView", () => {
   afterEach(() => {
+    vi.clearAllMocks();
     vi.restoreAllMocks();
   });
 
@@ -35,5 +42,9 @@ describe("VarselView", () => {
         "Vi har for øyeblikket tekniske problemer. Dette kan føre til at du ikke får opp alle dine varsler. Vennligst prøv igjen senere.",
       ),
     ).toBeInTheDocument();
+    expect(captureException).toHaveBeenCalledOnce();
+    expect(captureException).toHaveBeenCalledWith(expect.any(Error), {
+      fingerprint: "varsler-render",
+    });
   });
 });
