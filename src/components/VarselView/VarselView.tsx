@@ -1,7 +1,7 @@
 import ErrorAlert from "@components/error/Error.tsx";
-import ApmErrorBoundary from "@components/observability/ApmErrorBoundary";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
 import { text } from "@language/text.ts";
+import { withApmErrorBoundary } from "@nais/apm/react";
 import { useStore } from "@nanostores/react";
 import { Alert, Link } from "@navikt/ds-react";
 import type { VarselResponse } from "@src/customTypes/Varsel.ts";
@@ -12,12 +12,12 @@ import { NyeVarslerView } from "./NyeVarslerView/NyeVarslerView.tsx";
 import { TidligereVarslerView } from "./TidligereVarslerView/TidligereVarslerView.tsx";
 import styles from "./VarselView.module.css";
 
-interface Props {
+interface props {
   varselResponse: VarselResponse;
   isError: boolean;
 }
 
-const VarselView = ({ varselResponse, isError }: Props) => {
+const VarselView = ({ varselResponse, isError }: props) => {
   const isTidligereView: boolean = useStore($showTidligere);
   varselResponse && initVarsler(varselResponse);
 
@@ -42,10 +42,7 @@ const VarselView = ({ varselResponse, isError }: Props) => {
   );
 };
 
-const VarselViewWithErrorBoundary = (props: Props) => (
-  <ApmErrorBoundary fallback={<ErrorAlert />} fingerprint="varsler-render">
-    <VarselView {...props} />
-  </ApmErrorBoundary>
-);
-
-export default VarselViewWithErrorBoundary;
+export default withApmErrorBoundary(VarselView, {
+  fallback: <ErrorAlert />,
+  fingerprint: "varsler-render",
+});
