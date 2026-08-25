@@ -1,37 +1,39 @@
 # tms-varsler-frontend
 
-Frontenden for visning av varsler på nav.no.
+[![Deploy main](https://github.com/navikt/tms-varsler-frontend/actions/workflows/deploy-main.yaml/badge.svg)](https://github.com/navikt/tms-varsler-frontend/actions/workflows/deploy-main.yaml)
+[![Astro](https://img.shields.io/badge/Astro-7-BC52EE?logo=astro&logoColor=white)](https://astro.build/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vitest](https://img.shields.io/badge/Vitest-4-6E9F18?logo=vitest&logoColor=white)](https://vitest.dev/)
 
-Url dev: https://www.ansatt.dev.nav.no/minside/varsler
+Frontend for varsler til innloggede brukere på Min side. Brukerne kan se nye oppgaver og beskjeder, finne varsler fra det siste året og filtrere tidligere varsler etter type eller innhold. Løsningen støtter bokmål, nynorsk og engelsk.
 
-Url prod: https://www.nav.no/minside/varsler
+Appen krever innlogging med ID-porten. Varsler som krever høyere sikkerhetsnivå, vises etter ny innlogging på nivå 4.
 
-# Kom i gang
+## Miljøer
 
-1. Installer dependencies med `pnpm install`
-2. Start hono mockserver med `pnpm mock`
-3. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre `pnpm dev` i et nytt terminalvindu
-4. Appen nås på http://localhost:4321/minside/varsler
+- [Produksjon](https://www.nav.no/minside/varsler)
+- [Utvikling](https://www.ansatt.dev.nav.no/minside/varsler)
 
-# Testing
+## Backend
 
-Enhets- og komponenttester kjøres med [Vitest](https://vitest.dev/) (jsdom + Testing Library), og e2e-tester med [Playwright](https://playwright.dev/) (inkl. tilgjengelighetssjekk med axe).
+### [tms-varsel-api](https://github.com/navikt/tms-varsel-api)
 
-| Kommando | Beskrivelse |
-| --- | --- |
-| `pnpm test` | Kjører enhets- og komponenttester én gang |
-| `pnpm test:watch` | Kjører Vitest i watch-modus |
-| `pnpm test:coverage` | Kjører enhetstestene med dekningsrapport |
-| `pnpm test:e2e` | Kjører Playwright-e2e-testene |
+Leverer aktive og tidligere varsler. Frontenden henter data med et TokenX on-behalf-of-token og kan inaktivere beskjeder når brukeren følger lenken i et varsel.
 
-Enhets- og komponenttester ligger ved siden av koden de tester (`src/**/*.test.{ts,tsx}`). E2e-testene ligger i `e2e/`.
+- **GET** `/tms-varsel-api/alle`
+- **POST** `/tms-varsel-api/beskjed/inaktiver`
 
-Playwright starter mockserveren og appen automatisk via `webServer` i `playwright.config.ts`. Første gang må nettleseren installeres: `pnpm exec playwright install chromium`.
+## Utvikling
 
-# Henvendelser
+Appen kjører lokalt på [http://localhost:4321/minside/varsler](http://localhost:4321/minside/varsler). Det lokale utviklingsmiljøet bruker mockdata gjennom Astro-integrasjonen `@navikt/astro-mocks`.
 
-Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på github.
+Kjør `pnpm run` for en oppdatert oversikt over tilgjengelige kommandoer for lokal kjøring, bygging, linting og tester. Repoet bruker Vitest til enhets- og komponenttester og Playwright til ende-til-ende-tester og automatiserte tilgjengelighetssjekker.
 
-## For NAV-ansatte
+## Henvendelser
 
-Interne henvendelser kan sendes via Slack i kanalen [#minside-varsler](https://nav-it.slack.com/archives/CR61BPH7G).
+Spørsmål om koden eller prosjektet kan opprettes som [issues i GitHub](https://github.com/navikt/tms-varsler-frontend/issues).
+
+## For Nav-ansatte
+
+Interne henvendelser kan sendes i Slack-kanalen [#minside-varsler](https://nav-it.slack.com/archives/CR61BPH7G).
