@@ -1,22 +1,31 @@
+import { captureException } from "@nais/apm";
 import { inaktiverBeskjedApiUrl } from "@utils/urls.ts";
 
-const postInarkiver = (id: string) => {
+const postInarkiver = async (id: string): Promise<void> => {
   const requestBody = { eventId: id };
-  fetch(inaktiverBeskjedApiUrl, {
-    method: "POST",
-    credentials: "same-origin",
-    keepalive: true,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(requestBody),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        console.error(`Inaktivering av beskjed feilet med status: ${response.status}`);
-      }
-    })
-    .catch(() => console.error("Inaktivering av beskjed feilet"));
+
+  try {
+    const response = await fetch(inaktiverBeskjedApiUrl, {
+      method: "POST",
+      credentials: "same-origin",
+      keepalive: true,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    if (!response.ok) {
+      captureException(new Error("Inaktivering av beskjed feilet"), {
+        fingerprint: "varsel-inaktivering",
+        context: { status: response.status },
+      });
+    }
+  } catch (error) {
+    captureException(error, {
+      fingerprint: "varsel-inaktivering",
+    });
+  }
 };
 export default postInarkiver;
