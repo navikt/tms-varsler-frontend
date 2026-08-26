@@ -17,11 +17,9 @@ flowchart LR
     bruker["Innbygger\n(nettleser)"]
     frontend["tms-varsler-frontend\n(Astro SSR)"]
     backend["tms-varsel-api\n(backend)"]
-    dekorator["nav-dekoratoren"]
 
     bruker -->|ID-porten-innlogging| frontend
     frontend -->|TokenX OBO-token| backend
-    frontend -->|Dekoratorfragmenter| dekorator
 ```
 
 Innkommende forespørsler autentiseres i Astro-middleware med `@navikt/astro-auth`. Frontenden veksler brukerens token til et on-behalf-of-token via TokenX før den henter varsler fra `tms-varsel-api`.
