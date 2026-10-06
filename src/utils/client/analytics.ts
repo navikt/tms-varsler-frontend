@@ -6,7 +6,7 @@ const APP_NAME = "tms-varsler-frontend";
 const analyticsLogger = getAnalyticsInstance("tms-microfrontend-template-ssr");
 
 export const logLinkNavigation = async (komponent: string) => {
-  await analyticsLogger("navigere", {
+  await analyticsLogger.custom("navigere", {
     komponent: komponent,
     kategori: "tms-varsel",
     origin: APP_NAME,
@@ -14,11 +14,11 @@ export const logLinkNavigation = async (komponent: string) => {
 };
 
 export const logClickInaktiverButton = async () => {
-  await analyticsLogger("click-inaktiver-button", { origin: APP_NAME });
+  await analyticsLogger.custom("click-inaktiver-button", { origin: APP_NAME });
 };
 
 export const logClickInaktivVarselWithoutLink = async (type: VarselType) => {
-  await analyticsLogger("click-tidligere-varsel-uten-link", {
+  await analyticsLogger.custom("click-tidligere-varsel-uten-link", {
     eventData: { varselType: type },
     origin: APP_NAME,
   });
