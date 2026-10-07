@@ -58,7 +58,11 @@ export const VarselCard = ({ varsel, isInaktiv }: { varsel: Varsel; isInaktiv: b
             <Link
               onClick={() => {
                 handleInaktiverVarsel(varsel.eventId, varsel.isInaktiverbar);
-                logLinkNavigation(`${isInaktiv ? "inaktiv" : "aktiv"}-${varsel.type}`);
+                logLinkNavigation({
+                  komponent: `${isInaktiv ? "inaktiv" : "aktiv"}-${varsel.type}`,
+                  lenketekst: varsel.type,
+                  destinasjon: varsel.link,
+                });
               }}
               href={varsel.link}
             >
@@ -74,7 +78,7 @@ export const VarselCard = ({ varsel, isInaktiv }: { varsel: Varsel; isInaktiv: b
           <Button
             onClick={() => {
               handleInaktiverVarsel(varsel.eventId, varsel.isInaktiverbar);
-              logClickInaktiverButton();
+              logClickInaktiverButton(text.markAsRead[DOCUMENT_LOCALE]);
             }}
             size="small"
             variant="secondary"

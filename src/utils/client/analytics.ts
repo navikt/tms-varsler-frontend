@@ -3,18 +3,26 @@ import type { VarselType } from "../../customTypes/Varsel";
 
 const APP_NAME = "tms-varsler-frontend";
 
-const analyticsLogger = getAnalyticsInstance("tms-microfrontend-template-ssr");
+const analyticsLogger = getAnalyticsInstance(APP_NAME);
 
-export const logLinkNavigation = async (komponent: string) => {
-  await analyticsLogger.custom("navigere", {
-    komponent: komponent,
-    kategori: "tms-varsel",
-    origin: APP_NAME,
+type LinkNavigation = { komponent: string; lenketekst: string; destinasjon: string };
+
+export const logLinkNavigation = async ({ komponent, lenketekst, destinasjon }: LinkNavigation) => {
+  await analyticsLogger("navigere", {
+    lenketekst,
+    destinasjon,
+    komponentId: komponent,
+    lenkegruppe: "tms-varsel",
   });
 };
 
-export const logClickInaktiverButton = async () => {
-  await analyticsLogger.custom("click-inaktiver-button", { origin: APP_NAME });
+export const logClickInaktiverButton = async (tekst: string) => {
+  await analyticsLogger("knapp klikket", {
+    tekst,
+    variant: "secondary",
+    size: "small",
+    komponentId: "inaktiver-varsel",
+  });
 };
 
 export const logClickInaktivVarselWithoutLink = async (type: VarselType) => {
