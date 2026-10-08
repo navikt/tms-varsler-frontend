@@ -67,7 +67,23 @@ describe("VarselCard", () => {
 
     fireEvent.click(screen.getByRole("link", { name: baseVarsel.tekst }));
 
-    expect(logLinkNavigation).toHaveBeenCalledWith("aktiv-beskjed");
+    expect(logLinkNavigation).toHaveBeenCalledWith({
+      komponent: "aktiv-beskjed",
+      lenketekst: "beskjed",
+      destinasjon: baseVarsel.link,
+    });
+  });
+
+  it("should log link navigation as inaktiv when the varsel is inaktiv", () => {
+    render(<VarselCard varsel={{ ...baseVarsel, type: VarselType.OPPGAVE }} isInaktiv />);
+
+    fireEvent.click(screen.getByRole("link", { name: baseVarsel.tekst }));
+
+    expect(logLinkNavigation).toHaveBeenCalledWith({
+      komponent: "inaktiv-oppgave",
+      lenketekst: "oppgave",
+      destinasjon: baseVarsel.link,
+    });
   });
 
   it("should render a 'Merk som lest' button when inaktiverbar without a link", () => {
@@ -82,7 +98,7 @@ describe("VarselCard", () => {
     fireEvent.click(screen.getByRole("button", { name: "Merk som lest" }));
 
     expect(postInaktiver).toHaveBeenCalledWith(baseVarsel.eventId);
-    expect(logClickInaktiverButton).toHaveBeenCalled();
+    expect(logClickInaktiverButton).toHaveBeenCalledWith("Merk som lest");
   });
 
   it("should not render a button when the varsel has a link", () => {

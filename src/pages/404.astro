@@ -29,7 +29,11 @@ import { appBaseUrl, errorReportingUrl, minSideUrl } from "../utils/urls";
               <Link
                 href={minSideUrl}
                 onClick={() => {
-                  logLinkNavigation("404-min-side-link");
+                  logLinkNavigation({
+                    komponent: "404-min-side-link",
+                    lenketekst: "Gå til Min side",
+                    destinasjon: minSideUrl,
+                  });
                 }}>Gå til Min side</Link
               >
             </List.Item>
@@ -38,7 +42,12 @@ import { appBaseUrl, errorReportingUrl, minSideUrl } from "../utils/urls";
         <Button as="a" href={appBaseUrl}> Gå til dine varsler </Button>
         <Link
           href={errorReportingUrl}
-          onClick={() => logLinkNavigation("404-meld-inn-feil-link")}
+          onClick={() =>
+            logLinkNavigation({
+              komponent: "404-meld-inn-feil-link",
+              lenketekst: "Meld gjerne fra om at lenken ikke virker",
+              destinasjon: errorReportingUrl,
+            })}
         >
           <BugIcon aria-hidden />
           Meld gjerne fra om at lenken ikke virker

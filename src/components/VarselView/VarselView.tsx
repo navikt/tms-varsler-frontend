@@ -29,7 +29,11 @@ const VarselView = ({ varselResponse, isError }: props) => {
           <Link
             href={loginStepUpUrl}
             onClick={() => {
-              logLinkNavigation("step-up-login");
+              logLinkNavigation({
+                komponent: "step-up-login",
+                lenketekst: text.insufficientLoggingLevelAlertLink[DOCUMENT_LOCALE].trim(),
+                destinasjon: loginStepUpUrl,
+              });
             }}
           >
             {text.insufficientLoggingLevelAlertLink[DOCUMENT_LOCALE]}
