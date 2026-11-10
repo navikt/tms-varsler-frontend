@@ -21,8 +21,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0(nanostores@1.5.5)(react@18.3.1)
       '@navikt/aksel-icons':
-        specifier: 8.20.1
-        version: 8.20.1
+        specifier: 8.21.0
+        version: 8.21.0
       '@navikt/astro-auth':
         specifier: 1.0.8
         version: 1.0.8(astro@7.4.4(@types/node@24.0.14)(esbuild@0.28.2)(tsx@4.22.1)(yaml@2.9.1))
@@ -946,8 +946,8 @@ packages:
       '@emnapi/core': ^1.7.1 || ^2.0.0-alpha.4
       '@emnapi/runtime': ^1.7.1 || ^2.0.0-alpha.4
 
-  '@navikt/aksel-icons@8.20.1':
-    resolution: {integrity: sha512-+rS7SW9iyq1OIylkOIEpU9bGtspSp1edUxMUYip6ukOJEZ97cHBUHpOJkx6J/t/VrX/UCojBxdjYBwb9cPZ45w==, tarball: https://npm.pkg.github.com/download/@navikt/aksel-icons/8.20.1/e0a03944294b287dfe5d844bdf4958be67e804fa}
+  '@navikt/aksel-icons@8.21.0':
+    resolution: {integrity: sha512-/RXiUI1dt4lt/prvz2ngVp7BryHzLFIpq0wW1cjMKxqaaJwE4eYvTDFAdAFUpu3dL4hNRaXsji1GOxGGAK/jqw==, tarball: https://npm.pkg.github.com/download/@navikt/aksel-icons/8.21.0/3732daf4de6b0b26ae40aa42c2ad832b6acccc62}
 
   '@navikt/analytics-types@0.0.9':
     resolution: {integrity: sha512-bopCvqEogyFcmrJiBxK/Mr25d6yPKF7GR36MGrJqiHCPJYf1rDu6lK4cpooTG4Q//D/1xTkHRom8ZH5BI6dTew==, tarball: https://npm.pkg.github.com/download/@navikt/analytics-types/0.0.9/5919241a6dbb782eb101fff3234ce5c36d16e942}
@@ -3681,7 +3681,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.3
     optional: true
 
-  '@navikt/aksel-icons@8.20.1': {}
+  '@navikt/aksel-icons@8.21.0': {}
 
   '@navikt/analytics-types@0.0.9': {}
 
@@ -3704,7 +3704,7 @@ snapshots:
     dependencies:
       '@floating-ui/react': 0.27.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@floating-ui/react-dom': 2.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@navikt/aksel-icons': 8.20.1
+      '@navikt/aksel-icons': 8.21.0
       '@navikt/ds-tokens': 8.20.1
       '@types/react': 18.3.28
       date-fns: 4.1.0
