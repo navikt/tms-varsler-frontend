@@ -2,7 +2,8 @@ import ErrorAlert from "@components/error/Error.tsx";
 import { DOCUMENT_LOCALE } from "@language/language.ts";
 import { text } from "@language/text.ts";
 import { useStore } from "@nanostores/react";
-import { Alert, Link } from "@navikt/ds-react";
+import { InformationSquareIcon } from "@navikt/aksel-icons";
+import { InfoCard, Link } from "@navikt/ds-react";
 import type { VarselResponse } from "@src/customTypes/Varsel.ts";
 import { $showTidligere, initVarsler } from "@src/store/store.ts";
 import { logLinkNavigation } from "@utils/client/analytics.ts";
@@ -24,21 +25,27 @@ const VarselView = ({ varselResponse, isError }: props) => {
     <div className={styles.varselViewContainer}>
       {isError && <ErrorAlert />}
       {varselResponse?.hasMaskedVarsel && (
-        <Alert variant="info">
-          {text.insufficientLoggingLevelAlert[DOCUMENT_LOCALE]}
-          <Link
-            href={loginStepUpUrl}
-            onClick={() => {
-              logLinkNavigation({
-                komponent: "step-up-login",
-                lenketekst: text.insufficientLoggingLevelAlertLink[DOCUMENT_LOCALE].trim(),
-                destinasjon: loginStepUpUrl,
-              });
-            }}
-          >
-            {text.insufficientLoggingLevelAlertLink[DOCUMENT_LOCALE]}
-          </Link>
-        </Alert>
+        <InfoCard data-color="info">
+          <InfoCard.Header icon={<InformationSquareIcon aria-hidden />}>
+            <InfoCard.Title>{text.insufficientLoggingLevelAlertHeading[DOCUMENT_LOCALE]}</InfoCard.Title>
+          </InfoCard.Header>
+          <InfoCard.Content>
+            {text.insufficientLoggingLevelAlert[DOCUMENT_LOCALE]}
+            <Link
+              href={loginStepUpUrl}
+              className={styles.inlineLink}
+              onClick={() => {
+                logLinkNavigation({
+                  komponent: "step-up-login",
+                  lenketekst: text.insufficientLoggingLevelAlertLink[DOCUMENT_LOCALE].trim(),
+                  destinasjon: loginStepUpUrl,
+                });
+              }}
+            >
+              {text.insufficientLoggingLevelAlertLink[DOCUMENT_LOCALE]}
+            </Link>
+          </InfoCard.Content>
+        </InfoCard>
       )}
       {isTidligereView ? <TidligereVarslerView /> : <NyeVarslerView />}
     </div>
