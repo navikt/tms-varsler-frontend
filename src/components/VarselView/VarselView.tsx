@@ -33,6 +33,7 @@ const VarselView = ({ varselResponse, isError }: props) => {
             {text.insufficientLoggingLevelAlert[DOCUMENT_LOCALE]}
             <Link
               href={loginStepUpUrl}
+              className={styles.inlineLink}
               onClick={() => {
                 logLinkNavigation({
                   komponent: "step-up-login",
