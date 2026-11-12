@@ -26,7 +26,10 @@ const VarselView = ({ varselResponse, isError }: props) => {
       {isError && <ErrorAlert />}
       {varselResponse?.hasMaskedVarsel && (
         <InfoCard data-color="info">
-          <InfoCard.Message icon={<InformationSquareIcon aria-hidden />}>
+          <InfoCard.Header icon={<InformationSquareIcon aria-hidden />}>
+            <InfoCard.Title>{text.insufficientLoggingLevelAlertHeading[DOCUMENT_LOCALE]}</InfoCard.Title>
+          </InfoCard.Header>
+          <InfoCard.Content>
             {text.insufficientLoggingLevelAlert[DOCUMENT_LOCALE]}
             <Link
               href={loginStepUpUrl}
@@ -40,7 +43,7 @@ const VarselView = ({ varselResponse, isError }: props) => {
             >
               {text.insufficientLoggingLevelAlertLink[DOCUMENT_LOCALE]}
             </Link>
-          </InfoCard.Message>
+          </InfoCard.Content>
         </InfoCard>
       )}
       {isTidligereView ? <TidligereVarslerView /> : <NyeVarslerView />}
