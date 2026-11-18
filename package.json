@@ -15,7 +15,8 @@
     "ts-check": "tsc --strict",
     "lint": "biome check --write .",
     "lint:check": "biome check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "verify": "PUBLIC_APP_ENVIRONMENT=local astro check && pnpm run test"
   },
   "dependencies": {
     "@astrojs/check": "0.9.12",
