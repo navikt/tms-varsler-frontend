@@ -42,6 +42,13 @@ spec:
     - "https://www.ansatt.dev.nav.no/minside/varsler"
     - "https://www.ansatt.dev.nav.no/minside/tidligere-varsler"
 
+  env:
+    - name: NAV_NO_URL
+      value: "https://www.ansatt.dev.nav.no"
+    - name: VARSEL_API_URL
+      value: "http://tms-varsel-api/tms-varsel-api"
+    - name: ERROR_REPORTING_URL
+      value: "https://www.ansatt.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler"
   resources:
     limits:
       memory: 768Mi

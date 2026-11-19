@@ -2,7 +2,7 @@
 import { type DecoratorLocale } from "@navikt/nav-dekoratoren-moduler";
 import { fetchDecoratorHtml } from "@navikt/nav-dekoratoren-moduler/ssr";
 import { type Locale } from "@src/customTypes/Locale";
-import { appBaseUrl } from "@utils/urls";
+import { appBaseUrl } from "@utils/server/urls";
 import styles from "./Layout.module.css";
 
 const currentLocale: Locale = Astro.currentLocale as Locale;

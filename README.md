@@ -42,6 +42,8 @@ Leverer aktive og tidligere varsler. Frontenden henter data med et TokenX on-beh
 
 Appen kjører lokalt på [http://localhost:4321/minside/varsler](http://localhost:4321/minside/varsler). Det lokale utviklingsmiljøet bruker mockdata gjennom Astro-integrasjonen `@navikt/astro-mocks`.
 
+Bygg og deploy skjer med den delte workflowen `astro-deploy-v1.yaml` i [navikt/tms-deploy](https://github.com/navikt/tms-deploy). Samme image kjører i alle miljøer, og miljøspesifikke URL-er settes som miljøvariabler i `nais/<cluster>/nais.yaml`.
+
 Kjør `pnpm run` for en oppdatert oversikt over tilgjengelige kommandoer for lokal kjøring, bygging, linting og tester. Repoet bruker Vitest til enhets- og komponenttester og Playwright til ende-til-ende-tester og automatiserte tilgjengelighetssjekker.
 
 ## Henvendelser
