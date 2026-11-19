@@ -7,7 +7,7 @@ import { InfoCard, Link } from "@navikt/ds-react";
 import type { VarselResponse } from "@src/customTypes/Varsel.ts";
 import { $showTidligere, initVarsler } from "@src/store/store.ts";
 import { logLinkNavigation } from "@utils/client/analytics.ts";
-import { loginStepUpUrl } from "@utils/urls.ts";
+import { loginStepUpUrl } from "@utils/client/urls.ts";
 import { NyeVarslerView } from "./NyeVarslerView/NyeVarslerView.tsx";
 import { TidligereVarslerView } from "./TidligereVarslerView/TidligereVarslerView.tsx";
 import styles from "./VarselView.module.css";
