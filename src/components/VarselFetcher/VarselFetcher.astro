@@ -1,7 +1,7 @@
 ---
 import VarselView from "@components/VarselView/VarselView";
 import { getOboToken } from "@utils/server/getOboToken";
-import { apiInternIngress } from "@utils/urls";
+import { apiInternIngress } from "@utils/server/urls";
 
 const oboToken = await getOboToken(Astro.locals.token, Astro.logger);
 let isError = false;

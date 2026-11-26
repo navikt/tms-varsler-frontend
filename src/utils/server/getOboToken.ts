@@ -1,7 +1,7 @@
 import { requestOboToken } from "@navikt/oasis";
 import type { AstroRuntimeLogger } from "astro";
+import { isLocal } from "./environment";
 
-const isLocal = import.meta.env.PUBLIC_APP_ENVIRONMENT === "local";
 const audience = `${process.env.NAIS_CLUSTER_NAME}:min-side:tms-varsel-api`;
 
 export const getOboToken = async (token: string, logger: AstroRuntimeLogger): Promise<string> => {

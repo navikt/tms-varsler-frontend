@@ -1,4 +1,4 @@
-import { inaktiverBeskjedApiUrl } from "@utils/urls.ts";
+import { inaktiverBeskjedApiUrl } from "@utils/client/urls.ts";
 
 const postInarkiver = (id: string) => {
   const requestBody = { eventId: id };

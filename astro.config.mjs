@@ -1,12 +1,8 @@
 import node from "@astrojs/node";
 import react from "@astrojs/react";
 import mockServer from "@navikt/astro-mocks";
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import varsler from "./src/mocks/varsler.json" with { type: "json" };
-
-if (!process.env.PUBLIC_APP_ENVIRONMENT) {
-  throw new Error("PUBLIC_APP_ENVIRONMENT must be set");
-}
 
 // https://astro.build/config
 export default defineConfig({
@@ -37,4 +33,23 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  env: {
+    schema: {
+      NAV_NO_URL: envField.string({
+        context: "server",
+        access: "secret",
+        default: "http://localhost:4321",
+      }),
+      VARSEL_API_URL: envField.string({
+        context: "server",
+        access: "secret",
+        default: "http://localhost:4321/tms-varsel-api",
+      }),
+      ERROR_REPORTING_URL: envField.string({
+        context: "server",
+        access: "secret",
+        default: "https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler",
+      }),
+    },
+  },
 });
